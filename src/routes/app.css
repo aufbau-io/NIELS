@@ -4,7 +4,7 @@
 	--font-body: untitled-sans, sans-serif;
 	--font-header: dahlia, sans-serif;
 	--background: #232323;
-	--primary: #f0f0f0;
+	--primary: #d0d0d0;
 	--primary-50: #f0f0f080;
 	--column-width: 42rem;
 	--margin: 20px;
@@ -17,7 +17,7 @@
 }
 
 :root.dark-mode {
-	--background: #f0f0f0;
+	--background: #e4e4e4;
 	--primary: #232323;
 	--primary-50: #23232380;
 
