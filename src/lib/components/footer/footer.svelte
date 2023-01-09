@@ -3,7 +3,7 @@
 
 <footer>
 	<a href="https://aufbau.io" class="">EIN AUFBAU DING</a>
-	<a href="https://www.websitecarbon.com/website/iota-health/">0.03G CO2 / VISIT</a>
+	<a href="https://www.websitecarbon.com/website/aufbau-io/">0.03G CO2 / VISIT</a>
 	<!-- <p class="">COPYRIGHT 2022</p> -->
 </footer>
 
