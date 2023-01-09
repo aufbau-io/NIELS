@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>EMMETT THOMPSON</title>
+	<meta name="description" content="Neuroscientist" />
 </svelte:head>
 
 <section>
