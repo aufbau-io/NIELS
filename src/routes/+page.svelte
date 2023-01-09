@@ -20,7 +20,7 @@
 		align-items: center;
 		flex: 1;
 		background: var(--background);
-		max-height: 600px;
+		max-height: 500px;
 		max-width: 100%;
 	}
 
