@@ -1,0 +1,162 @@
+@tailwind base;
+
+:root {
+	--font-body: untitled-sans, sans-serif;
+	--font-header: dahlia, sans-serif;
+	--background: #232323;
+	--primary: #f0f0f0;
+	--primary-50: #f0f0f080;
+	--column-width: 42rem;
+	--margin: 20px;
+	font-family: var(--font-body);
+	color: var(--color-text);
+}
+
+:root.dark-mode {
+	--background: #f0f0f0;
+	--primary: #232323;
+	--primary-50: #23232380;
+}
+
+@font-face {
+	font-family: dahlia;
+	src: url(/fonts/dahlia-regular.woff) format('woff');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: dahlia;
+	src: url(/fonts/dahlia-medium.woff) format('woff');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: untitled-sans;
+	src: url(/fonts/test-untitled-sans-medium.woff2) format('woff2');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: untitled-sans;
+	src: url(/fonts/test-untitled-sans-regular.woff2) format('woff2');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: untitled-sans;
+	src: url(/fonts/test-untitled-sans-light.woff2) format('woff2');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: nb-architekt;
+	src: url(/fonts/NB-Architekt-Pro-Bold.woff) format('woff');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: nb-architekt;
+	src: url(/fonts/NB-Architekt-Pro-Regular.woff) format('woff');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: nb-architekt;
+	src: url(/fonts/NB-Architekt-Pro-Light.woff) format('woff');
+	font-weight: 400;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-attachment: fixed;
+	background-color: var(--background);
+	background-size: 100vw 100vh;
+	background-image: linear-gradient(
+		180deg,
+		var(--background) 0%,
+		var(--background) 15%,
+		var(--background) 50%
+	);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+	color: var(--primary);
+	font-weight: 400;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1rem;
+}
+
+pre {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--color-text);
+}
+
+.text-column {
+	display: flex;
+	max-width: 48rem;
+	flex: 0.6;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
