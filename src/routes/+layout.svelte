@@ -2,7 +2,7 @@
 	import './app.css';
 
 	import { onMount } from 'svelte';
-	import { screenType, is_iframe } from '$lib/store/store';
+	import { screenType, isIframe, darkMode } from '$lib/store/store';
 
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
@@ -10,7 +10,7 @@
 	let Geometry;
 	onMount(async () => {
 
-		const module = await import('$lib/components/three/lorentz.svelte');
+		const module = await import('$lib/components/three/cube_playground.svelte');
 		Geometry = module.default;
 
 		// ---------------------------------------------------------------------------
@@ -32,13 +32,14 @@
 
 		if (window.location !== window.parent.location) {
 			// The page is in an iframe
-			is_iframe.set(true);
+			isIframe.set(true);
 		}
 	});
 </script>
 
-<!-- <svelte:component this={Geometry} /> -->
-
+{#if $darkMode}
+<svelte:component this={Geometry} />
+{/if}
 
 <div class="app">
 	{#if $screenType}

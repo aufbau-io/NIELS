@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import * as THREE from 'three';
 
-	import { screenType, userType, mouseOnLink } from '$lib/store/store';
+	import { screenType, darkMode, mouseOnLink } from '$lib/store/store';
 
 	let container;
 	let id;
@@ -27,6 +27,12 @@
 		d = 4;
 	}
 
+	let white = new THREE.Color(0xf0f0f0);
+	let black = new THREE.Color(0x232323);
+
+	// $: backgroundColor = $darkMode ? 0xff0000 : 0x232323;
+	// let backgroundColor = 0x0000000
+
 	const objects = [];
 
 	init();
@@ -39,7 +45,8 @@
 		camera.zoom = 5;
 
 		scene = new THREE.Scene();
-		scene.background = new THREE.Color(0x232323);
+		scene.background = $darkMode ? black : white;
+		// renderer.setClearColor(0xd0d0d0, 0);
 
 		// roll-over helpers
 
@@ -114,8 +121,8 @@
 		if (intersects.length > 0) {
 			const intersect = intersects[0];
 
-			rollOverMesh.position.copy(intersect.point).add(intersect.face.normal);
-			rollOverMesh.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
+			// rollOverMesh.position.copy(intersect.point).add(intersect.face.normal);
+			// rollOverMesh.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
 
 			render();
 		}
@@ -127,7 +134,7 @@
 
 			raycaster.setFromCamera(pointer, camera);
 
-			const intersects = raycaster.intersectObjects(objects, false);
+			// const intersects = raycaster.intersectObjects(objects, false);
 
 			if (intersects.length > 0) {
 				const intersect = intersects[0];
@@ -183,8 +190,11 @@
 	.geometry {
 		touch-action: manipulation;
 		position: absolute;
+		overflow: hidden;
 		top: 0;
 		left: 0;
+		max-width: 100%;
+		max-height: 100%;
 		z-index: -10;
 	}
 </style>

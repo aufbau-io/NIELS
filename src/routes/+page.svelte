@@ -7,9 +7,9 @@
 	<meta name="description" content="Neuroscientist" />
 </svelte:head>
 
-<section>
+<!-- <section>
 	<RoomNav selected="lobby" scale=".85" type="lobby" />
-</section>
+</section> -->
 
 <style>
 	section {
@@ -19,7 +19,7 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-		background: var(--background);
+		/* background: var(--background); */
 		max-height: 500px;
 		max-width: 100%;
 	}

@@ -4,19 +4,15 @@
 	// stub data out
 	const navItems = [
 		{
-			name: 'AUFBAU',
+			name: 'WORK',
 			href: '/'
 		},
 		{
-			name: 'PROJECTS',
+			name: 'PUBLICATIONS',
 			href: '/'
 		},
 		{
-			name: 'ART / MATHS',
-			href: '/'
-		},
-		{
-			name: 'ABOUT',
+			name: 'CONTACT',
 			href: '/'
 		},
 	];
@@ -29,16 +25,17 @@
 
 <header>
 	<main>
-	<!-- {#if $screenType == 3}
+		<p>EmmetT Thompson</p>
+	{#if $screenType == 3}
 		<Nav {navItems} />
-	{/if} -->
-	<p>EmmetT Thompson</p>
+	{/if}
+
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div on:click={() => toggleDarkMode()} class="darkMode">
-		<p class:selected={$darkMode == false}>ONLINE</p>
+		<p class:selected={$darkMode == true}>ONLINE</p>
 		<p class="selected">/</p>
-		<p class:selected={$darkMode == true}>OFFLINE</p>
+		<p class:selected={$darkMode == false}>OFFLINE</p>
 	</div>
 </main>
 </header>
