@@ -26,7 +26,7 @@
 <header>
 	<main>
 		<p>EmmetT Thompson</p>
-	{#if $screenType == 3}
+	{#if $screenType == 3 && $darkMode}
 		<Nav {navItems} />
 	{/if}
 
