@@ -37,7 +37,7 @@
 	});
 </script>
 
-<svelte:component this={Geometry} />
+<!-- <svelte:component this={Geometry} /> -->
 
 
 <div class="app">
@@ -80,9 +80,9 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: calc(4 * var(--margin));
+		padding: calc(1 * var(--margin));
 		width: 100%;
-		max-width: 64rem;
+		/* max-width: 1400px; */
 		margin: 0 auto;
 		box-sizing: border-box;
 	}

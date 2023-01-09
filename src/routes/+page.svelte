@@ -1,4 +1,5 @@
 <script>
+		import RoomNav from '$lib/components/roomNav/roomNav.svelte';
 </script>
 
 <svelte:head>
@@ -7,21 +8,20 @@
 </svelte:head>
 
 <section>
-	<h1>
-		DAS AUFBAUZEUG
-	</h1>
-
+	<RoomNav selected="lobby" scale=".85" type="lobby" />
 </section>
 
 <style>
 	section {
+		margin: auto 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		flex: 1;
 		background: var(--background);
-		border: solid 1px var(--primary);
+		max-height: 600px;
+		max-width: 100%;
 	}
 
 	h1 {

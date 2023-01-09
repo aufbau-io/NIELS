@@ -29,15 +29,16 @@
 
 <header>
 	<main>
-	{#if $screenType == 3}
+	<!-- {#if $screenType == 3}
 		<Nav {navItems} />
-	{/if}
+	{/if} -->
+	<p>EmmetT Thompson</p>
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div on:click={() => toggleDarkMode()} class="darkMode">
-		<p class:selected={$darkMode == false}>day</p>
+		<p class:selected={$darkMode == false}>ONLINE</p>
 		<p class="selected">/</p>
-		<p class:selected={$darkMode == true}>night</p>
+		<p class:selected={$darkMode == true}>OFFLINE</p>
 	</div>
 </main>
 </header>
@@ -82,12 +83,15 @@
 		padding: 20px 16px;
 	}
 
-	.darkMode p {
+	p {
 		line-height: 110%;
 		font-size: 15px;
 		letter-spacing: 0.1em;
 		padding: 10px;
 		cursor: pointer;
+	}
+
+	.darkMode p {
 		opacity: 0.4;
 	}
 

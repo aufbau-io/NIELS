@@ -10,12 +10,20 @@
 	--margin: 20px;
 	font-family: var(--font-body);
 	color: var(--color-text);
+
+	--green: #008080;
+	--white: #d0d0d0;
+	--black: #232323;
 }
 
 :root.dark-mode {
 	--background: #f0f0f0;
 	--primary: #232323;
 	--primary-50: #23232380;
+
+	--green: #008080;
+	--white: #232323;
+	--black: #f0f0f0;
 }
 
 @font-face {
