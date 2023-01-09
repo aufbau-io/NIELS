@@ -14,7 +14,7 @@
 		z-index: 10;
 		gap: 10px;
 
-		padding: 20px 32px;
+		padding: 16px;
 		background: var(--background-alt);
 		border-top: solid 1px var(--accent-50);
 		text-transform: none;
