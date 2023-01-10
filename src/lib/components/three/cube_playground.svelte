@@ -1,24 +1,34 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import * as THREE from 'three';
+	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import gsap from "gsap";
+	// import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
-	import { screenType, darkMode, mouseOnLink } from '$lib/store/store';
+
+	import { screenType, darkMode } from '$lib/store/store';
 
 	let container;
 	let id;
 	onDestroy(() => cancelAnimationFrame(id));
 
+	let m = { x: 0, y: 0 };
+
 	let camera, scene, renderer;
 	let plane;
 	let pointer,
-		raycaster,
-		isShiftDown = false;
+		raycaster = false;
+
+	let mixer;
+
+	let gridHelper;
 
 	let rollOverMesh, rollOverMaterial;
 	let cubeGeo, cubeMaterial;
 
 	let width = screen.width;
 	let height = screen.height;
+	let mouseGroup;
 
 	let d;
 	if ($screenType == 2) {
@@ -34,9 +44,6 @@
 	// let backgroundColor = 0x0000000
 
 	const objects = [];
-
-	init();
-	render();
 
 	function init() {
 		camera = new THREE.OrthographicCamera(width / -d, width / d, height / d, height / -d, 10, 3200);
@@ -59,6 +66,7 @@
 		rollOverMesh = new THREE.Mesh(rollOverGeo, rollOverMaterial);
 		rollOverMesh.position.y = 1000; // really high to hide it initally and on mobile
 		scene.add(rollOverMesh);
+		
 
 		// cubes
 
@@ -67,10 +75,35 @@
 
 		// grid
 
-		const gridHelper = new THREE.GridHelper(2000, 40, 0x424242, 0x424242);
+		gridHelper = new THREE.GridHelper(2000, 40, 0x424242, 0x424242);
 		scene.add(gridHelper);
 
-		//
+
+
+		// mouse
+
+		mouseGroup = new THREE.Group();
+
+		const gltfLoader = new GLTFLoader();
+		gltfLoader.load('/mouse_basic_anim_running.glb', (glb) => {
+			let mouse = glb.scene;
+			// mouse.position.x = 0;
+			// mouse.position.z = 0;
+
+			// mewtwo.material = new THREE.MeshLambertMaterial({ color: 0xf0f0f0 });
+
+			mouse.scale.set(10, 10, 10);
+			mouseGroup.add(mouse);
+
+			mixer = new THREE.AnimationMixer(glb.scene)
+        const action = mixer.clipAction(glb.animations[0])
+        action.play()
+		});
+
+		scene.add(mouseGroup);
+		
+
+		//  stuff idk
 
 		raycaster = new THREE.Raycaster();
 		pointer = new THREE.Vector2();
@@ -102,86 +135,110 @@
 		onMount(() => {
 			container.appendChild(renderer.domElement);
 
-			document.addEventListener('pointermove', onPointerMove);
-			document.addEventListener('pointerdown', onPointerDown);
-			document.addEventListener('keydown', onDocumentKeyDown);
-			document.addEventListener('keyup', onDocumentKeyUp);
+			document.addEventListener('pointermove', handleMousemove);
+			// document.addEventListener('pointerdown', onPointerDown);
+			//document.addEventListener('keydown', onDocumentKeyDown);
+			// document.addEventListener('keyup', onDocumentKeyUp);
 		});
 
 		//
 	}
 
-	function onPointerMove(event) {
-		pointer.set(((event.clientX - 0) / width) * 2 - 1, -(event.clientY / height) * 2 + 1);
+	// clock
+	const clock = new THREE.Clock();
 
-		raycaster.setFromCamera(pointer, camera);
+	// Animations
+	const tick = () => {
+		// time
+		//   const currentTime = Date.now();
+		//   const deltaTime = currentTime - time;
+		//   time = currentTime;
 
-		const intersects = raycaster.intersectObjects(objects, false);
+		// clock
+		var delta = clock.getDelta();
 
-		if (intersects.length > 0) {
-			const intersect = intersects[0];
+	
+		gsap.to(gridHelper.position, { duration: 1, delay: 0, z: gridHelper.position.z -30 });
 
-			// rollOverMesh.position.copy(intersect.point).add(intersect.face.normal);
-			// rollOverMesh.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
+		// update objects
+		//   mesh.rotation.y = Math.sin(elapsedTime);
+		//   mesh.rotation.x = Math.cos(elapsedTime);
 
-			render();
-		}
-	}
+		mouseGroup.position.x = m.x
+		mouseGroup.position.z = m.y
+		// camera.position.x = Math.cos(elapsedTime);
+		// camera.lookAt(mesh.position);
 
-	function onPointerDown(event) {
-		if (!$mouseOnLink) {
-			pointer.set(((event.clientX - 0) / width) * 2 - 1, -(event.clientY / height) * 2 + 1);
 
-			raycaster.setFromCamera(pointer, camera);
+  
+  	if ( mixer ) mixer.update( delta );
 
-			// const intersects = raycaster.intersectObjects(objects, false);
-
-			if (intersects.length > 0) {
-				const intersect = intersects[0];
-
-				// delete cube
-
-				if (isShiftDown) {
-					if (intersect.object !== plane) {
-						scene.remove(intersect.object);
-
-						objects.splice(objects.indexOf(intersect.object), 1);
-					}
-
-					// create cube
-				} else {
-					const voxel = new THREE.Mesh(cubeGeo, cubeMaterial);
-					voxel.position.copy(intersect.point).add(intersect.face.normal);
-					voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
-					scene.add(voxel);
-
-					objects.push(voxel);
-				}
-
-				render();
-			}
-		}
-	}
-
-	function onDocumentKeyDown(event) {
-		switch (event.keyCode) {
-			case 16:
-				isShiftDown = true;
-				break;
-		}
-	}
-
-	function onDocumentKeyUp(event) {
-		switch (event.keyCode) {
-			case 16:
-				isShiftDown = false;
-				break;
-		}
-	}
-
-	function render() {
+		// render
 		renderer.render(scene, camera);
+
+		//
+		window.requestAnimationFrame(tick);
+	};
+
+	
+	init();
+	tick();
+
+	function handleMousemove(event) {
+		m.x = event.clientX / 10;
+		m.y = event.clientY / 10;
 	}
+
+	// function onPointerMove(event) {
+	// 	pointer.set(((event.clientX - 0) / width) * 2 - 1, -(event.clientY / height) * 2 + 1);
+
+	// 	raycaster.setFromCamera(pointer, camera);
+
+	// 	// mouseGroup.position.x = ((event.clientX - 0) / width) * 2 - 1;
+	// 	// mouseGroup.position.z = 100;
+
+	// 	render();
+
+	// }
+
+	// function onPointerDown(event) {
+	// 	if (!$mouseOnLink) {
+	// 		pointer.set(((event.clientX - 0) / width) * 2 - 1, -(event.clientY / height) * 2 + 1);
+
+	// 		raycaster.setFromCamera(pointer, camera);
+
+	// 		// const intersects = raycaster.intersectObjects(objects, false);
+
+	// 		if (intersects.length > 0) {
+	// 			const intersect = intersects[0];
+
+	// 			// delete cube
+
+	// 			if (isShiftDown) {
+	// 				if (intersect.object !== plane) {
+	// 					scene.remove(intersect.object);
+
+	// 					objects.splice(objects.indexOf(intersect.object), 1);
+	// 				}
+
+	// 				// create cube
+	// 			} else {
+	// 				const voxel = new THREE.Mesh(cubeGeo, cubeMaterial);
+	// 				voxel.position.copy(intersect.point).add(intersect.face.normal);
+	// 				voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25);
+	// 				scene.add(voxel);
+
+	// 				objects.push(voxel);
+	// 			}
+
+	// 			render();
+	// 		}
+	// 	}
+	// }
+
+	// function render() {
+	// 	renderer.render(scene, camera);
+	// }
 </script>
 
 <div bind:this={container} class:geometry={true} />
