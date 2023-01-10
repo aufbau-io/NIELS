@@ -158,7 +158,7 @@
 		var delta = clock.getDelta();
 
 	
-		gsap.to(gridHelper.position, { duration: 1, delay: 0, z: gridHelper.position.z -30 });
+		// gsap.to(gridHelper.position, { duration: 1, delay: 0, z: gridHelper.position.z -30 });
 
 		// update objects
 		//   mesh.rotation.y = Math.sin(elapsedTime);
