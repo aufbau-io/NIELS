@@ -5,7 +5,7 @@ import Sizes from './Utils/Sizes.js';
 import Time from './Utils/Time.js';
 import Camera from './Camera.js';
 import Renderer from './Renderer.js';
-import World from './World/World.svelte';
+import World from './World/World.js';
 import Resources from './Utils/Resources.js';
 
 import sources from './sources.js';

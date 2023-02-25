@@ -7,11 +7,24 @@
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
 
-	let Geometry;
+	import Experience from '$lib/three-d/Experience.js'
+
 	onMount(async () => {
 
-		const module = await import('$lib/components/three/cube_playground.svelte');
-		Geometry = module.default;
+		const experience = new Experience(document.querySelector('canvas.webgl'))
+
+		// ---------------------------------------------------------------------------
+		// HEIGHT
+		// ---------------------------------------------------------------------------
+
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+		window.addEventListener('resize', () => {
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+		});
+
 
 		// ---------------------------------------------------------------------------
 		// SCREEN
@@ -37,9 +50,7 @@
 	});
 </script>
 
-{#if $darkMode}
-<svelte:component this={Geometry} />
-{/if}
+<canvas class="webgl"></canvas>
 
 <div class="app">
 	{#if $screenType}
@@ -62,9 +73,15 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		height: 100%;
+		height: calc(var(--vh, 1vh) * 100);
 	}
 
+	.webgl {
+		position: absolute;
+		z-index: 0;
+	}
+	
 	header {
 		position: absolute;
 		top: 0;
