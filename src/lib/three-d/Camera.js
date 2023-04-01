@@ -16,10 +16,10 @@ export default class Camera {
 	setInstance() {
 		const aspectRatio = this.sizes.width / this.sizes.height;
 		this.instance = new THREE.OrthographicCamera(
-			-1 * aspectRatio,
-			1 * aspectRatio,
-			1,
-			-1,
+			-2.5 * aspectRatio,
+			2.5 * aspectRatio,
+			2.5,
+			-2.5,
 			-100,
 			100
 		);
@@ -34,10 +34,10 @@ export default class Camera {
 
 	resize() {
 		this.instance.aspect = this.sizes.width / this.sizes.height;
-		this.instance.left = -1 * this.instance.aspect;
-		this.instance.right = 1 * this.instance.aspect;
-		this.instance.top = 1;
-		this.instance.bottom = -1;
+		this.instance.left = -2.5 * this.instance.aspect;
+		this.instance.right = 2.5 * this.instance.aspect;
+		this.instance.top = 2.5;
+		this.instance.bottom = -2.5;
 
 		this.instance.updateProjectionMatrix();
 	}
