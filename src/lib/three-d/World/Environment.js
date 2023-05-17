@@ -9,7 +9,7 @@ export default class Environment {
 		this.debug = this.experience.debug;
 		this.intersect = new THREE.Vector3(0, 0, 0);
 
-		this.scene.fog = new THREE.FogExp2(0xf0f0f0, 0.03);
+		this.scene.fog = new THREE.FogExp2(0xf0f0f0, 0.04);
 
 		// Debug
 		if (this.debug.active) {
