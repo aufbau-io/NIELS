@@ -8,7 +8,7 @@
 	// stub data out
 	const navItems = [
 		{
-			name: 'EMMETT THOMPSON',
+			name: 'ABOUT',
 			href: '/'
 		},
 		{
@@ -39,6 +39,10 @@
 <header>
 	<main>
 
+		<div class="darkMode">
+			<p> EMMETT THOMPSON</p>
+		</div>
+
 		<Nav {navItems} />
 
 	<div on:click={() => toggleDarkMode()} on:keydown={() => toggleDarkMode()} class="darkMode right">
@@ -63,7 +67,7 @@
 		justify-content: space-between;
 		align-items: flex-start;
 
-		padding: 10px;
+		padding: 20px;
 		font-size: 13px;
 		height: calc(2 * var(--margin));
 		font-weight: 300;
@@ -71,10 +75,9 @@
 	}
 
 	.darkMode {
-		background: var(--background);
-		color: var(--primary);
+		background: var(--primary);
+		color: var(--background);
 		border: solid 1px var(--blue);
-
 		display: flex;
 		gap: 12px;
 		padding: 6px 12px;
@@ -95,7 +98,7 @@
 
 	.darkMode p {
 		font-size: 13px;
-		opacity: 0.5;
+		opacity: 1;
 		color: inherit;
 	}
 

@@ -14,7 +14,7 @@
 		z-index: 10;
 		gap: 10px;
 
-		padding: 10px 10px;
+		padding: 30px 20px;
 		height: calc(2 * var(--margin));
 
 		border-top: solid 1px var(--accent-50);
@@ -29,8 +29,8 @@
 
 	footer a,
 	footer p {
-		background: var(--background);
-		color: var(--primary);
+		background: var(--primary-50);
+		color: var(--background);
 		border: solid 1px var(--blue);
 
 		padding: 6px 10px;

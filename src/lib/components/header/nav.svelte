@@ -27,9 +27,9 @@
 	nav {
 		align-self: baseline;
 		display: flex;
-		flex-flow: column wrap;
-		background: var(--background);
-		color: var(--primary);
+		flex-flow: row wrap;
+		background: var(--primary);
+		color: var(--background);
 		border: solid 1px var(--blue);
 	}
 	nav a,
