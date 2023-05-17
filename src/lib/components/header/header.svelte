@@ -1,42 +1,52 @@
 <script>
 	import Nav from './nav.svelte';
 	import { darkMode, screenType } from '$lib/store/store';
+
+	// import { page } from '$app/stores';
+	// import { goto } from '$app/navigation';
+
 	// stub data out
 	const navItems = [
 		{
-			name: 'WORK',
+			name: 'EMMETT THOMPOSN',
 			href: '/'
 		},
 		{
 			name: 'PUBLICATIONS',
-			href: '/'
+			href: '/publications'
 		},
 		{
+			name: 'MISC.',
+			href: '/misc'
+		},
+	
+		{
 			name: 'CONTACT',
-			href: '/'
+			href: '/contact'
 		},
 	];
 
 	let toggleDarkMode = () => {
 		darkMode.set(!$darkMode);
 		document.querySelector(':root').classList.toggle('dark-mode');
+
+// 		if ($page.url.pathname == '/') {
+// goto(`/art`, { replaceState: true }) 
+// 		}
 	};
 </script>
 
 <header>
 	<main>
-		<p>EmmetT Thompson</p>
-	{#if $screenType == 3 && $darkMode}
+
 		<Nav {navItems} />
-	{/if}
 
-
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div on:click={() => toggleDarkMode()} class="darkMode">
-		<p class:selected={$darkMode == true}>ONLINE</p>
+	<div on:click={() => toggleDarkMode()} on:keydown={() => toggleDarkMode()} class="darkMode right">
+		<p class:selected={$darkMode == false}>ONLINE</p>
 		<p class="selected">/</p>
-		<p class:selected={$darkMode == false}>OFFLINE</p>
+		<p class:selected={$darkMode == true}>OFFLINE</p>
 	</div>
+
 </main>
 </header>
 
@@ -44,9 +54,6 @@
 	header {
 		user-select: none;
 		color: var(--primary);
-		/* border-bottom: solid 1px var(--primary-50);
-		background: var(--background);
-		box-shadow: 0px -1px 8px var(--orimary-50); */
 	}
 
 	main {
@@ -54,42 +61,41 @@
 		max-width: 100vw;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
 
-		padding: 0 16px 0 8px;
-		font-size: 14px;
-		height: 60px;
-		font-family: nb-architekt;
-		font-weight: 500;
+		padding: 10px;
+		font-size: 13px;
+		height: calc(2 * var(--margin));
+		font-weight: 300;
+		
 	}
 
 	.darkMode {
+		background: var(--primary);
+		color: var(--background);
+
 		display: flex;
+		gap: 12px;
+		padding: 6px 12px;
+		cursor: pointer;
+	}
+
+	.left {
+		justify-content: start;
+	}
+
+	.right {
+		justify-content: end;
 	}
 
 	.app_link {
 		opacity: 0.3;
 	}
 
-	.logo {
-		padding: 20px 16px;
-		text-transform: none;
-	}
-
-	.tag {
-		padding: 20px 16px;
-	}
-
-	p {
-		line-height: 110%;
-		font-size: 15px;
-		letter-spacing: 0.1em;
-		padding: 10px;
-		cursor: pointer;
-	}
-
 	.darkMode p {
-		opacity: 0.4;
+
+		opacity: 0.5;
+		color: inherit;
 	}
 
 	.darkMode p.selected {
@@ -97,9 +103,6 @@
 	}
 
 	@media only screen and (max-width: 768px) {
-		header {
-			padding: 0 18px;
-			justify-content: flex-end;
-		}
+
 	}
 </style>

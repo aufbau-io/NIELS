@@ -2,23 +2,24 @@
 </script>
 
 <footer>
-	<a href="https://aufbau.io" class="">EIN AUFBAU DING</a>
-	<a href="https://www.websitecarbon.com/website/aufbau-io/">0.03G CO2 / VISIT</a>
+	<a href="https://aufbau.io" target="_blank" rel="noreferrer">EIN AUFBAU DING</a>
+	<a href="https://www.websitecarbon.com/website/aufbau-io/" target="_blank" rel="noreferrer">0.03G CO2 / VISIT</a>
 	<!-- <p class="">COPYRIGHT 2022</p> -->
 </footer>
 
 <style>
 	footer {
 		width: 100%;
-		min-height: 50px;
+
 		z-index: 10;
 		gap: 10px;
 
-		padding: 16px;
-		background: var(--background-alt);
+		padding: 10px 10px;
+		height: calc(2 * var(--margin));
+
 		border-top: solid 1px var(--accent-50);
 		text-transform: none;
-		color: var(--accent);
+
 
 		display: flex;
 		flex-flow: row nowrap;
@@ -28,11 +29,15 @@
 
 	footer a,
 	footer p {
+		background: var(--primary);
+		color: var(--background);
+
+		padding: 6px 10px;
 		font-size: 13px;
 		font-weight: 300;
 
 		letter-spacing: 0.15em;
-		font-family: nb-architekt;
+		font-family: var(--font-body);
 	}
 
 	@media only screen and (max-width: 768px) {

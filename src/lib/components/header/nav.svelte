@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { screenType } from '$lib/store/store';
 
 	export let navItems = [];
 	export async function load() {
@@ -12,6 +13,7 @@
 </script>
 
 <nav>
+
 	{#each navItems as navItem}
 		<a href={navItem.href} class="" class:active={navItem.href === $page.url.pathname}
 			>{navItem.name}</a
@@ -23,17 +25,17 @@
 
 <style>
 	nav {
+		align-self: baseline;
 		display: flex;
-		flex-flow: comumn nowrap;
-		color: var(--primary);
+		flex-flow: column wrap;
+		background: var(--primary);
+		color: var(--background);
 	}
 	nav a,
 	nav p {
-		line-height: 110%;
-		text-transform: none;
-		letter-spacing: 0.1em;
-		padding: 16px;
+		padding: 10px 10px;
 		cursor: pointer;
+		color: inherit;
 	}
 
 	nav a:hover {

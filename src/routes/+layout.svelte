@@ -62,9 +62,12 @@
 		<slot />
 	</main>
 
+	{#if $screenType == 3}
 	<footer>
 		<Footer />
 	</footer>
+	{/if}
+	
 	{/if}
 </div>
 
@@ -79,7 +82,7 @@
 
 	.webgl {
 		position: absolute;
-		z-index: 0;
+		z-index: -1;
 	}
 	
 	header {
@@ -98,9 +101,10 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: calc(1 * var(--margin));
+		/* padding: calc(1 * var(--margin)); */
 		width: 100%;
-		/* max-width: 1400px; */
+		height: 100%;
+		height: calc(var(--vh, 1vh) * 100);
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
