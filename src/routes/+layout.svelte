@@ -91,6 +91,7 @@
 		height: 100%;
 		height: calc(var(--vh, 1vh) * 100);
 		width: 100%;
+		opacity: .75;
 	}
 	
 	header {
