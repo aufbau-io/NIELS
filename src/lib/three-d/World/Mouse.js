@@ -73,6 +73,6 @@ export default class Mouse {
 
 		this.model.position.copy(window.experience.world.environment.intersect);
 
-		this.model.lookAt(window.experience.world.environment.intersect);
+		this.model.lookAt(0, 0, 0);
 	}
 }
