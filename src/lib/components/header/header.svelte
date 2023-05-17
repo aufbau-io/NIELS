@@ -93,7 +93,7 @@
 	}
 
 	.darkMode p {
-
+		font-size: 13px;
 		opacity: 0.5;
 		color: inherit;
 	}

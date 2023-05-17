@@ -5,13 +5,15 @@
 	--font-header: untitled-sans, sans-serif;
 	--column-width: 42rem;
 	--margin: 20px;
+	--blue: #3eb1c8;
+
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
 
 :root {
 	--background: #f0f0f0;
-	--background-50: #f0f0f080;
+	--background-50: #f0f0f088;
 	--primary: #232323;
 	--primary-50: #23232380;
 
@@ -74,12 +76,11 @@
 }
 
 body {
-	min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
 	background-color: var(--background);
-	background-size: 100vw 100vh;
-	background: linear-gradient(#f0f0f0, #3eb1c8);
+	background-size: 100% 100%;
+	background: linear-gradient(var(--background), var(--blue));
 }
 
 h1,
@@ -89,14 +90,15 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-header);
+	color: var(--primary);
+	letter-spacing: 0.1em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1 {
+	font-size: 24px;
+	font-weight: 300;
+}
+
 p,
 a {
 	color: var(--primary);
@@ -105,6 +107,7 @@ a {
 	line-height: 120%;
 	text-transform: none;
 	letter-spacing: 0.1em;
+	font-size: 16px;
 }
 
 p {
@@ -119,15 +122,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
-}
-
 pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
@@ -137,15 +131,6 @@ pre {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--color-text);
-}
-
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
 }
 
 input,
@@ -158,11 +143,11 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-@media (min-width: 720px) {
+/* @media (max-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
 	}
-}
+} */
 
 .visually-hidden {
 	border: 0;

@@ -9,6 +9,8 @@ export default class Mouse {
 		this.time = this.experience.time;
 		this.debug = this.experience.debug;
 
+		this.cursor = this.experience.camera.cursor;
+
 		// Resource
 		this.resource = this.resources.items.mouse;
 		this.setModel();
@@ -17,7 +19,7 @@ export default class Mouse {
 
 	setModel() {
 		this.model = this.resource.scene;
-		this.model.scale.set(0.1, 0.1, 0.1);
+		this.model.scale.set(0.125, 0.125, 0.125);
 		this.scene.add(this.model);
 
 		this.gradientTexture = this.resources.items.gradientTexture;
@@ -47,11 +49,9 @@ export default class Mouse {
 		// Actions
 		this.animation.actions = {};
 
-		this.animation.actions.idle = this.animation.mixer.clipAction(this.resource.animations[0]);
-		// this.animation.actions.walking = this.animation.mixer.clipAction(this.resource.animations[1]);
-		// this.animation.actions.running = this.animation.mixer.clipAction(this.resource.animations[2]);
+		this.animation.actions.running = this.animation.mixer.clipAction(this.resource.animations[0]);
 
-		this.animation.actions.current = this.animation.actions.idle;
+		this.animation.actions.current = this.animation.actions.running;
 		this.animation.actions.current.play();
 
 		// Play the action
@@ -69,5 +69,9 @@ export default class Mouse {
 
 	update() {
 		this.animation.mixer.update(this.time.delta * 0.001);
+		this.model.position.x = this.cursor.x;
+		this.model.position.y = this.cursor.y;
+
+		this.model.lookAt(this.experience.camera.cursor.x, this.experience.camera.cursor.y, 0);
 	}
 }

@@ -17,13 +17,13 @@ export default class Environment {
 
 		this.setSunLight();
 
-		let gridHelper = new THREE.GridHelper(200, 100, 0x232323, 0x171717);
+		let gridHelper = new THREE.GridHelper(200, 100, 0xf0f0f0, 0xf0f0f0);
 		this.scene.add(gridHelper);
 		// this.setEnvironmentMap();
 	}
 
 	setSunLight() {
-		this.sunLight = new THREE.DirectionalLight('#ffffff', 1);
+		this.sunLight = new THREE.DirectionalLight('#f0f0f0', 1);
 		this.sunLight.castShadow = true;
 		this.sunLight.shadow.camera.far = 15;
 		this.sunLight.shadow.mapSize.set(1024, 1024);

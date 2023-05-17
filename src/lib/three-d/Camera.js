@@ -11,6 +11,8 @@ export default class Camera {
 		this.scene = this.experience.scene;
 		this.canvas = this.experience.canvas;
 
+		this.cursor = { x: 0, y: 0 };
+
 		this.setInstance();
 		this.setControls();
 	}
@@ -27,6 +29,13 @@ export default class Camera {
 		);
 		this.instance.position.set(10, 5, 10);
 		this.scene.add(this.instance);
+
+		window.addEventListener('mousemove', (event) => {
+			this.cursor.x = (event.clientX / this.sizes.width) * ASPECT_FACTOR * 2 - ASPECT_FACTOR;
+			this.cursor.y = (event.clientY / this.sizes.height) * -ASPECT_FACTOR * 2 + ASPECT_FACTOR;
+
+			// console.log(this.cursor);
+		});
 	}
 
 	setControls() {

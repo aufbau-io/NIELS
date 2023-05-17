@@ -50,6 +50,11 @@
 	});
 </script>
 
+<svelte:head>
+	<title>EMMETT THOMPSON</title>
+	<meta name="description" content="Neuroscientist" />
+</svelte:head>
+
 <canvas class="webgl"></canvas>
 
 <div class="app">
@@ -83,6 +88,9 @@
 	.webgl {
 		position: absolute;
 		z-index: -1;
+		height: 100%;
+		height: calc(var(--vh, 1vh) * 100);
+		width: 100%;
 	}
 	
 	header {
@@ -98,15 +106,10 @@
 	}
 
 	main {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
 		/* padding: calc(1 * var(--margin)); */
 		width: 100%;
 		height: 100%;
-		height: calc(var(--vh, 1vh) * 100);
-		margin: 0 auto;
-		box-sizing: border-box;
 	}
-
 </style>
