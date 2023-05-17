@@ -8,7 +8,7 @@
 	// stub data out
 	const navItems = [
 		{
-			name: 'EMMETT THOMPOSN',
+			name: 'EMMETT THOMPSON',
 			href: '/'
 		},
 		{
