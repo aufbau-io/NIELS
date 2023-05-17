@@ -81,7 +81,7 @@ body {
 	background-attachment: fixed;
 	background-color: var(--background);
 	background-size: 100% 100%;
-	background: linear-gradient(var(--background), var(--blue));
+	background: linear-gradient(var(--blue), var(--blue));
 }
 
 h1,

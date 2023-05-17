@@ -35,6 +35,7 @@
 		gap: 40px;
 
 		background: var(--background-50);
+		color: var(--primary);
 		border: solid 1px var(--blue);
 		padding: 40px;
 	}
