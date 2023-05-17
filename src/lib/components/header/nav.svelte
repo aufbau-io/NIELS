@@ -44,6 +44,10 @@
 		opacity: 0.6;
 	}
 
+	nav a.active {
+		font-weight: 700;
+	}
+
 	.active,
 	.active:hover {
 		opacity: 1;

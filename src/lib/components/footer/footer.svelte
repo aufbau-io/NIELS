@@ -27,6 +27,10 @@
 		justify-content: space-between;
 	}
 
+	p, a {
+		font-weight: 600;
+	}
+
 	footer a,
 	footer p {
 		background: var(--primary-50);
@@ -35,7 +39,6 @@
 
 		padding: 6px 10px;
 		font-size: 13px;
-		font-weight: 300;
 
 		letter-spacing: 0.15em;
 		font-family: var(--font-body);

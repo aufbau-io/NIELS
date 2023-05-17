@@ -70,8 +70,10 @@
 		padding: 20px;
 		font-size: 13px;
 		height: calc(2 * var(--margin));
-		font-weight: 300;
-		
+	}
+
+	p, a {
+		font-weight: 600;
 	}
 
 	.darkMode {
