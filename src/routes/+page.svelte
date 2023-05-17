@@ -22,7 +22,7 @@
 		align-items: center;
 		text-align: center;
 
-		background: var(--background-50);
+		/* background: var(--primary-50); */
 		overflow: auto;
 	}
 
@@ -34,9 +34,9 @@
 		justify-content: center;
 		gap: 40px;
 
-		/* background: var(--primary); */
-		color: var(--primary);
-		border: solid 1px var(--primary);
+		background: var(--primary-50);
+		color: var(--background);
+		border: solid 1px var(--blue);
 		padding: 40px;
 	}
 

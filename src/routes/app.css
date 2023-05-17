@@ -11,10 +11,10 @@
 }
 
 :root {
-	--background: #f0f0f0;
-	--background-50: #f0f0f080;
-	--primary: #232323;
-	--primary-50: #23232380;
+	--background: #232323;
+	--background-50: #23232380;
+	--primary: #f0f0f0;
+	--primary-50: #f0f0f0bb;
 
 	--green: #008080;
 	--white: #232323;
@@ -81,7 +81,7 @@ body {
 	background-attachment: fixed;
 	background-color: var(--background);
 	background-size: 100% 100%;
-	background: linear-gradient(var(--blue), var(--blue));
+	background: linear-gradient(var(--primary), var(--primary));
 }
 
 h1,

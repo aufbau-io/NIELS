@@ -28,8 +28,8 @@
 		align-self: baseline;
 		display: flex;
 		flex-flow: column wrap;
-		background: var(--primary);
-		color: var(--background);
+		background: var(--background);
+		color: var(--primary);
 		border: solid 1px var(--blue);
 	}
 	nav a,

@@ -9,7 +9,7 @@ export default class Environment {
 		this.debug = this.experience.debug;
 		this.intersect = new THREE.Vector3(0, 0, 0);
 
-		this.scene.fog = new THREE.FogExp2(0xf0f0f0, 0.04);
+		this.scene.fog = new THREE.FogExp2(0xf0f0f0, 0.03);
 
 		// Debug
 		if (this.debug.active) {
@@ -18,7 +18,7 @@ export default class Environment {
 
 		this.setSunLight();
 
-		this.gridHelper = new THREE.GridHelper(200, 100, 0xf0f0f0, 0xf0f0f0);
+		this.gridHelper = new THREE.GridHelper(200, 100, 0x3eb1c8, 0x3eb1c8);
 		this.scene.add(this.gridHelper);
 
 		let onDocumentMouseMove = () => {

@@ -71,8 +71,8 @@
 	}
 
 	.darkMode {
-		background: var(--primary);
-		color: var(--background);
+		background: var(--background);
+		color: var(--primary);
 		border: solid 1px var(--blue);
 
 		display: flex;

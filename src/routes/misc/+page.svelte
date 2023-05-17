@@ -20,7 +20,6 @@ section {
   align-items: center;
   text-align: center;
 
-  background: var(--background-50);
   overflow: auto;
 }
 
@@ -32,7 +31,9 @@ section {
 		justify-content: center;
 		gap: 40px;
 
-		border: solid 1px var(--primary);
+		background: var(--primary);
+		color: var(--background);
+		border: solid 1px var(--blue);
 		padding: 40px;
 	}
 
