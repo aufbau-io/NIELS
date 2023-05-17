@@ -7,6 +7,7 @@ export default class Environment {
 		this.scene = this.experience.scene;
 		this.resources = this.experience.resources;
 		this.debug = this.experience.debug;
+		this.intersect = new THREE.Vector3(0, 0, 0);
 
 		this.scene.fog = new THREE.FogExp2(0xf0f0f0, 0.04);
 
@@ -17,9 +18,28 @@ export default class Environment {
 
 		this.setSunLight();
 
-		let gridHelper = new THREE.GridHelper(200, 100, 0xf0f0f0, 0xf0f0f0);
-		this.scene.add(gridHelper);
-		// this.setEnvironmentMap();
+		this.gridHelper = new THREE.GridHelper(200, 100, 0xf0f0f0, 0xf0f0f0);
+		this.scene.add(this.gridHelper);
+
+		let onDocumentMouseMove = () => {
+			// Calculate normalized device coordinates
+			var mouse = new THREE.Vector2();
+			mouse.x = window.experience.camera.cursor.x;
+			mouse.y = window.experience.camera.cursor.y;
+
+			console.log(mouse);
+
+			var raycaster = new THREE.Raycaster();
+			raycaster.setFromCamera(mouse, window.experience.camera.instance);
+			var intersects = raycaster.intersectObject(this.gridHelper);
+
+			if (intersects.length > 0) {
+				this.intersect = intersects[0].point;
+				// console.log('Position:', this.intersect);
+			}
+		};
+
+		document.addEventListener('mousemove', onDocumentMouseMove, false);
 	}
 
 	setSunLight() {

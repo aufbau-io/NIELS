@@ -7,3 +7,5 @@ export const darkMode = writable(false);
 
 export const lobbySelected = writable(false);
 export const mouseOnLink = writable(false);
+
+export const mousePosition = writable({ x: 0, y: 0, z: 0 });

@@ -25,12 +25,15 @@ section {
 }
 
 .main {
-  max-width: 800px;
+		max-width: 800px;
 
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  gap: 20px;
-}
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		gap: 40px;
+
+		border: solid 1px var(--primary);
+		padding: 40px;
+	}
 
 </style>

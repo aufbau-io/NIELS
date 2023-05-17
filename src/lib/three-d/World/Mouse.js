@@ -69,9 +69,10 @@ export default class Mouse {
 
 	update() {
 		this.animation.mixer.update(this.time.delta * 0.001);
-		this.model.position.x = this.cursor.x;
-		this.model.position.y = this.cursor.y;
+		console.log(window.experience.world.environment.intersect);
 
-		this.model.lookAt(this.experience.camera.cursor.x, this.experience.camera.cursor.y, 0);
+		this.model.position.copy(window.experience.world.environment.intersect);
+
+		this.model.lookAt(window.experience.world.environment.intersect);
 	}
 }

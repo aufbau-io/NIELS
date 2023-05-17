@@ -31,8 +31,8 @@ export default class Camera {
 		this.scene.add(this.instance);
 
 		window.addEventListener('mousemove', (event) => {
-			this.cursor.x = (event.clientX / this.sizes.width) * ASPECT_FACTOR * 2 - ASPECT_FACTOR;
-			this.cursor.y = (event.clientY / this.sizes.height) * -ASPECT_FACTOR * 2 + ASPECT_FACTOR;
+			this.cursor.x = event.clientX / this.sizes.width;
+			this.cursor.y = event.clientY / this.sizes.height;
 
 			// console.log(this.cursor);
 		});
