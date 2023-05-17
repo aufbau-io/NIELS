@@ -98,8 +98,11 @@
 
 	.darkMode p {
 		font-size: 13px;
-		opacity: 1;
 		color: inherit;
+	}
+
+ 	.right p {
+		opacity: .5;
 	}
 
 	.darkMode p.selected {
