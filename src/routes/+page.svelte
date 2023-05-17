@@ -4,7 +4,7 @@
 
 <section>
 	<div class="main">
-		<h1>EMMETT THOMPSON</h1>
+		<h1>EMMETT THOMPSON<br>-</h1>
 		<p>{text}</p>
 	</div>
 </section>
