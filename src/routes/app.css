@@ -5,7 +5,6 @@
 	--font-header: untitled-sans, sans-serif;
 	--column-width: 42rem;
 	--margin: 20px;
-	--blue: #3eb1c8;
 
 	font-family: var(--font-body);
 	color: var(--color-text);
@@ -13,13 +12,15 @@
 
 :root {
 	--background: #f0f0f0;
-	--background-50: #f0f0f088;
+	--background-50: #f0f0f080;
 	--primary: #232323;
 	--primary-50: #23232380;
 
 	--green: #008080;
 	--white: #232323;
 	--black: #f0f0f0;
+	--blue: #3eb1c8;
+	--blue-50: #3eb1c880;
 }
 
 /* :root {

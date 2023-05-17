@@ -31,6 +31,7 @@
 	footer p {
 		background: var(--primary);
 		color: var(--background);
+		border: solid 1px var(--blue);
 
 		padding: 6px 10px;
 		font-size: 13px;

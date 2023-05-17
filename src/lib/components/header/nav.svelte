@@ -30,6 +30,7 @@
 		flex-flow: column wrap;
 		background: var(--primary);
 		color: var(--background);
+		border: solid 1px var(--blue);
 	}
 	nav a,
 	nav p {

@@ -34,7 +34,8 @@
 		justify-content: center;
 		gap: 40px;
 
-		border: solid 1px var(--primary);
+		background: var(--background-50);
+		border: solid 1px var(--blue);
 		padding: 40px;
 	}
 
