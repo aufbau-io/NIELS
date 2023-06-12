@@ -18,6 +18,7 @@ export default class Environment {
 
 		this.setSunLight();
 
+		// this.space = new THREE.BoxGeometry((200, 1, 200));
 		this.gridHelper = new THREE.GridHelper(200, 100, 0x3eb1c8, 0x3eb1c8);
 		this.scene.add(this.gridHelper);
 
