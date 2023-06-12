@@ -57,6 +57,7 @@
 
 <canvas class="webgl"></canvas>
 
+{#if $screenType == 3}
 <div class="app">
 	{#if $screenType}
 	<header>
@@ -75,6 +76,12 @@
 	
 	{/if}
 </div>
+{:else}
+<div class="app">
+	<p>mobile site build in progress</p>
+</div>
+
+{/if}
 
 
 <style>
