@@ -78,7 +78,7 @@
 </div>
 {:else}
 <div class="app">
-	<p>mobile site build in progress</p>
+	<p style="width:100%; height:60px; display: flex; align-items:center; justify-content:center;">mobile site build in progress</p>
 </div>
 
 {/if}
