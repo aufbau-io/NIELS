@@ -45,7 +45,7 @@
 
 		{#if $screenType == 3}
 		<div class="darkMode">
-			<p>NIELS HUMPHRIES</p>
+			<p>DANIEL HUMPHRIES</p>
 		</div>
 		{/if}
 

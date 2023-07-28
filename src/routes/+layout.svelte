@@ -51,8 +51,8 @@
 </script>
 
 <svelte:head>
-	<title>NIELS HUMPHRIES</title>
-	<meta name="description" content="Neuroscientist" />
+	<title>DANIEL HUMPHRIES</title>
+	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Human." />
 </svelte:head>
 
 <canvas class="webgl"></canvas>

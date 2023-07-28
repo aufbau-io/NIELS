@@ -17,7 +17,7 @@
 		<img src={chat} alt="chat" class="icon" />
 	</div>
 
-		<h1>NIELS HUMPHRIES<br>-</h1>
+		<h1>DANIEL HUMPHRIES<br>-</h1>
 		<!-- <p>Space, Representation, Communication</p> -->
 		<p>{text1}</p>
 		<p>{text2}</p>
