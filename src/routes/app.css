@@ -161,3 +161,20 @@ button:focus:not(:focus-visible) {
 	width: 1px;
 	white-space: nowrap;
 }
+
+@media only screen and (max-width: 768px) {
+	h1 {
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+	p,
+	a {
+		font-weight: 400;
+
+		line-height: 120%;
+		text-transform: none;
+		letter-spacing: 0.1em;
+		font-size: 14px;
+	}
+}
