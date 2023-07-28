@@ -72,6 +72,7 @@
 	@media only screen and (max-width: 768px) {
 		.main {
 			width: 80vw;
+			gap: 20px;
 		}
 	}
 </style>
