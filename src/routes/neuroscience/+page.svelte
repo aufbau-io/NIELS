@@ -57,7 +57,7 @@ section {
 	@media only screen and (max-width: 768px) {
 		.main {
 			width: 80vw;
-			gap: 20px;
+			gap: 16px;
 		}
 	}
 </style>
