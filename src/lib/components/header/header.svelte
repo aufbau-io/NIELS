@@ -99,6 +99,7 @@
 		gap: 15px;
 		padding: 6px 15px;
 		justify-content: space-evenly;
+		background: var(--background);
 		border: var(--border);
 	}
 
