@@ -13,7 +13,7 @@
 	// stub data out
 	const navItems = [
 		{
-			name: 'ABOUT',
+			name: 'NIELS',
 			href: '/'
 		},
 		{
@@ -43,11 +43,11 @@
 <header>
 	<main>
 
-		{#if $screenType == 3}
+		<!-- {#if $screenType == 3}
 		<div class="darkMode">
 			<p>DANIEL HUMPHRIES</p>
 		</div>
-		{/if}
+		{/if} -->
 
 		<Nav {navItems} />
 
