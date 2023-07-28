@@ -33,9 +33,9 @@
 
 	footer a,
 	footer p {
-		background: var(--primary-50);
-		color: var(--background);
-		border: solid 1px var(--blue);
+		background: var(--background);
+		color: var(--primary);
+		border: var(--border);
 
 		padding: 6px 10px;
 		font-size: 13px;

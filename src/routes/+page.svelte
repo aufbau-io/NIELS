@@ -1,12 +1,29 @@
 <script>
-		let text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper velit id quam bibendum, eu viverra leo dictum. Duis tempus mauris vitae fermentum dictum. Mauris quis purus ut lacus porttitor tempor mollis id felis. Praesent sit amet placerat magna, eu egestas nulla. Donec nec nunc sed risus convallis malesuada. Nulla nulla neque, accumsan id egestas non, varius et nibh. Duis hendrerit vestibulum elementum. Duis ut mauris tincidunt, cursus nibh in, hendrerit lectus. Nulla blandit arcu ut mollis vehicula. Pellentesque ligula arcu, laoreet sit amet ante auctor, egestas condimentum lacus. Sed consectetur auctor velit, lobortis fringilla tellus tincidunt sit amet. Integer non tortor pellentesque, venenatis est eget, volutpat augue. Phasellus imperdiet semper ultrices."
+		let text1="Part-Time Web Engineer"
+		let text2="Part-Time Neuroscientist"
+		let text3="Full-Time Human"
+
+	import graph from '$lib/images/icons/graph.svg';
+	import www from '$lib/images/icons/www2.svg';
+	import chat from '$lib/images/icons/chat.svg';
 </script>
 
 <section>
 	<div class="main">
-		<h1>EMMETT THOMPSON<br>-</h1>
-		<p>{text}</p>
+		<div class="icons">
+
+		<img src={graph} alt="graph" class="icon" />
+		<img src={www} alt="www" class="icon" />
+		<img src={chat} alt="chat" class="icon" />
 	</div>
+
+		<h1>NIELS HUMPHRIES<br>-</h1>
+		<!-- <p>Space, Representation, Communication</p> -->
+		<p>{text1}</p>
+		<p>{text2}</p>
+		<p>{text3}</p>
+	</div>
+	
 </section>
 
 <style>
@@ -32,12 +49,29 @@
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
-		gap: 40px;
+		gap: 10px;
 
-		background: var(--primary-50);
-		color: var(--background);
-		border: solid 1px var(--blue);
-		padding: 40px;
+		background: var(--background);
+		color: var(--primary);
+		border: var(--border);
+		padding:  40px 48px;
 	}
 
+	.icons {
+		display: flex;
+		flex-flow: row;
+		padding-bottom: 16px;
+	}
+
+	.icon {
+		height: 60px;
+		width: 100%;
+	}
+
+
+	@media only screen and (max-width: 768px) {
+		.main {
+			width: 80vw;
+		}
+	}
 </style>

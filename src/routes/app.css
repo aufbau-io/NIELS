@@ -11,16 +11,18 @@
 }
 
 :root {
-	--background: #232323;
+	--background: #d0d0d0;
 	--background-50: #23232380;
-	--primary: #f0f0f0;
-	--primary-50: #f0f0f0bb;
+	--primary: #232323;
+	--primary-50: #ffa50080;
 
 	--green: #008080;
 	--white: #232323;
 	--black: #f0f0f0;
 	--blue: #3eb1c8;
 	--blue-50: #3eb1c880;
+
+	--border: solid 1px #232323;
 }
 
 /* :root {
@@ -81,7 +83,7 @@ body {
 	background-attachment: fixed;
 	background-color: var(--background);
 	background-size: 100% 100%;
-	background: linear-gradient(var(--primary), var(--primary));
+	background: linear-gradient(var(--background), var(--background));
 }
 
 h1,

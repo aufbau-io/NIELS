@@ -28,9 +28,9 @@
 		align-self: baseline;
 		display: flex;
 		flex-flow: row wrap;
-		background: var(--primary);
-		color: var(--background);
-		border: solid 1px var(--blue);
+		background: var(--background);
+		color: var(--primary);
+		border: var(--border);
 	}
 	nav a,
 	nav p {
@@ -51,5 +51,11 @@
 	.active,
 	.active:hover {
 		opacity: 1;
+	}
+
+	@media only screen and (max-width: 768px) {
+		nav {
+			flex-flow: column wrap;
+		}
 	}
 </style>

@@ -5,24 +5,28 @@
 	// import { page } from '$app/stores';
 	// import { goto } from '$app/navigation';
 
+	
+	import mail from '$lib/images/icons/mail.svg';
+	import insta from '$lib/images/icons/insta.svg';
+	import www from '$lib/images/icons/www.svg';
+
 	// stub data out
 	const navItems = [
 		{
-			name: 'ABOUT',
+			name: 'NIELS',
 			href: '/'
 		},
 		{
-			name: 'PUBLICATIONS',
-			href: '/publications'
+			name: 'NEUROSCIENCE',
+			href: '/neuroscience'
 		},
 		{
-			name: 'MISC.',
-			href: '/misc'
+			name: 'TECHNOLOGY',
+			href: '/technology'
 		},
-	
 		{
-			name: 'CONTACT',
-			href: '/contact'
+			name: 'ART',
+			href: '/art'
 		},
 	];
 
@@ -39,16 +43,30 @@
 <header>
 	<main>
 
+		{#if $screenType == 3}
 		<div class="darkMode">
-			<p> EMMETT THOMPSON</p>
+			<p>NIELS HUMPHRIES</p>
 		</div>
+		{/if}
 
 		<Nav {navItems} />
 
-	<div on:click={() => toggleDarkMode()} on:keydown={() => toggleDarkMode()} class="darkMode right">
+	<!-- <div on:click={() => toggleDarkMode()} on:keydown={() => toggleDarkMode()} class="darkMode right">
 		<p class:selected={$darkMode == false}>ONLINE</p>
 		<p class="selected">/</p>
 		<p class:selected={$darkMode == true}>OFFLINE</p>
+	</div> -->
+
+	<div class="icons">
+		<a href="mailto: dan@aufbau.io">
+			<img src={mail} alt="mail" class="icon" />
+		</a>
+		<a href="https://www.instagram.com/dn.niels" target="_blank" rel="noreferrer">
+			<img src={insta} alt="instagram" class="icon" />
+		</a>
+		<a href="https://www.aufbau.io" target="_blank" rel="noreferrer">
+			<img src={www} alt="instagram" class="icon" />
+		</a>
 	</div>
 
 </main>
@@ -76,10 +94,31 @@
 		font-weight: 600;
 	}
 
+	.icons {
+		display: flex;
+		gap: 15px;
+		padding: 6px 15px;
+		justify-content: space-evenly;
+		border: var(--border);
+	}
+
+
+	.icon {
+		height: 20px;
+		width: 20px;
+
+		cursor: pointer;
+		opacity: 1;
+	}
+
+	.icon:hover{
+		opacity:.5;
+		}
+
 	.darkMode {
-		background: var(--primary);
-		color: var(--background);
-		border: solid 1px var(--blue);
+		background: var(--background);
+		color: var(--primary);
+		border: var(--border);
 		display: flex;
 		gap: 12px;
 		padding: 6px 12px;

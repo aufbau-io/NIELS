@@ -9,7 +9,7 @@ export default class Environment {
 		this.debug = this.experience.debug;
 		this.intersect = new THREE.Vector3(0, 0, 0);
 
-		this.scene.fog = new THREE.FogExp2(0xf0f0f0, 0.03);
+		this.scene.fog = new THREE.FogExp2(0xd0d0d0, 0.025);
 
 		// Debug
 		if (this.debug.active) {
@@ -19,7 +19,7 @@ export default class Environment {
 		this.setSunLight();
 
 		// this.space = new THREE.BoxGeometry((200, 1, 200));
-		this.gridHelper = new THREE.GridHelper(200, 100, 0x3eb1c8, 0x3eb1c8);
+		this.gridHelper = new THREE.GridHelper(200, 100, 0x0b0b0b, 0x0b0b0b);
 		this.scene.add(this.gridHelper);
 
 		let onDocumentMouseMove = () => {
@@ -44,7 +44,7 @@ export default class Environment {
 	}
 
 	setSunLight() {
-		this.sunLight = new THREE.DirectionalLight('#3eb1c8', 1);
+		this.sunLight = new THREE.DirectionalLight('#d0d0d0', 1);
 		this.sunLight.castShadow = true;
 		this.sunLight.shadow.camera.far = 15;
 		this.sunLight.shadow.mapSize.set(1024, 1024);

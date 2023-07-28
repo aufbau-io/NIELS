@@ -51,13 +51,13 @@
 </script>
 
 <svelte:head>
-	<title>EMMETT THOMPSON</title>
+	<title>NIELS HUMPHRIES</title>
 	<meta name="description" content="Neuroscientist" />
 </svelte:head>
 
 <canvas class="webgl"></canvas>
 
-{#if $screenType == 3}
+<!-- {#if $screenType == 3} -->
 <div class="app">
 	{#if $screenType}
 	<header>
@@ -76,12 +76,12 @@
 	
 	{/if}
 </div>
-{:else}
+<!-- {:else}
 <div class="app">
 	<p style="width:100%; height:60px; display: flex; align-items:center; justify-content:center;">mobile site build in progress</p>
 </div>
 
-{/if}
+{/if} -->
 
 
 <style>
