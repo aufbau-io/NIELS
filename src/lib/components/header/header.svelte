@@ -13,7 +13,7 @@
 	// stub data out
 	const navItems = [
 		{
-			name: 'NIELS',
+			name: 'ABOUT',
 			href: '/'
 		},
 		{
