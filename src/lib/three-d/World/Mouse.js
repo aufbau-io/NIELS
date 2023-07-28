@@ -26,8 +26,7 @@ export default class Mouse {
 		this.gradientTexture.magFilter = THREE.NearestFilter;
 
 		let material = new THREE.MeshToonMaterial({
-			color: 0x232323
-			// gradientMap: this.gradientTexture
+			gradientMap: this.gradientTexture
 		});
 
 		this.model.traverse(function (child) {

@@ -7,6 +7,6 @@ export default [
 	{
 		name: 'gradientTexture',
 		type: 'texture',
-		path: 'textures/gradients/5.jpg'
+		path: 'textures/gradients/3.jpg'
 	}
 ];
