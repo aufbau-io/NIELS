@@ -41,7 +41,7 @@
 	let black = new THREE.Color(0x232323);
 
 	// $: backgroundColor = $darkMode ? 0xff0000 : 0x232323;
-	// let backgroundColor = 0x0000000
+	// let backgroundColor = 0x2323230
 
 	const objects = [];
 

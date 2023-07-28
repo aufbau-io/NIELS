@@ -74,11 +74,11 @@
 	// gridHelper2.position.y = boxSize * 0.75;
 	// scene.add(gridHelper2);
 
-	// const gridHelper2 = new THREE.GridHelper(size, divisions, 0x000000, 0x000000);
+	// const gridHelper2 = new THREE.GridHelper(size, divisions, 0x232323, 0x232323);
 	// gridHelper2.rotateX(Math.PI / 2);
 	// scene.add(gridHelper2);
 
-	// const gridHelper3 = new THREE.GridHelper(size, divisions, 0x000000, 0x000000);
+	// const gridHelper3 = new THREE.GridHelper(size, divisions, 0x232323, 0x232323);
 	// gridHelper3.rotateZ(Math.PI / 2);
 	// scene.add(gridHelper3);
 
@@ -206,7 +206,7 @@
 	let renderer = new THREE.WebGLRenderer({ antialias: false });
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize(width, height);
-	renderer.setClearColor(0x000000, 0);
+	renderer.setClearColor(0x232323, 0);
 
 	let renderer2 = new CSS3DRenderer();
 	renderer2.setSize(width, height);
