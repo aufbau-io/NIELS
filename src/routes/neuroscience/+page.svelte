@@ -56,9 +56,6 @@ section {
 
 	@media only screen and (max-width: 768px) {
 		.main {
-			position: absolute;
-			bottom: 10%;
-			z-index: -1;
 			width: 90vw;
 			gap: 24px;
 			padding:  40px 24px;
