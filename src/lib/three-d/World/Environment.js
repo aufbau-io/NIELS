@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import Experience from '../Experience.js';
+import { get } from 'svelte/store';
+import { screenType } from '$lib/store/store';
 
 export default class Environment {
 	constructor() {
@@ -178,5 +180,13 @@ export default class Environment {
 
 	update() {
 		this.shaderMaterial.uniforms.time.value = this.clock.getElapsedTime();
+
+		if (get(screenType) === 1) {
+			// this.plane.rotateX(1);
+			this.shaderMaterial.uniforms.mouse.value = {
+				x: this.clock.getElapsedTime() * 1,
+				y: this.clock.getElapsedTime() * 0.1
+			};
+		}
 	}
 }
