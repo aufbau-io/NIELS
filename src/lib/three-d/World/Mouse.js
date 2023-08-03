@@ -11,6 +11,10 @@ export default class Mouse {
 
 		this.cursor = this.experience.camera.cursor;
 
+		this.mousePath = []; // Array to store mouse positions
+		this.pathLength = 25; // Number of points to store
+		this.spline = new THREE.CatmullRomCurve3([]); // Spline curve
+
 		// Resource
 		this.resource = this.resources.items.mouse;
 		this.setModel();
@@ -73,10 +77,31 @@ export default class Mouse {
 
 	update() {
 		this.animation.mixer.update(this.time.delta * 0.001);
-		// console.log(window.experience.world.environment.intersect);
 
-		this.model.position.copy(window.experience.world.environment.intersect);
+		// Get target position
+		let targetPosition = window.experience.world.environment.intersect;
 
-		this.model.lookAt(0, 0, 0);
+		// Store the target positions in an array
+		this.mousePath.push(targetPosition.clone());
+
+		// If we have too many points, remove the oldest
+		if (this.mousePath.length > this.pathLength) {
+			this.mousePath.shift();
+		}
+
+		// Update the spline to pass through each point
+		this.spline.points = this.mousePath;
+
+		// Calculate a position along the spline. 1 is the end of the spline, so
+		// this will give the position of the mouse model a little way along the
+		// path that the mouse has taken.
+		if (this.mousePath.length > 1) {
+			let newPosition = this.spline.getPoint(1);
+
+			// Update the model's position to this new position
+			this.model.position.lerp(newPosition, 0.02);
+		}
+
+		this.model.lookAt(window.experience.world.environment.intersect);
 	}
 }
