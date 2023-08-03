@@ -52,7 +52,7 @@ export default class Environment {
     }
 
     void main() {
-      float n = noise(vUv) + (sin(time) * 0.25) ;
+      float n = noise(vUv) + (sin(time) * 0.15);
       vec3 color = mix(color1, color2, n);
       color = mix(color, color3, n*n);
       color = mix(color, color4, n*n*n)  ;
