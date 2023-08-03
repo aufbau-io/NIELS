@@ -10,7 +10,8 @@
   <h1>TECHNOLOGY<br>-</h1>
   <a href="https://aufbau.io" target="_blank" rel="noreferrer"><p>Aufbau IO - intern (unpaid)</p></a>
   <a href="https://midnight.agency" target="_blank" rel="noreferrer"><p>Midnight Agency - Senior Engineer</p></a>
-  <a href="https://iota.health" target="_blank" rel="noreferrer"><p>IOTA - CTO / Co-Founder</p></a>
+  <!-- <a href="https://iota.health" target="_blank" rel="noreferrer"><p>IOTA - CTO / Co-Founder</p></a> -->
+	<p>IOTA - CTO / Co-Founder</p>
 </div>
 </section>
 
