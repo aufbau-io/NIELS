@@ -164,7 +164,7 @@ button:focus:not(:focus-visible) {
 
 @media only screen and (max-width: 768px) {
 	h1 {
-		font-size: 17px;
+		font-size: 18px;
 		font-weight: 400;
 	}
 
