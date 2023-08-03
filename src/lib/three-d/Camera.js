@@ -31,17 +31,20 @@ export default class Camera {
 		this.scene.add(this.instance);
 
 		window.addEventListener('mousemove', (event) => {
+			event.preventDefault();
+
 			this.cursor.x = (event.clientX / this.sizes.width) * 2 - 1;
 			this.cursor.y = -((event.clientY / this.sizes.height) * 2) + 1;
-
-			// console.log(this.cursor);
 		});
 
 		window.addEventListener('touchmove', (event) => {
-			this.cursor.x = (event.touches && event.touches[0].clientX) * 2 - 1;
-			this.cursor.y = -((event.touches && event.touches[0].clientY) * 2) + 1;
+			event.preventDefault();
 
-			// console.log(this.cursor);
+			this.cursor.x = (event.touches[event.touches.length - 1].clientX / this.sizes.width) * 2 - 1;
+			this.cursor.y =
+				-(
+					(event.touches && event.touches[event.touches.length - 1].clientY / this.sizes.height) * 2
+				) + 1;
 		});
 	}
 
