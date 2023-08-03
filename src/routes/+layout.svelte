@@ -94,8 +94,10 @@
 
 	.webgl {
 		position: absolute;
+		bottom: 0;
 		z-index: -1;
 		height: 100dvh;
+		min-height: 100dvh;
 		width: 100%;
 		opacity: 1;
 	}
