@@ -25,8 +25,13 @@ export default class Mouse {
 		this.gradientTexture = this.resources.items.gradientTexture;
 		this.gradientTexture.magFilter = THREE.NearestFilter;
 
-		let material = new THREE.MeshToonMaterial({
-			gradientMap: this.gradientTexture
+		let material = new THREE.MeshPhysicalMaterial({
+			// semi-transulcent gradient
+			map: this.gradientTexture,
+			alphaMap: this.gradientTexture,
+			roughness: 0.25,
+			transmission: 1,
+			thickness: 0.5 // Add refraction!
 		});
 
 		this.model.traverse(function (child) {
@@ -68,7 +73,7 @@ export default class Mouse {
 
 	update() {
 		this.animation.mixer.update(this.time.delta * 0.001);
-		console.log(window.experience.world.environment.intersect);
+		// console.log(window.experience.world.environment.intersect);
 
 		this.model.position.copy(window.experience.world.environment.intersect);
 

@@ -19,5 +19,6 @@ export default class World {
 
 	update() {
 		if (this.mouse) this.mouse.update();
+		if (this.environment) this.environment.update();
 	}
 }

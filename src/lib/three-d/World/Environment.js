@@ -10,6 +10,7 @@ export default class Environment {
 		this.intersect = new THREE.Vector3(0, 0, 0);
 
 		this.scene.fog = new THREE.FogExp2(0xd0d0d0, 0.025);
+		this.clock = new THREE.Clock();
 
 		// Debug
 		if (this.debug.active) {
@@ -18,21 +19,81 @@ export default class Environment {
 
 		this.setSunLight();
 
+		// -------------------------------------------------------------------------
+
+		const color1 = new THREE.Color(0xd0d0d0);
+		const color2 = new THREE.Color(0x0000ff);
+		const color3 = new THREE.Color(0x00ff00);
+		const color4 = new THREE.Color(0x232323);
+
+		// Mouse position
+		let mouse = new THREE.Vector2();
+
+		// Shader material
+		this.shaderMaterial = new THREE.ShaderMaterial({
+			vertexShader: `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+			fragmentShader: `
+    varying vec2 vUv;
+    uniform vec3 color1;
+    uniform vec3 color2;
+    uniform vec3 color3;
+    uniform vec3 color4;
+    uniform float time;
+    uniform vec2 mouse;
+
+    float noise(vec2 position) {
+      return fract(sin(dot(position, vec2(0, 90))) * 2.5453 + (mouse.x * 0.5)) - fract(sin(dot(position, vec2(90, 90))) * 3.5453 + (mouse.y * 0.5));
+    }
+
+    void main() {
+      float n = noise(vUv) + (sin(time) * 0.25) ;
+      vec3 color = mix(color1, color2, n);
+      color = mix(color, color3, n*n);
+      color = mix(color, color4, n*n*n)  ;
+      gl_FragColor = vec4(color, 1.0);
+    }
+  `,
+			uniforms: {
+				color1: { value: color1 },
+				color2: { value: color2 },
+				color3: { value: color3 },
+				color4: { value: color4 },
+				time: { value: 0 },
+				mouse: { value: mouse }
+			}
+		});
+
+		// Plane - double sided
+		this.plane = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), this.shaderMaterial);
+		this.plane.rotateZ(Math.PI / 2);
+		this.plane.rotateY(Math.PI / 2);
+		// plane.rotateX(Math.PI / 4);
+		this.scene.add(this.plane);
+
+		// -------------------------------------------------------------------------
+
 		// this.space = new THREE.BoxGeometry((200, 1, 200));
-		this.gridHelper = new THREE.GridHelper(200, 100, 0x0b0b0b, 0x0b0b0b);
-		this.scene.add(this.gridHelper);
+		// this.gridHelper = new THREE.GridHelper(200, 100, 0x0b0b0b, 0x0b0b0b);
+		// this.scene.add(this.gridHelper);
 
 		let onDocumentMouseMove = () => {
 			// Calculate normalized device coordinates
 			var mouse = new THREE.Vector2();
 			mouse.x = window.experience.camera.cursor.x;
 			mouse.y = window.experience.camera.cursor.y;
-
-			console.log(mouse);
+			this.shaderMaterial.uniforms.mouse.value = mouse;
 
 			var raycaster = new THREE.Raycaster();
 			raycaster.setFromCamera(mouse, window.experience.camera.instance);
-			var intersects = raycaster.intersectObject(this.gridHelper);
+			var intersects = raycaster.intersectObject(this.plane);
+
+			this.shaderMaterial.uniforms.mouse.value = mouse;
 
 			if (intersects.length > 0) {
 				this.intersect = intersects[0].point;
@@ -44,7 +105,7 @@ export default class Environment {
 	}
 
 	setSunLight() {
-		this.sunLight = new THREE.DirectionalLight('#d0d0d0', 1);
+		this.sunLight = new THREE.DirectionalLight('#232323', 1);
 		this.sunLight.castShadow = true;
 		this.sunLight.shadow.camera.far = 15;
 		this.sunLight.shadow.mapSize.set(1024, 1024);
@@ -113,5 +174,9 @@ export default class Environment {
 				.step(0.001)
 				.onChange(this.environmentMap.updateMaterials);
 		}
+	}
+
+	update() {
+		this.shaderMaterial.uniforms.time.value = this.clock.getElapsedTime();
 	}
 }
