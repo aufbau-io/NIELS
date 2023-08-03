@@ -181,7 +181,7 @@ export default class Environment {
 	update() {
 		this.shaderMaterial.uniforms.time.value = this.clock.getElapsedTime();
 
-		if (get(screenType) === 1) {
+		if (get(screenType) == 1) {
 			// this.plane.rotateX(1);
 			this.shaderMaterial.uniforms.mouse.value = {
 				x: this.clock.getElapsedTime() * 1,

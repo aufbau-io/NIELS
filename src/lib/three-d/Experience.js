@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import { screenType } from '$lib/store/store';
+import { get } from 'svelte/store';
 
 import Debug from './Utils/Debug.js';
 import Sizes from './Utils/Sizes.js';
@@ -48,8 +50,10 @@ export default class Experience {
 	}
 
 	resize() {
-		this.camera.resize();
-		this.renderer.resize();
+		if (get(screenType) != 1) {
+			this.camera.resize();
+			this.renderer.resize();
+		}
 	}
 
 	update() {
