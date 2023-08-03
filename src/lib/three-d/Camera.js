@@ -36,6 +36,13 @@ export default class Camera {
 
 			// console.log(this.cursor);
 		});
+
+		window.addEventListener('touchmove', (event) => {
+			this.cursor.x = (event.touches && event.touches[0].clientX) * 2 - 1;
+			this.cursor.y = -((event.touches && event.touches[0].clientY) * 2) + 1;
+
+			// console.log(this.cursor);
+		});
 	}
 
 	setControls() {
