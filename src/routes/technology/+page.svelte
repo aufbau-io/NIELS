@@ -17,7 +17,7 @@
 
 <style>
 section {
-  padding: 0 20%;
+  padding: 0 0;
   height: 100%;
   width: 100%;
 

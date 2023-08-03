@@ -52,7 +52,7 @@
 
 <svelte:head>
 	<title>DANIEL HUMPHRIES</title>
-	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Human." />
+	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Loser." />
 </svelte:head>
 
 <canvas class="webgl"></canvas>
