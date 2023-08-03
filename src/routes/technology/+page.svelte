@@ -58,7 +58,7 @@ section {
 
 	@media only screen and (max-width: 768px) {
 		.main {
-			position: fixed;
+			position: absolute;
 			bottom: 5%;
 			z-index: -1;
 			width: 90vw;
