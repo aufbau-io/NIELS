@@ -175,6 +175,6 @@ button:focus:not(:focus-visible) {
 		line-height: 120%;
 		text-transform: none;
 		letter-spacing: 0.1em;
-		font-size: 12px;
+		font-size: 13px;
 	}
 }
