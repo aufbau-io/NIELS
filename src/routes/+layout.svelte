@@ -88,14 +88,14 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		height: 100svh;
+		height: 100dvh;
 		/* height: calc(var(--vh, 1vh) * 100); */
 	}
 
 	.webgl {
 		position: absolute;
 		z-index: -1;
-		height: 100svh;
+		height: 100dvh;
 		width: 100%;
 		opacity: 1;
 	}
