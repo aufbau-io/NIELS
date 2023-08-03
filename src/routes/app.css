@@ -13,7 +13,7 @@
 :root {
 	--background: #2b2b2b;
 	--background-50: #d0d0d080;
-	--primary: #d0d0d0;
+	--primary: #f0f0f0;
 	--primary-50: #ffa50080;
 
 	--green: #008080;
@@ -22,7 +22,7 @@
 	--blue: #3eb1c8;
 	--blue-50: #3eb1c880;
 
-	--border: solid 1px #d0d0d0;
+	--border: solid 1px #f0f0f0;
 }
 
 /* :root {
