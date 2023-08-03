@@ -9,7 +9,7 @@
 	</div>
   <h1>ART / WORDS<br>-</h1>
 	<a href="https://www.instagram.com/metamodernism.as.a.service/" target="_blank" rel="noreferrer"><p>metamodernism.as.a.service - 2020/21</p></a>
-  <a href="https://www.ucl.ac.uk/bartlett/architecture/programmes/postgraduate/march-design-for-performance-and-interaction" target="_blank" rel="noreferrer"><p>Computational Soul (seminar) - Bartlett DfPI, 2021</p></a>
+  <p>Computational Soul (seminar) - Bartlett DfPI : 2020/21</p>
   <p>Raumen Bar - London Space and Representation Meet-Up</p>
   <!-- <p>psychosis (book) - wip</p> -->
   
