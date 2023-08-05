@@ -86,7 +86,6 @@
 		align-items: flex-start;
 
 		padding: 20px;
-		font-size: 13px;
 		height: calc(2 * var(--margin));
 	}
 

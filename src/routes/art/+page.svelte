@@ -32,7 +32,7 @@ section {
   overflow: auto;
 }
 
-.main {
+	.main {
 		max-width: 800px;
 
 		display: flex;
@@ -45,6 +45,11 @@ section {
 		border: var(--border);
 		padding:  40px 48px;
 	}
+
+	.main p, a {
+		font-size: 13px;
+	}
+
 
   .icons {
 		display: flex;
@@ -61,7 +66,6 @@ section {
 		.main {
 			position: absolute;
 			bottom: 20px;
-			z-index: -1;
 			width: 90vw;
 			padding:  40px 24px;
 		}

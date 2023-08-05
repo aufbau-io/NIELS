@@ -35,7 +35,6 @@
 	nav a,
 	nav p {
 		padding: 10px 10px;
-		font-size: 13px;
 		cursor: pointer;
 		color: inherit;
 	}

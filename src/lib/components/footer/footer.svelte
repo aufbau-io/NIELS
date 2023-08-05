@@ -38,7 +38,6 @@
 		border: var(--border);
 
 		padding: 6px 10px;
-		font-size: 13px;
 
 		letter-spacing: 0.15em;
 		font-family: var(--font-body);
