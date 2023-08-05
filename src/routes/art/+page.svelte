@@ -7,7 +7,7 @@
   <!-- <div class="icons">
 		<img src={chat} alt="graph" class="icon" />
 	</div> -->
-  <h1>ART / WORDS<br>-</h1>
+  <!-- <h1>ART / WORDS<br>-</h1> -->
 	<a href="https://www.instagram.com/metamodernism.as.a.service/" target="_blank" rel="noreferrer"><p>metamodernism.as.a.service - 2020/21</p></a>
   <!-- <p>Computational Soul (seminar) - Bartlett DfPI : 2020/21</p> -->
   <!-- <p>Raumen Bar - London Space and Representation Meet-Up</p> -->
@@ -63,7 +63,6 @@ section {
 			bottom: 20px;
 			z-index: -1;
 			width: 90vw;
-			gap: 24px;
 			padding:  40px 24px;
 		}
 	}

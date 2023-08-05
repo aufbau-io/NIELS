@@ -17,8 +17,7 @@
 		<img src={chat} alt="chat" class="icon" />
 	</div> -->
 
-		<h1>DANIEL HUMPHRIES<br>-</h1>
-		<!-- <p>Space, Representation, Communication</p> -->
+		<!-- <h1>DANIEL HUMPHRIES<br>-</h1> -->
 		<p>{text1}</p>
 		<p>{text2}</p>
 		<p>{text3}</p>
@@ -75,7 +74,6 @@
 			bottom: 20px;
 			z-index: -1;
 			width: 90vw;
-			gap: 24px;
 			padding:  40px 24px;
 		}
 	}

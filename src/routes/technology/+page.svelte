@@ -7,7 +7,7 @@
   <!-- <div class="icons">
 		<img src={www} alt="graph" class="icon" />
 	</div> -->
-  <h1>TECHNOLOGY<br>-</h1>
+  <!-- <h1>TECHNOLOGY<br>-</h1> -->
   <a href="https://aufbau.io" target="_blank" rel="noreferrer"><p>Aufbau - creative web engineer</p></a>
   <a href="https://midnight.agency" target="_blank" rel="noreferrer"><p>Midnight Agency - intern</p></a>
   <!-- <a href="https://iota.health" target="_blank" rel="noreferrer"><p>IOTA - CTO / Co-Founder</p></a> -->
@@ -62,7 +62,6 @@ section {
 			bottom: 20px;
 			z-index: -1;
 			width: 90vw;
-			gap: 24px;
 			padding:  40px 24px;
 		}
 	}
