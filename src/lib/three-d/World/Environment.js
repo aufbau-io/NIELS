@@ -24,9 +24,9 @@ export default class Environment {
 		// -------------------------------------------------------------------------
 
 		const color1 = new THREE.Color(0xd0d0d0);
-		const color2 = new THREE.Color(0x0000ff);
-		const color3 = new THREE.Color(0x00ff00);
-		const color4 = new THREE.Color(0x232323);
+		const color2 = new THREE.Color(0xbb4500);
+		const color3 = new THREE.Color(0x0000ff);
+		const color4 = new THREE.Color(0x00ff00);
 
 		// Mouse position
 		let mouse = new THREE.Vector2();
@@ -54,7 +54,7 @@ export default class Environment {
     }
 
     void main() {
-      float n = noise(vUv) + (sin(time) * 0.15);
+      float n = noise(vUv) + 0.15;
       vec3 color = mix(color1, color2, n);
       color = mix(color, color3, n*n);
       color = mix(color, color4, n*n*n)  ;
