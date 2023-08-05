@@ -65,6 +65,7 @@ section {
 			position: absolute;
 			bottom: 20px;
 			padding:  40px 24px;
+			gap: 10px;
 		}
 	}
 </style>

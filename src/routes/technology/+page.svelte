@@ -67,6 +67,7 @@ section {
 			bottom: 20px;
 			width: 90vw;
 			padding:  40px 24px;
+			gap: 10px;
 		}
 	}
 </style>
