@@ -60,7 +60,7 @@ section {
 	@media only screen and (max-width: 768px) {
 		.main {
 			position: absolute;
-			bottom: 5%;
+			bottom: 20px;
 			z-index: -1;
 			width: 90vw;
 			gap: 24px;
