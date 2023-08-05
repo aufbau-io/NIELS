@@ -22,7 +22,7 @@
 	--blue: #3eb1c8;
 	--blue-50: #3eb1c880;
 
-	--border: solid 1px #f0f0f0;
+	--border: solid 1px #1b1b1b;
 }
 
 /* :root {
@@ -97,7 +97,7 @@ h6 {
 }
 
 h1 {
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 400;
 }
 

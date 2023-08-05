@@ -1,12 +1,12 @@
 <script>
-  	import www from '$lib/images/icons/www2.svg';
+  	// import www from '$lib/images/icons/www2.svg';
 </script>
 
 <section>
 <div class="main">
-  <div class="icons">
+  <!-- <div class="icons">
 		<img src={www} alt="graph" class="icon" />
-	</div>
+	</div> -->
   <h1>TECHNOLOGY<br>-</h1>
   <a href="https://aufbau.io" target="_blank" rel="noreferrer"><p>Aufbau - creative web engineer</p></a>
   <a href="https://midnight.agency" target="_blank" rel="noreferrer"><p>Midnight Agency - intern (unpaid)</p></a>

@@ -3,19 +3,19 @@
 		let text2="Part-Time Neuroscientist"
 		let text3="Full-Time Loser"
 
-	import graph from '$lib/images/icons/graph.svg';
-	import www from '$lib/images/icons/www2.svg';
-	import chat from '$lib/images/icons/chat.svg';
+	// import graph from '$lib/images/icons/graph.svg';
+	// import www from '$lib/images/icons/www2.svg';
+	// import chat from '$lib/images/icons/chat.svg';
 </script>
 
 <section>
 	<div class="main">
-		<div class="icons">
+		<!-- <div class="icons">
 
 		<img src={graph} alt="graph" class="icon" />
 		<img src={www} alt="www" class="icon" />
 		<img src={chat} alt="chat" class="icon" />
-	</div>
+	</div> -->
 
 		<h1>DANIEL HUMPHRIES<br>-</h1>
 		<!-- <p>Space, Representation, Communication</p> -->
