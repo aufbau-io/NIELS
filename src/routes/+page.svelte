@@ -74,7 +74,7 @@
 
 	@media only screen and (max-width: 768px) {
 		.main {
-			position: fixed;
+			position: absolute;
 			bottom: 20px;
 			width: 90vw;
 			padding:  40px 24px;
