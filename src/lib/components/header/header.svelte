@@ -85,8 +85,8 @@
 	}
 
 	p, a {
-		font-weight: 600;
-	}
+		/* font-weight: 600;
+	} */
 
 	.icons {
 		display: flex;
