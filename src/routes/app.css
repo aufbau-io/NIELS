@@ -89,7 +89,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-pre {
+/* pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
 	background-color: rgba(255, 255, 255, 0.45);
@@ -98,7 +98,7 @@ pre {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--color-text);
-}
+} */
 
 input,
 button {
@@ -115,18 +115,6 @@ button:focus:not(:focus-visible) {
 		font-size: 2.4rem;
 	}
 } */
-
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
-}
 
 @media only screen and (max-width: 768px) {
 	h1 {
