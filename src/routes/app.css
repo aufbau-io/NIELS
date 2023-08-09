@@ -141,8 +141,6 @@ button:focus:not(:focus-visible) {
 	p,
 	a {
 		font-weight: 400;
-
-		line-height: 120%;
 		text-transform: none;
 		letter-spacing: 0.1em;
 		font-size: 13px;
