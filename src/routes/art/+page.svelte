@@ -66,8 +66,8 @@ section {
 		.main {
 			position: absolute;
 			bottom: 20px;
-			width: 90vw;
-			padding:  40px 24px;
+			width: calc(100vw - 40px);
+			padding:  40px 20px;
 			gap: 10px;
 		}
 	}
