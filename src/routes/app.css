@@ -49,11 +49,7 @@
 }
 
 body {
-	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--background);
-	background-size: 100% 100%;
-	background: linear-gradient(var(--background), var(--background));
+	background: var(--background);
 }
 
 h1,
