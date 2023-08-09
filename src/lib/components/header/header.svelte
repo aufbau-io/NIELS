@@ -84,10 +84,6 @@
 		height: calc(2 * var(--margin));
 	}
 
-	p, a {
-		/* font-weight: 600;
-	} */
-
 	.icons {
 		display: flex;
 		gap: 15px;

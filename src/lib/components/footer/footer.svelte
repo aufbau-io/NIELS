@@ -27,10 +27,6 @@
 		justify-content: space-between;
 	}
 
-	/* p, a {
-		font-weight: 600;
-	} */
-
 	footer a,
 	footer p {
 		background: var(--background);
