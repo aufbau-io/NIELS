@@ -100,8 +100,7 @@ export default class Mouse {
 
 			// Update the model's position to this new position
 			this.model.position.lerp(newPosition, 0.02);
+			this.model.lookAt(window.experience.world.environment.intersect);
 		}
-
-		this.model.lookAt(window.experience.world.environment.intersect);
 	}
 }
