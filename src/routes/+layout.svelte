@@ -53,11 +53,30 @@
 <svelte:head>
 	<title>DANIEL HUMPHRIES</title>
 	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Loser." />
+
+	<link
+	rel="preload"
+	href="/fonts/NB-Architekt-Pro-Light.woff"
+	as="font"
+	type="font/woff"
+	crossorigin="anonymous"
+/>
+
+<link
+	rel="preload"
+	href="/fonts/NB-Architekt-Pro-Bold.woff"
+	as="font"
+	type="font/woff"
+	crossorigin="anonymous"
+/>
+
+<link rel="preload" href="icons/www.svg" as="image" type="image/svg">
+<link rel="preload" href="icons/insta.svg" as="image"  type="image/svg">
+<link rel="preload" href="icons/mail.svg" as="image"  type="image/svg">
 </svelte:head>
 
 <canvas class="webgl"></canvas>
 
-<!-- {#if $screenType == 3} -->
 <div class="app">
 	{#if $screenType}
 	<header>
@@ -76,12 +95,6 @@
 	
 	{/if}
 </div>
-<!-- {:else}
-<div class="app">
-	<p style="width:100%; height:60px; display: flex; align-items:center; justify-content:center;">mobile site build in progress</p>
-</div>
-
-{/if} -->
 
 
 <style>

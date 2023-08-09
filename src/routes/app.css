@@ -37,39 +37,9 @@
 } */
 
 @font-face {
-	font-family: nb-television;
-	src: url(/fonts/NB-Television-Pro-Mono.woff) format('woff');
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: untitled-sans;
-	src: url(/fonts/test-untitled-sans-medium.woff2) format('woff2');
-	font-weight: 500;
-}
-
-@font-face {
-	font-family: untitled-sans;
-	src: url(/fonts/test-untitled-sans-regular.woff2) format('woff2');
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: untitled-sans;
-	src: url(/fonts/test-untitled-sans-light.woff2) format('woff2');
-	font-weight: 300;
-}
-
-@font-face {
 	font-family: nb-architekt;
 	src: url(/fonts/NB-Architekt-Pro-Bold.woff) format('woff');
-	font-weight: 700;
-}
-
-@font-face {
-	font-family: nb-architekt;
-	src: url(/fonts/NB-Architekt-Pro-Regular.woff) format('woff');
-	font-weight: 500;
+	font-weight: 600;
 }
 
 @font-face {

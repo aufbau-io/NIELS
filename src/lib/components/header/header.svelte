@@ -5,11 +5,6 @@
 	// import { page } from '$app/stores';
 	// import { goto } from '$app/navigation';
 
-	
-	import mail from '$lib/images/icons/mail.svg';
-	import insta from '$lib/images/icons/insta.svg';
-	import www from '$lib/images/icons/www.svg';
-
 	// stub data out
 	const navItems = [
 		{
@@ -59,13 +54,13 @@
 
 	<div class="icons">
 		<a href="mailto: dan@aufbau.io">
-			<img src={mail} alt="mail" class="icon" />
+			<img src="/icons/mail.svg" alt="mail" class="icon" />
 		</a>
 		<a href="https://www.instagram.com/dn.niels" target="_blank" rel="noreferrer">
-			<img src={insta} alt="instagram" class="icon" />
+			<img src="/icons/insta.svg" alt="instagram" class="icon" />
 		</a>
 		<a href="https://www.aufbau.io" target="_blank" rel="noreferrer">
-			<img src={www} alt="instagram" class="icon" />
+			<img src="/icons/www.svg" alt="www" class="icon" />
 		</a>
 	</div>
 

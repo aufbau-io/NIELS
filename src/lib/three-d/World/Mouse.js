@@ -23,7 +23,7 @@ export default class Mouse {
 
 	setModel() {
 		this.model = this.resource.scene;
-		this.model.scale.set(0.125, 0.125, 0.125);
+		this.model.scale.set(0.12, 0.12, 0.12);
 		this.scene.add(this.model);
 
 		this.gradientTexture = this.resources.items.gradientTexture;
