@@ -40,11 +40,10 @@ export default class Camera {
 		window.addEventListener('touchmove', (event) => {
 			event.preventDefault();
 
-			this.cursor.x = (event.touches[event.touches.length - 1].clientX / this.sizes.width) * 2 - 1;
+			this.cursor.x = (event.touches[event.touches.length].clientX / this.sizes.width) * 2;
 			this.cursor.y =
-				-(
-					(event.touches && event.touches[event.touches.length - 1].clientY / this.sizes.height) * 2
-				) + 1;
+				-((event.touches && event.touches[event.touches.length].clientY / this.sizes.height) * 2) +
+				1;
 		});
 	}
 
