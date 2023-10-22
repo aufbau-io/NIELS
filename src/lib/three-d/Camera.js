@@ -37,19 +37,21 @@ export default class Camera {
 			this.cursor.y = -((event.clientY / this.sizes.height) * 2) + 1;
 		});
 
-		window.addEventListener('touchmove', (event) => {
+		window.addEventListener('touchstart', (event) => {
 			event.preventDefault();
 
-			this.cursor.x = (event.touches[event.touches.length].clientX / this.sizes.width) * 2;
+			this.cursor.x = (event.touches[event.touches.length - 1].clientX / this.sizes.width) * 2 - 1;
 			this.cursor.y =
-				-((event.touches && event.touches[event.touches.length].clientY / this.sizes.height) * 2) +
-				1;
+				-(
+					(event.touches && event.touches[event.touches.length - 1].clientY / this.sizes.height) * 2
+				) + 1;
 		});
 	}
 
 	setControls() {
 		this.controls = new OrbitControls(this.instance, this.canvas);
 		this.controls.enableDamping = true;
+		this.controls.enableZoom = false;
 	}
 
 	resize() {
