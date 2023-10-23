@@ -56,6 +56,7 @@
 	crossorigin="anonymous"
 />
 
+<link rel="preload" href="icons/cv.svg" as="image">
 <link rel="preload" href="icons/www.svg" as="image">
 <link rel="preload" href="icons/insta.svg" as="image">
 <link rel="preload" href="icons/mail.svg" as="image">
