@@ -37,7 +37,7 @@
 </script>
 
 <svelte:head>
-	<title>DANIEL HUMPHRIES</title>
+	<title>NIELS DANIEL</title>
 	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Loser." />
 
 	<link
