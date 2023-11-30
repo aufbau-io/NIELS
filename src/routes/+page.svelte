@@ -21,7 +21,7 @@
 		<p>{text1}</p>
 		<p>{text2}</p>
 		<!-- <p>{text3}</p> -->
-		<a href="https://aufbau.io/dan_humphries_cv.pdf">
+		<a href="https://aufbau.io/niels_daniel_cv.pdf">
 			// read cv //
 			<!-- <img src="/icons/cv.svg" alt="cv" class="icon" /> -->
     </a>
