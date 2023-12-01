@@ -150,11 +150,11 @@
 
 	.visible {
 			opacity: 1;
-			z-index: 1;
+			z-index: 10;
 	}
 
 	.hidden {
 			opacity: 0;
-			z-index: -1;
+			z-index: -10;
 	}
 </style>
