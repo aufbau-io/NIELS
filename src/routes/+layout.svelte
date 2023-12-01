@@ -38,7 +38,7 @@
 
 <svelte:head>
 	<title>DANIEL HUMPHRIES</title>
-	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Loser." />
+	<meta name="description" content="Daniel Humphries. Neuroscience and Mathemtics. UCL." />
 
 	<link
 	rel="preload"
