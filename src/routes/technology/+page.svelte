@@ -9,7 +9,7 @@
 	</div> -->
   <!-- <h1>TECHNOLOGY<br>-</h1> -->
   <a href="https://aufbau.io" target="_blank" rel="noreferrer"><p>Aufbau - creative web engineer</p></a>
-  <a href="https://midnight.agency" target="_blank" rel="noreferrer"><p>Midnight - senior engineer // webgl</p></a>
+  <a href="https://midnight.agency" target="_blank" rel="noreferrer"><p>Midnight - senior webgl engineer</p></a>
   <!-- <a href="https://iota.health" target="_blank" rel="noreferrer"><p>IOTA - CTO / Co-Founder</p></a> -->
 	<!-- <p>IOTA - Co-Founder</p> -->
 </div>
@@ -43,6 +43,8 @@ section {
 		color: var(--primary);
 		border: var(--border);
 		padding:  40px 48px;
+		margin-bottom: 40px;
+		margin-bottom: 40px;
 	}
 
 	.main p, a {

@@ -99,11 +99,11 @@
 </div>
 
 
-{#if $screenType == 3}
+
 <footer>
 	<Footer />
 </footer>
-{/if}
+
 
 <style>
 	.app {

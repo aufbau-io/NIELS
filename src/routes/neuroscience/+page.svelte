@@ -42,6 +42,7 @@ section {
 		color: var(--primary);
 		border: var(--border);
 		padding:  40px 48px;
+		margin-bottom: 40px;
 	}
 
 	.main p, a {

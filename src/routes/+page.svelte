@@ -1,7 +1,6 @@
 <script>
 		let text1="Part-Time Web Engineer"
 		let text2="Part-Time Neuroscientist"
-		let text3="Full-Time Loser"
 
 	// import graph from '$lib/images/icons/graph.svg';
 	// import www from '$lib/images/icons/www2.svg';
@@ -58,6 +57,7 @@
 		color: var(--primary);
 		border: var(--border);
 		padding:  40px 48px;
+		margin-bottom: 40px;
 	}
 
 	.main p, a {

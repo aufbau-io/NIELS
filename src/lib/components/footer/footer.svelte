@@ -1,5 +1,5 @@
 <script>
-	import { mathematics } from '$lib/store/store';
+	import { mathematics, screenType } from '$lib/store/store';
 
 	// function to toggle mathematics mode in store
 	function setMathematics() {
@@ -11,7 +11,9 @@
 	<!-- <a href="https://aufbau.io" target="_blank" rel="noreferrer">EIN AUFBAU DING</a> -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<p on:click={() => setMathematics()}>Mathematician Friendly Mode :: {$mathematics ? 'ON' : 'OFF'}</p>
+	{#if $screenType == 3}
 	<a href="https://www.websitecarbon.com/website/niels-aufbau-io/" target="_blank" rel="noreferrer">0.08G CO2 / VISIT</a>
+	{/if}
 	<!-- <p class="">COPYRIGHT 2022</p> -->
 </footer>
 
@@ -51,11 +53,12 @@
 
 	@media only screen and (max-width: 768px) {
 		footer {
-			padding: 20px 24px;
+
 		}
 		footer a,
 		footer p {
 			font-size: 12px;
+			width: 100%;
 		}
 	}
 </style>
