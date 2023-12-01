@@ -64,9 +64,9 @@
 
 
 
-<div class="{ $mathematics ? 'visible' : 'hidden' }" style="position:absolute;width:100%;padding:10px;background:#f0f0f0;font-family:untitled-serif">
+<div class="{ $mathematics ? 'visible' : 'hidden' }" style="position:absolute;width:100%;padding:10px;background:#f0f0f0;font-family:untitled-serif;display:flex;flex-flow:column;gap:2px;">
 	<h2>Daniel Niels Humphries</h2>
-	<p>Neuroscience & Mathematics</p>
+	<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 	<hr/>
 	<h3>Places</h3>
 	<a href="https://bushlab-ucl.github.io/"><h4>- UCL :: Human Electrophysiology Lab :: Research Assistant</h4></a>
@@ -143,10 +143,10 @@
 		height: 100%;
 	}
 
-	p,
+	/* p,
 	a {
 		font-size: 13px;
-	}
+	} */
 
 	.visible {
 			opacity: 1;
