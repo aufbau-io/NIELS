@@ -69,8 +69,8 @@
 	<p style="letter-spacing:1.32px">Neuroscience & Mathematics</p>
 	<hr/>
 	<h3>Places</h3>
-	<a href="https://bushlab-ucl.github.io/"><h4>- UCL :: Human Electrophysiology Lab :: Research Assistant</h4></a>
-	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><h4>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting Research Assistant</h4></a>
+	<a href="https://bushlab-ucl.github.io/"><p>- UCL :: Human Electrophysiology Lab :: Research Assistant</p></a>
+	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting Research Assistant</p></a>
 	<hr>
 	<h3>Interests</h3>
 	<p>- Space</p>
@@ -78,7 +78,7 @@
 	<p>- Structure</p>
 	<hr>
 	<h3>Things</h3>
-	<p>- nothing to see yet</p>
+	<a href="/Harvesting_and_Sowing.pdf"><p>- Harvesting and Sowing :: Alexander Grothendieck :: English Version :: Niels Machine Tranlation (Very Rough WIP)</p></a>
 </div>
 
 <div class="{ $mathematics ? 'hidden' : 'visible' }">
