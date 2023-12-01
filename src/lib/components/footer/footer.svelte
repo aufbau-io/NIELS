@@ -1,8 +1,16 @@
 <script>
+	import { mathematics } from '$lib/store/store';
+
+	// function to toggle mathematics mode in store
+	function setMathematics() {
+		mathematics.set(!$mathematics);
+	}
 </script>
 
 <footer>
-	<a href="https://aufbau.io" target="_blank" rel="noreferrer">EIN AUFBAU DING</a>
+	<!-- <a href="https://aufbau.io" target="_blank" rel="noreferrer">EIN AUFBAU DING</a> -->
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<p on:click={() => setMathematics()}>Mathematician Friendly Mode :: {$mathematics ? 'ON' : 'OFF'}</p>
 	<a href="https://www.websitecarbon.com/website/niels-aufbau-io/" target="_blank" rel="noreferrer">0.08G CO2 / VISIT</a>
 	<!-- <p class="">COPYRIGHT 2022</p> -->
 </footer>
@@ -37,6 +45,8 @@
 
 		letter-spacing: 0.15em;
 		font-family: var(--font-body);
+		cursor: pointer;
+		user-select: none;
 	}
 
 	@media only screen and (max-width: 768px) {

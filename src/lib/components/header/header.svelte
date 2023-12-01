@@ -53,7 +53,7 @@
 	</div> -->
 
 	<div class="icons">
-		<a href="https://aufbau.io/daniel_niels_cv.pdf">
+		<a href="https://aufbau.io/daniel_humphries_cv.pdf">
 			<img src="/icons/cv.svg" alt="cv" class="icon" />
     </a>
 		<a href="mailto: dan@aufbau.io">

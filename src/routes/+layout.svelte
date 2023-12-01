@@ -2,7 +2,7 @@
 	import './app.css';
 
 	import { onMount } from 'svelte';
-	import { screenType, isIframe, darkMode } from '$lib/store/store';
+	import { mathematics, screenType, isIframe } from '$lib/store/store';
 
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
@@ -37,7 +37,7 @@
 </script>
 
 <svelte:head>
-	<title>DANIEL NIELS</title>
+	<title>DANIEL HUMPHRIES</title>
 	<meta name="description" content="Part-Time Web Engineer, Part-Time Neuroscientist, Full-Time Loser." />
 
 	<link
@@ -62,27 +62,48 @@
 <link rel="preload" href="icons/mail.svg" as="image">
 </svelte:head>
 
-<canvas class="webgl"></canvas>
 
-<div class="app">
-	{#if $screenType}
-	<header>
-		<Header />
-	</header>
 
-	<main>
-		<slot />
-	</main>
-
-	{#if $screenType == 3}
-	<footer>
-		<Footer />
-	</footer>
-	{/if}
-	
-	{/if}
+<div class="{ $mathematics ? 'visible' : 'hidden' }" style="position:absolute;width:100%;padding:10px;background:#f0f0f0;font-family:untitled-serif">
+	<h2>Daniel Niels Humphries</h2>
+	<p>Neuroscience & Mathematics</p>
+	<hr/>
+	<h3>Places</h3>
+	<a href="https://bushlab-ucl.github.io/"><h4>- UCL :: Human Electrophysiology Lab :: Research Assistant</h4></a>
+	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><h4>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting Research Assistant</h4></a>
+	<hr>
+	<h3>Interests</h3>
+	<p>- Space</p>
+	<p>- Concepts</p>
+	<p>- Structure</p>
+	<hr>
+	<h3>Things</h3>
+	<p>- nothing to see yet</p>
 </div>
 
+<div class="{ $mathematics ? 'hidden' : 'visible' }">
+	<canvas class="webgl"></canvas>
+
+	<div class="app">
+		{#if $screenType}
+		<header>
+			<Header />
+		</header>
+
+		<main>
+			<slot />
+		</main>		
+		
+		{/if}
+	</div>
+</div>
+
+
+{#if $screenType == 3}
+<footer>
+	<Footer />
+</footer>
+{/if}
 
 <style>
 	.app {
@@ -120,5 +141,20 @@
 		/* padding: calc(1 * var(--margin)); */
 		width: 100%;
 		height: 100%;
+	}
+
+	p,
+	a {
+		font-size: 13px;
+	}
+
+	.visible {
+			opacity: 1;
+			z-index: 1;
+	}
+
+	.hidden {
+			opacity: 0;
+			z-index: -1;
 	}
 </style>
