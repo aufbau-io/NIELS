@@ -73,9 +73,9 @@
 	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting Research Assistant</p></a>
 	<hr>
 	<h3>Interests</h3>
-	<p>- Space</p>
-	<p>- Concepts</p>
-	<p>- Structure</p>
+	<p>- Space :: <a href="https://www.gutenberg.org/files/4280/4280-h/4280-h.htm">Kant</a>, <a href="https://www.grothendieckcircle.org/">Grothendieck</a>, <a href="https://www.sainsburywellcome.org/web/groups/behrens-lab">Behrens</a></p>
+	<p>- Concepts :: <a href="https://plato.stanford.edu/entries/nonexistent-objects/">Meinong</a>, <a href="https://www.phil.cmu.edu/projects/carnap/editorial/latex_pdf/1928-1e%20part1.pdf">Carnap</a>, <a href="https://www.saxelab.org/">Saxe</a></p>
+	<p>- Structure :: <a href="https://www.gutenberg.org/files/5740/5740-pdf.pdf">Wittgenstein</a>, <a href="https://arxiv.org/abs/2104.13478">Bronstein</a></p>
 	<hr>
 	<h3>Things</h3>
 	<a href="/Harvesting_and_Sowing.pdf"><p>- Harvesting and Sowing :: Alexander Grothendieck :: English Version :: Niels Machine Tranlation (Very Rough WIP)</p></a>
