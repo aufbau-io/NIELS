@@ -20,8 +20,8 @@
 		<p>{text1}</p>
 		<p>{text2}</p>
 		<!-- <p>{text3}</p> -->
-		<a href="https://aufbau.io/daniel_humphries_cv.pdf">
-			// read cv //
+		<a href="https://aufbau.io">
+			// aufbau //
 			<!-- <img src="/icons/cv.svg" alt="cv" class="icon" /> -->
     </a>
 	</div>
