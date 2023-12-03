@@ -35,7 +35,7 @@ export default class Mouse {
 			alphaMap: this.gradientTexture,
 			roughness: 0.25,
 			transmission: 1,
-			thickness: 0.75 // Add refraction!
+			thickness: 0.5 // Add refraction!
 		});
 
 		this.model.traverse(function (child) {

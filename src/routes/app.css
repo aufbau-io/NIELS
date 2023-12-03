@@ -11,7 +11,7 @@
 }
 
 :root {
-	--background: #2b2b2b;
+	--background: #ffffff;
 	--background-50: #d0d0d080;
 	--primary: #e0e0e0;
 	--primary-50: #ffa50080;
@@ -66,6 +66,7 @@ h5,
 h6 {
 	font-family: var(--font-header);
 	letter-spacing: 0.1em;
+	color: black;
 }
 
 h1 {
@@ -81,6 +82,7 @@ a {
 	text-transform: none;
 	letter-spacing: 0.1em;
 	font-size: 13px;
+	color: black;
 }
 
 p {
