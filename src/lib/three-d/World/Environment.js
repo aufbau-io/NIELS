@@ -95,7 +95,7 @@ export default class Environment {
 			raycaster.setFromCamera(mouse, window.experience.camera.instance);
 			var intersects = raycaster.intersectObject(this.plane);
 
-			this.shaderMaterial.uniforms.mouse.value = mouse;
+			// this.shaderMaterial.uniforms.mouse.value = mouse;
 
 			if (intersects.length > 0) {
 				this.intersect = intersects[0].point;
