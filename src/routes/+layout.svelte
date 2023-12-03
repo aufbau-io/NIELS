@@ -64,8 +64,9 @@
 
 
 
-<div class="{ $mathematics ? 'visible' : 'hidden' }" style="position:absolute;width:100%;padding:10px;background:#f0f0f0;font-family:untitled-serif;display:flex;flex-flow:column;gap:2px;">
+<div class="{ $mathematics ? 'visible' : 'hidden' }" style="position:absolute;height:100%;width:100%;padding:10px;background:#fafafa;font-family:serif;display:flex;flex-flow:column;gap:2px;">
 	<h2>Daniel Niels Humphries</h2>
+	<img src="niels.jpg" width=190 />
 	<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 	<hr/>
 	<h3>Places</h3>
@@ -138,6 +139,7 @@
 		position: absolute;
 		bottom: 0;
 		width: 100%;
+		z-index: 11;
 	}
 
 	main {
