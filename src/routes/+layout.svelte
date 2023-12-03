@@ -66,7 +66,7 @@
 <canvas class="webgl"></canvas>
 <div class="main { $mathematics ? 'visible' : 'hidden' }" style="padding:10px;position:absolute;height:auto;width:100%;font-family:serif;display:flex;flex-flow:column;gap:2px;">
 		<h2>Daniel Niels Humphries</h2>
-		<img src="niels.jpg" width=188 />
+		<img src="niels.jpg" style="border:solid 1px black;" width=188 />
 		<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 		<h3>Places</h3>
 		<a href="https://bushlab-ucl.github.io/"><p>- UCL :: Human Electrophysiology Lab :: Research Assistant</p></a>
