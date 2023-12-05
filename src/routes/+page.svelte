@@ -44,7 +44,7 @@
 
 	img {
 		border:solid 1px black;
-		width: 180px;
-		height: 180px;
+		width: 188px;
+		height: 188px;
 	}
 </style>
