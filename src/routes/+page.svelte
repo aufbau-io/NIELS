@@ -19,8 +19,8 @@
 	<p>- Concepts :: <a href="https://plato.stanford.edu/entries/nonexistent-objects/">Meinong</a>, <a href="https://www.phil.cmu.edu/projects/carnap/editorial/latex_pdf/1928-1e%20part1.pdf">Carnap</a>,  <a href="https://link.springer.com/content/pdf/10.1016/j.thbio.2006.02.001.pdf">Jost</a></p>
 	<hr> -->
 	<h3>Things</h3>
-	<a href="/Harvesting_and_Sowing.pdf"><p>- Harvesting and Sowing :: Alexander Grothendieck :: English Version :: Niels Machine Tranlation (Very Rough WIP)</p></a>
-		<a href="https://aufbau.io">- Aufbau :: Creative Web Engineering</a>
+	<a href="/Harvesting_and_Sowing.pdf" target="_blank"><p>- Harvesting and Sowing :: Alexander Grothendieck :: English Version :: Niels Machine Tranlation (Very Rough WIP)</p></a>
+	<a href="https://aufbau.io" target="_blank">- Aufbau :: Creative Web Engineering</a>
 </main>
 
 <style>
