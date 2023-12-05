@@ -3,11 +3,11 @@
 
 <main style="">
 	<h2>Daniel Niels Humphries</h2>
-	<img src="niels.jpg" style="border:solid 1px black;" width=188 />
+	<img src="niels.jpg" alt="niels, this is my website." style="border:solid 1px black;" width=188 />
 	<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 	<h3>Places</h3>
-	<a href="https://bushlab-ucl.github.io/"><p>- UCL :: Human Electrophysiology Lab :: Research Assistant</p></a>
-	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting Research Assistant</p></a>
+	<a href="https://bushlab-ucl.github.io/"><p>- UCL // Human Electrophysiology Lab // Research Assistant</p></a>
+	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences // Stochastic Topology Group // Visiting Research Assistant</p></a>
 		<h3>Interests</h3>
 	<p>- Space</p>
 	<p>- Structure</p>
@@ -19,8 +19,8 @@
 	<p>- Concepts :: <a href="https://plato.stanford.edu/entries/nonexistent-objects/">Meinong</a>, <a href="https://www.phil.cmu.edu/projects/carnap/editorial/latex_pdf/1928-1e%20part1.pdf">Carnap</a>,  <a href="https://link.springer.com/content/pdf/10.1016/j.thbio.2006.02.001.pdf">Jost</a></p>
 	<hr> -->
 	<h3>Things</h3>
-	<a href="/Harvesting_and_Sowing.pdf" target="_blank"><p>- Harvesting and Sowing :: Alexander Grothendieck :: English Version :: Niels Machine Tranlation (Very Rough WIP)</p></a>
-	<a href="https://aufbau.io" target="_blank">- Aufbau :: Creative Web Engineering</a>
+	<a href="/Harvesting_and_Sowing.pdf" target="_blank" rel="noreferrer"><p>- Harvesting and Sowing // Alexander Grothendieck // English Version // Niels Machine Tranlation (Rough WIP)</p></a>
+	<a href="https://aufbau.io" target="_blank" rel="noreferrer">- Aufbau // Creative Web Engineering</a>
 </main>
 
 <style>
