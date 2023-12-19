@@ -11,7 +11,7 @@
 		<h3>Interests</h3>
 	<p>- Space</p>
 	<p>- Structure</p>
-	<p>- Representation</p>
+	<p>- Concepts</p>
 
 	<!-- <h3>Interests</h3>
 	<p>- Space :: <a href="https://www.gutenberg.org/files/4280/4280-h/4280-h.htm">Kant</a>, <a href="https://www.grothendieckcircle.org/">Grothendieck</a>, <a href="https://www.sainsburywellcome.org/web/groups/behrens-lab">Behrens</a></p>
