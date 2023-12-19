@@ -36,24 +36,6 @@
 	--black: #232323;
 } */
 
-@font-face {
-	font-family: nb-architekt;
-	src: url(/fonts/NB-Architekt-Pro-Bold.woff) format('woff');
-	font-weight: 600;
-}
-
-@font-face {
-	font-family: nb-architekt;
-	src: url(/fonts/NB-Architekt-Pro-Light.woff) format('woff');
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: untitled-serif;
-	src: url(/fonts/test-untitled-serif-regular.woff2) format('woff2');
-	font-weight: 400;
-}
-
 body {
 	background: var(--background);
 }
