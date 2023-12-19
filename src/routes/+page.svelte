@@ -38,7 +38,8 @@
 		overflow: auto;
 
 		font-family:serif;
-		backdrop-filter: blur(10px);
+		/* backdrop-filter: blur(5px); */
+		background: #fafafacc;
 		border-bottom: 1px solid black;
 	}
 

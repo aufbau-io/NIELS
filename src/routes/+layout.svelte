@@ -69,6 +69,6 @@
 		height: 100dvh;
 		min-height: 100dvh;
 		width: 100%;
-		opacity: .4;
+		opacity: .5
 	}
 </style>
