@@ -70,11 +70,11 @@
 		<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 		<h3>Places</h3>
 		<a href="https://bushlab-ucl.github.io/"><p>- UCL :: Human Electrophysiology Lab :: Research Assistant</p></a>
-		<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting Research Assistant</p></a>
+		<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences :: Stochastic Topology Group :: Visiting</p></a>
 			<h3>Interests</h3>
 		<p>- Space</p>
 		<p>- Structure</p>
-		<p>- Representation</p>
+		<p>- Concepts</p>
 
 		<!-- <h3>Interests</h3>
 		<p>- Space :: <a href="https://www.gutenberg.org/files/4280/4280-h/4280-h.htm">Kant</a>, <a href="https://www.grothendieckcircle.org/">Grothendieck</a>, <a href="https://www.sainsburywellcome.org/web/groups/behrens-lab">Behrens</a></p>
@@ -135,7 +135,7 @@
 		height: 100dvh;
 		min-height: 100dvh;
 		width: 100%;
-		opacity: 1;
+		opacity: .4;
 	}
 	
 	header {
