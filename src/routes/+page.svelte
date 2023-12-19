@@ -7,7 +7,7 @@
 	<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 	<h3>Places</h3>
 	<a href="https://bushlab-ucl.github.io/"><p>- UCL // Human Electrophysiology Lab // Research Assistant</p></a>
-	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences // Stochastic Topology Group // Visiting Research Assistant</p></a>
+	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences // Stochastic Topology Group // Visiting</p></a>
 		<h3>Interests</h3>
 	<p>- Space</p>
 	<p>- Structure</p>
