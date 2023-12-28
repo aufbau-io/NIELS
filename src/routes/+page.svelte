@@ -93,7 +93,6 @@ main {
 	
 	@media (max-width: 767px) {
 		main {
-				padding: 0; /* Remove padding on small screens */
 				height: auto; /* Adjust height to content */
 				overflow: hidden; /* Prevent scrolling on the main container */
 			}
@@ -105,7 +104,7 @@ main {
 				/* scroll properly on mobile */
 			.text-container {
 				column-width: 100%; /* Full width for the column */
-				height: auto; /* Adjust height to content */
+				height: 100%; /* Adjust height to content */
 				overflow-y: auto; /* Enable vertical scrolling */
 				overflow-x: hidden; /* Hide horizontal scrollbar */
 				padding-left: 0; /* Adjust padding if needed */
