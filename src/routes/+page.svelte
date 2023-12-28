@@ -58,35 +58,28 @@
 
 <style>
 
-body, html {
-    margin: 0;
-    height: 100vh; /* Keep the full viewport height */
-}
-
 main {
     font-family: serif;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
     padding: 10px;
+    padding-left: 20px;
     height: 100vh; /* Set main to full viewport height */
     overflow: hidden; /* Prevent scrolling on the main container */
 }
 
 .header {
-    flex-shrink: 0; /* Ensure the header doesn't shrink */
-    width: 100%; /* Full width */
-    /* Additional header styles */
+    flex: 0 0 144px; /* Fixed width for the first column */
+    box-sizing: border-box;
+    /* Add any specific height if required */
 }
 
 .text-container {
-    flex-grow: 1; /* Allow text container to grow */
+    flex-grow: 1;
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
-		column-count: 1; /* Single column on mobile */
-    column-width: 100%; /* Full width of the column */
-    column-gap: 20px;
     padding-left: 20px;
+    column-width: 142px;
+    column-gap: 20px;
 }
 
 
@@ -104,17 +97,13 @@ main {
 				padding-right: 20px;
 			}
 
-			.text-container {
-        column-count: 1;
-        column-width: 100%;
-        height: auto; /* Ensure it's auto to grow as needed */
-        overflow-y: auto; /* Auto instead of scroll for mobile */
-        overflow-x: hidden;
-        padding-left: 0;
-        column-fill: initial;
-				column-gap: initial;
 				/* scroll properly on mobile */
-				-webkit-overflow-scrolling: touch;
-        }
+			.text-container {
+					overflow-x: hidden;
+					overflow-y: scroll;
+					column-width: 100%;
+					column-gap: 0px;
+					padding-left: 0;
+			}
 	}
 </style>
