@@ -105,6 +105,8 @@ main {
 					column-width: 100%;
 					column-gap: 0px;
 					padding-left: 0;
+					/* fix issue where column wasn't scrolling on mobile, but was on dev console*/
+					-webkit-overflow-scrolling: touch;
 			}
 	}
 </style>
