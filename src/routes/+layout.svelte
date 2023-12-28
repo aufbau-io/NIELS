@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>DANIEL HUMPHRIES</title>
+	<title>NIELS // DANIEL HUMPHRIES</title>
 	<meta name="description" content="Daniel Humphries. Neuroscience, Graphics, Mathematics, Words." />
 </svelte:head>
 
