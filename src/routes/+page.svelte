@@ -57,36 +57,32 @@
 </main>
 
 <style>
-	main {
-			font-family: serif;
-			height: 100dvh;
-			display: flex;
-			padding: 10px;
-			padding-left: 20px;
-			overflow: hidden;
-	}
 
-	.header {
-			flex: 0 0 144px; /* Fixed width for the first column */
-			box-sizing: border-box;
-	}
+main {
+    font-family: serif;
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    height: 100vh; /* Set main to full viewport height */
+    overflow: hidden; /* Prevent scrolling on the main container */
+}
 
-	.text-container {
-			flex-grow: 1;
-			overflow: auto;
-			padding-left: 20px;
-			column-width: 142px;
-			column-gap: 20px;
-			height: 100%;
-	}
+.header {
+    flex: 0 0 144px; /* Fixed width for the first column */
+    box-sizing: border-box;
+    /* Add any specific height if required */
+}
 
-	img {
-			width: 142px;
-			height: auto;
-			border: solid 1px black;
-			display: block;
-			margin: 5px auto;
-	}
+.text-container {
+    flex-grow: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    padding-left: 20px;
+    column-width: 142px;
+    column-gap: 20px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+}
+
 
 	p {
 			break-inside: avoid; /* Avoid breaking inside paragraphs */

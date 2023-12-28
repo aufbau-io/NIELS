@@ -40,6 +40,13 @@ body {
 	background: var(--background);
 }
 
+body,
+html {
+	margin: 0;
+	overflow: hidden; /* Prevent scrolling on the entire page */
+	height: 100vh; /* Set the height to full viewport height */
+}
+
 h1,
 h2,
 h3,
