@@ -90,5 +90,9 @@
 	p {
 			break-inside: avoid; /* Avoid breaking inside paragraphs */
 	}
+
+	h2 {
+			padding-left: 2px;
+	}
 	
 </style>
