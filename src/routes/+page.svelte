@@ -1,51 +1,94 @@
 <script>
+	let allWords = '';
+	let displayIndex = 0;
+	const maxWordLength = 3; // Adjustable maximum word length
+
+	// Function to generate words up to a specified length
+	function generateWords(maxLength) {
+			const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+			let words = [];
+			for (let length = 1; length <= maxLength; length++) {
+					for (let combo of getCombinations(alphabet, length)) {
+							words.push(combo);
+					}
+			}
+			return words;
+	}
+
+	// Helper function to get combinations of letters
+	function getCombinations(alphabet, length) {
+			if (length === 1) return alphabet.split('');
+			const combos = [];
+			const smallerCombos = getCombinations(alphabet, length - 1);
+			for (let letter of alphabet) {
+					for (let combo of smallerCombos) {
+							combos.push(letter + combo);
+					}
+			}
+			return combos;
+	}
+
+	// Call function to generate words
+	const words = generateWords(maxWordLength);
+
+	// Timer to display words by appending to a string
+	const timer = setInterval(() => {
+			if (displayIndex < words.length) {
+					allWords += words[displayIndex] + ' ';
+					displayIndex++;
+			} else {
+					clearInterval(timer);
+			}
+	}, 10);
 </script>
 
-<main style="">
-	<h2>Daniel Niels Humphries</h2>
-	<img src="niels.jpg" alt="niels, this is my website." width=188 />
-	<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
-	<h3>Places</h3>
-	<a href="https://bushlab-ucl.github.io/"><p>- UCL // Human Electrophysiology Lab // Research Assistant</p></a>
-	<a href="https://www.mis.mpg.de/stochastic-topology-applications"><p>- Max Planck Institute for Mathematics in the Sciences // Stochastic Topology Group // Visiting</p></a>
-		<h3>Interests</h3>
-	<p>- Space</p>
-	<p>- Structure</p>
-	<p>- Concepts</p>
-
-	<!-- <h3>Interests</h3>
-	<p>- Space :: <a href="https://www.gutenberg.org/files/4280/4280-h/4280-h.htm">Kant</a>, <a href="https://www.grothendieckcircle.org/">Grothendieck</a>, <a href="https://www.sainsburywellcome.org/web/groups/behrens-lab">Behrens</a></p>
-	<p>- Structure :: <a href="https://www.gutenberg.org/files/5740/5740-pdf.pdf">Wittgenstein</a>, <a href="https://en.wikipedia.org/wiki/Yoneda_lemma">Yoneda</a></p>
-	<p>- Concepts :: <a href="https://plato.stanford.edu/entries/nonexistent-objects/">Meinong</a>, <a href="https://www.phil.cmu.edu/projects/carnap/editorial/latex_pdf/1928-1e%20part1.pdf">Carnap</a>,  <a href="https://link.springer.com/content/pdf/10.1016/j.thbio.2006.02.001.pdf">Jost</a></p>
-	<hr> -->
-	<h3>Things</h3>
-	<a href="/Harvesting_and_Sowing.pdf" target="_blank" rel="noreferrer"><p>- Harvesting and Sowing // Alexander Grothendieck // English Version // Niels Machine Tranlation (Rough WIP)</p></a>
-	<a href="https://aufbau.io" target="_blank" rel="noreferrer">- Aufbau // Creative Web Engineering</a>
+<main>
+	<div class="header">
+			<h2>Daniel Humphries</h2>
+			<img src="niels_bw.jpg" alt="niels, this is my website." width=144 />
+			<a href="https://aufbau.io">websites/apps/graphics</a>
+			<a href="https://bushlab-ucl.github.io/">ucl neuroscience</a>
+			<br >
+			<hr style="margin-top:5px;"/>
+	</div>
+	<div class="text-container">
+			<p>{allWords}</p>
+	</div>
 </main>
 
 <style>
 	main {
-		position:absolute;
-		height:auto;
-		width:100%;
-		max-height: 100%;
+			font-family: serif;
+			height: 100vh;
+			display: flex;
+			padding: 10px;
+			padding-left: 20px
+	}
 
-		display:flex;
-		flex-flow:column;
-		gap:2px;
-		z-index: 1000;
-		padding:10px;
-		overflow: auto;
+	.header {
+			flex: 0 0 144px; /* Fixed width for the first column */
+			box-sizing: border-box;
+	}
 
-		font-family:serif;
-		/* backdrop-filter: blur(5px); */
-		background: #fafafacc;
-		border-bottom: 1px solid black;
+	.text-container {
+			flex-grow: 1;
+			overflow: auto;
+			padding-left: 20px;
+			column-width: 142px;
+			column-gap: 20px;
+			height: 100%;
 	}
 
 	img {
-		border:solid 1px black;
-		width: 188px;
-		height: 188px;
+			width: 142px;
+			height: auto;
+			border: solid 1px black;
+			display: block;
+			margin: 5px auto;
 	}
+
+	p {
+			break-inside: avoid; /* Avoid breaking inside paragraphs */
+	}
+	
 </style>
