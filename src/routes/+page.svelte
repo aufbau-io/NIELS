@@ -77,7 +77,6 @@ main {
     flex-grow: 1;
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden; /* Hide horizontal scrollbar */
-		height: 100dvh;
     padding-left: 20px;
     column-width: 142px;
     column-gap: 20px;
@@ -93,6 +92,12 @@ main {
 	}
 	
 	@media (max-width: 767px) {
+		main {
+				flex-direction: column; /* Stack columns on small screens */
+				padding: 0; /* Remove padding on small screens */
+				height: auto; /* Adjust height to content */
+				overflow: none;
+			}
 			/* single column of text on mobile, scroll down rather than sideways */
 			.header {
 				padding-right: 20px;
