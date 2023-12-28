@@ -127,7 +127,6 @@
 			.text-container {
             column-count: 1; /* Single column */
             column-width: 100%; /* Full width for the column */
-						height: auto;
             height: auto; /* Adjust height to content */
             overflow-y: auto; /* Enable vertical scrolling */
             overflow-x: hidden; /* Hide horizontal scrollbar */
