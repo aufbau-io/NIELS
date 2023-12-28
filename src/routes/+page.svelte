@@ -58,31 +58,36 @@
 
 <style>
 
-main {
-    font-family: serif;
-    display: flex;
-    padding: 10px;
-    padding-left: 20px;
-    overflow: hidden; /* Prevent scrolling on the main container */
-		height: 100dvh;
-}
+	main {
+			font-family: serif;
+			display: flex;
+			padding: 10px;
+			padding-left: 20px;
+			overflow: hidden; /* Prevent scrolling on the main container */
+			height: 100dvh;
+	}
 
-.header {
-    flex: 0 0 144px; /* Fixed width for the first column */
-    box-sizing: border-box;
-    /* Add any specific height if required */
-}
+	.header {
+			flex: 0 0 144px; /* Fixed width for the first column */
+			box-sizing: border-box;
+			/* Add any specific height if required */
+	}
 
-.text-container {
-    flex-grow: 1;
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: auto; /* Hide horizontal scrollbar */
-    padding-left: 20px;
-    column-width: 142px;
-    column-gap: 20px;
-		height: 100%;
-}
+	.text-container {
+			flex-grow: 1;
+			overflow-y: auto; /* Enable vertical scrolling */
+			overflow-x: auto; /* Hide horizontal scrollbar */
+			padding-left: 20px;
+			column-width: 142px;
+			column-gap: 20px;
+			height: 100%;
+	}
 
+	img {
+			border: 1px solid black;
+			margin: 5px 0;
+	
+	}
 
 	p {
 			break-inside: avoid; /* Avoid breaking inside paragraphs */
