@@ -96,6 +96,9 @@
 	}
 	
 	@media (max-width: 767px) {
+		main {
+			overflow: hidden;
+		}
 			/* single column of text on mobile, scroll down rather than sideways */
 			.header {
 				padding-right: 20px;
