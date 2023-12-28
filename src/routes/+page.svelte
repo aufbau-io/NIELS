@@ -96,7 +96,7 @@ main {
 				flex-direction: column; /* Stack columns on small screens */
 				padding: 0; /* Remove padding on small screens */
 				height: auto; /* Adjust height to content */
-				overflow: none;
+				overflow: hidden; /* Prevent scrolling on the main container */
 			}
 			/* single column of text on mobile, scroll down rather than sideways */
 			.header {
