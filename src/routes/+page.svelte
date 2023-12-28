@@ -58,29 +58,35 @@
 
 <style>
 
+body, html {
+    margin: 0;
+    height: 100vh; /* Keep the full viewport height */
+}
+
 main {
     font-family: serif;
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     padding: 10px;
-    padding-left: 20px;
     height: 100vh; /* Set main to full viewport height */
     overflow: hidden; /* Prevent scrolling on the main container */
 }
 
 .header {
-    flex: 0 0 144px; /* Fixed width for the first column */
-    box-sizing: border-box;
-    /* Add any specific height if required */
+    flex-shrink: 0; /* Ensure the header doesn't shrink */
+    width: 100%; /* Full width */
+    /* Additional header styles */
 }
 
 .text-container {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow text container to grow */
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    padding-left: 20px;
-    column-width: 142px;
-    column-gap: 20px;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+		column-count: 1; /* Single column on mobile */
+    column-width: 100%; /* Full width of the column */
+    column-gap: 20px;
+    padding-left: 20px;
 }
 
 
