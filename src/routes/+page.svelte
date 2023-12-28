@@ -77,6 +77,7 @@ main {
     flex-grow: 1;
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden; /* Hide horizontal scrollbar */
+		height: 100dvh;
     padding-left: 20px;
     column-width: 142px;
     column-gap: 20px;
