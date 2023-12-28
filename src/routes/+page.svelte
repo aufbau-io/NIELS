@@ -105,7 +105,7 @@
 			.text-container {
         column-count: 1;
         column-width: 100%;
-        height: auto; /* Ensure it's auto to grow as needed */
+        height: 100%; /* Ensure it's auto to grow as needed */
         overflow-y: auto; /* Auto instead of scroll for mobile */
         overflow-x: hidden;
         padding-left: 0;
