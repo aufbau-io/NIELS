@@ -117,21 +117,22 @@
 	
 	@media (max-width: 767px) {
 		main {
-			overflow: hidden;
-		}
-			/* single column of text on mobile, scroll down rather than sideways */
-			.header {
-				padding-right: 20px;
-			}
+        flex-direction: column; /* Stack elements vertically on mobile */
+    }
 
-			.text-container {
-            column-count: 1; /* Single column */
-            column-width: 100%; /* Full width for the column */
-            height: auto; /* Adjust height to content */
-            overflow-y: auto; /* Enable vertical scrolling */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
-            padding-left: 0; /* Adjust padding if needed */
-						column-fill: initial; /* Disable balancing of columns */
-        }
+		/* single column of text on mobile, scroll down rather than sideways */
+		.header {
+			padding-right: 20px;
+		}
+
+		.text-container {
+					column-count: 1; /* Single column */
+					column-width: 100%; /* Full width for the column */
+					height: auto; /* Adjust height to content */
+					overflow-y: auto; /* Enable vertical scrolling */
+					overflow-x: hidden; /* Hide horizontal scrollbar */
+					padding-left: 0; /* Adjust padding if needed */
+					column-fill: initial; /* Disable balancing of columns */
+			}
 	}
 </style>
