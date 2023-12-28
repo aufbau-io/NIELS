@@ -39,7 +39,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta property="og:title" content="NIELS // DANIEL HUMPHRIES" />
 	<meta property="og:description" content="Daniel Humphries. Neuroscience, Graphics, Mathematics, Words." />
-	<meta property="og:image" content="https://niels.uk/niels_bw.jpg" />
+	<meta property="og:image" content="https://danielniels.co.uk/niels_bw.jpg" />
 </svelte:head>
 
 
