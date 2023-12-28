@@ -109,7 +109,7 @@
         overflow-y: auto; /* Auto instead of scroll for mobile */
         overflow-x: hidden;
         padding-left: 0;
-        column-fill: initial;
+
         }
 	}
 </style>
