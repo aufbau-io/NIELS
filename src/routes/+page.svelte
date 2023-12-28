@@ -63,8 +63,8 @@ main {
     display: flex;
     padding: 10px;
     padding-left: 20px;
-    height: 100vh; /* Set main to full viewport height */
     overflow: hidden; /* Prevent scrolling on the main container */
+		height: 100dvh;
 }
 
 .header {
@@ -80,6 +80,7 @@ main {
     padding-left: 20px;
     column-width: 142px;
     column-gap: 20px;
+		height: 100%;
 }
 
 
