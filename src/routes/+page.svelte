@@ -100,13 +100,12 @@ main {
 
 				/* scroll properly on mobile */
 			.text-container {
-					overflow-x: hidden;
-					overflow-y: scroll;
-					column-width: 100%;
-					column-gap: 0px;
-					padding-left: 0;
-					/* fix issue where column wasn't scrolling on mobile, but was on dev console*/
-					-webkit-overflow-scrolling: touch;
+				column-count: 1; /* Single column */
+				column-width: 100%; /* Full width for the column */
+				height: auto; /* Adjust height to content */
+				overflow-y: auto; /* Enable vertical scrolling */
+				overflow-x: hidden; /* Hide horizontal scrollbar */
+				padding-left: 0; /* Adjust padding if needed */
 			}
 	}
 </style>
