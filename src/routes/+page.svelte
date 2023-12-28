@@ -1,7 +1,12 @@
 <script>
-	let allWords = '';
+	let wordsArray = [];
 	let displayIndex = 0;
 	const maxWordLength = 3; // Adjustable maximum word length
+	const englishWords = [
+    'a', 'i',
+    'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we',
+    'and', 'any', 'are', 'but', 'can', 'did', 'for', 'get', 'had', 'has', 'her', 'him', 'his', 'how', 'its', 'let', 'man', 'may', 'new', 'not', 'now', 'old', 'one', 'our', 'out', 'own', 'say', 'see', 'she', 'the', 'too', 'two', 'use', 'war', 'was', 'way', 'who', 'why', 'yes', 'you'
+]
 
 	// Function to generate words up to a specified length
 	function generateWords(maxLength) {
@@ -31,15 +36,18 @@
 	// Call function to generate words
 	const words = generateWords(maxWordLength);
 
-	// Timer to display words by appending to a string
+	// Timer to display words
 	const timer = setInterval(() => {
 			if (displayIndex < words.length) {
-					allWords += words[displayIndex] + ' ';
+					const word = words[displayIndex];
+					const isEnglishWord = englishWords.includes(word);
+					wordsArray = [...wordsArray, { word, isEnglishWord }];
 					displayIndex++;
 			} else {
 					clearInterval(timer);
 			}
 	}, 10);
+
 </script>
 
 <main>
@@ -52,7 +60,14 @@
 			<hr style="margin-top:5px;"/>
 	</div>
 	<div class="text-container">
-			<p>{allWords}</p>
+    {#each wordsArray as { word, isEnglishWord }}
+        {#if isEnglishWord}
+            <span class="english-word">{word}</span>
+        {:else}
+            <span>{word}</span>
+        {/if}
+        {' '}
+    {/each}
 	</div>
 </main>
 
@@ -77,7 +92,12 @@
 			column-width: 142px;
 			column-gap: 20px;
 			height: 100%;
+			column-fill: auto;
 	}
+
+	.english-word {
+    color: red;
+}
 
 	img {
 			width: 142px;
