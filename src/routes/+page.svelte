@@ -62,7 +62,8 @@
 			height: 100dvh;
 			display: flex;
 			padding: 10px;
-			padding-left: 20px
+			padding-left: 20px;
+			overflow: hidden;
 	}
 
 	.header {
@@ -102,13 +103,13 @@
 			}
 
 			.text-container {
-            column-count: 1; /* Single column */
-            column-width: 100%; /* Full width for the column */
-            height: auto; /* Adjust height to content */
-            overflow-y: scroll; /* Enable vertical scrolling */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
-            padding-left: 0; /* Adjust padding if needed */
-						column-fill: initial; /* Disable balancing of columns */
+        column-count: 1;
+        column-width: 100%;
+        height: auto; /* Ensure it's auto to grow as needed */
+        overflow-y: auto; /* Auto instead of scroll for mobile */
+        overflow-x: hidden;
+        padding-left: 0;
+        column-fill: initial;
         }
 	}
 </style>
