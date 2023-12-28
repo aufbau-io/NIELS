@@ -34,6 +34,12 @@
 <svelte:head>
 	<title>NIELS // DANIEL HUMPHRIES</title>
 	<meta name="description" content="Daniel Humphries. Neuroscience, Graphics, Mathematics, Words." />
+	<meta name="keywords" content="Daniel Humphries, Dan Humphries, Niels, Daniel Niels, UCL, Neuroscience, Graphics, Mathematics, Words" />
+	<meta name="author" content="Daniel Humphries" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="NIELS // DANIEL HUMPHRIES" />
+	<meta property="og:description" content="Daniel Humphries. Neuroscience, Graphics, Mathematics, Words." />
+	<meta property="og:image" content="https://niels.uk/niels_bw.jpg" />
 </svelte:head>
 
 
