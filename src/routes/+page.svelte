@@ -128,7 +128,6 @@
             overflow-y: auto; /* Enable vertical scrolling */
             overflow-x: hidden; /* Hide horizontal scrollbar */
             padding-left: 0; /* Adjust padding if needed */
-						column-fill: initial; /* Disable balancing of columns */
         }
 	}
 </style>
