@@ -46,7 +46,7 @@
 	<div class="header">
 			<h2>Daniel Humphries</h2>
 			<p class="less-spacing">['Niels' for Art Things]</p>
-			<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 />
+			<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
 			<a href="https://aufbau.io"><p>websites/apps/graphics</p></a>
 			<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
 			<hr style="margin-top:5px;"/>
@@ -100,7 +100,6 @@
 	img {
 			border: 1px solid black;
 			margin: 5px 0 0px 0;
-	
 	}
 
 	p {
