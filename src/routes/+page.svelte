@@ -44,7 +44,7 @@
 
 <main>
 	<div class="header">
-			<h2>Daniel Humphries</h2>
+			<h2>Daniel Humphries.</h2>
 			<p class="less-spacing">['Niels' for Art Things]</p>
 			<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 />
 			<a href="https://aufbau.io"><p>websites/apps/graphics</p></a>
@@ -81,7 +81,7 @@
 	}
 
 	.header p.less-spacing {
-		letter-spacing: 0.09em;
+		letter-spacing: 0.092em;
 		color: red;
 	} 
 
@@ -107,9 +107,10 @@
 	}
 
 	h2 {
-			padding-left: 1px;
+			padding-left: 0px;
 			font-size: 16px;
 			font-weight: normal;
+			letter-spacing: 0.095em;
 	}
 
 	
