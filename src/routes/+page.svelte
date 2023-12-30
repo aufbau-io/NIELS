@@ -64,11 +64,12 @@
 		padding: 10px;
 		overflow: hidden; /* Prevent scrolling on the main container */
 		height: 100dvh;
+		max-height: 100dvh;
 		padding-left: 20px;
 		padding-top: 10px;
 		box-sizing: border-box;
+		overflow: hidden;
 	}
-
 	.header {
 			flex: 0 0 144px; /* Fixed width for the first column */
 			box-sizing: border-box;
@@ -95,6 +96,7 @@
 			column-gap: 20px;
 			height: 100%;
 			text-align: justify;
+			box-sizing: border-box;
 	}
 
 	img {
@@ -128,7 +130,7 @@
 				/* scroll properly on mobile */
 			.text-container {
 				column-width: 100%; /* Full width for the column */
-				height: 100%; /* Adjust height to content */
+				height: auto;
 				overflow-y: auto; /* Enable vertical scrolling */
 				overflow-x: hidden; /* Hide horizontal scrollbar */
 				padding-left: 0; /* Adjust padding if needed */
