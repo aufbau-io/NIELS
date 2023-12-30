@@ -1,5 +1,5 @@
 <script>
-	import './app.css';
+	import './styles.css';
 
 	import { onMount } from 'svelte';
 	import { screenType, isIframe } from '$lib/store/store';

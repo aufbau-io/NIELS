@@ -2,7 +2,7 @@
 
 :root {
 	--font-body: times-new-roman, serif;
-	--font-header:  times-new-roman, serif;
+	--font-header: times-new-roman, serif;
 	--column-width: 42rem;
 	--margin: 20px;
 
@@ -50,7 +50,6 @@ h6 {
 	letter-spacing: 0.1em;
 	color: black;
 	margin: 0;
-
 }
 
 h1 {
@@ -66,7 +65,6 @@ a {
 	letter-spacing: 0.1em;
 	font-size: 13px;
 	color: black;
-	
 }
 
 p {
@@ -90,6 +88,25 @@ a:hover {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--color-text);
+} */
+
+/* ::-webkit-scrollbar {
+	display: none;
+}
+
+html {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+} */
+
+/* ::-moz-selection {
+	color: red;
+	background: yellow;
+}
+
+::selection {
+	color: red;
+	background: yellow;
 } */
 
 input,
