@@ -40,7 +40,7 @@
 	<meta name="description" content="Welcome to my world." />
 	<meta
 		name="keywords"
-		content="Daniel Humphries, Dan Humphries, Niels, Daniel Niels, UCL, Neuroscience, Graphics, Mathematics, Words, Machien Learning, AI, Computational Psychiatry"
+		content="Daniel Humphries, Dan Humphries, D.N. Humphries, Niels, Daniel Niels, UCL, d.humphries@ucl.ac.uk, Neuroscience, Graphics, Mathematics, Words, Machien Learning, AI, Computational Psychiatry"
 	/>
 	<meta name="author" content="Daniel Humphries" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
