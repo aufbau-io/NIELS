@@ -94,7 +94,7 @@
 			padding-left: 20px;
 			column-width: 142px;
 			column-gap: 20px;
-			height: 100%;
+			height: auto;
 			text-align: justify;
 			box-sizing: border-box;
 	}
