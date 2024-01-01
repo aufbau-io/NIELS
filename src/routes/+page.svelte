@@ -85,6 +85,9 @@
 		letter-spacing: 0.082em;
 		color: red;
 		font-style: italic;
+		text-decoration: none;
+		/* on mobile */
+
 	} 
 
 	.text-container {
@@ -138,7 +141,6 @@
 		}
 
 		a {
-			text-decoration: red underline;
 			-webkit-text-decoration-color: red;
 			text-decoration-color: red;
 		}
