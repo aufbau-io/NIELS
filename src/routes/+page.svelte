@@ -120,6 +120,10 @@
 	@media (max-width: 767px) {
 
 		/* Make the text-container scroll vertically within main on mobile */
+		main {
+				flex-direction: row;
+				overflow: auto;
+		}
 		.text-container {
 				overflow-y: auto;
 				overflow-x: hidden;
