@@ -131,8 +131,8 @@
 		}
 
 		.text-container {
-			height: fit-content;
-			max-height: fit-content;
+			height: 100%;
+			max-height: 100%;
 			overflow: auto;
 		}
 
