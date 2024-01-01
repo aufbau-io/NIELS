@@ -118,25 +118,17 @@
 
 	
 	@media (max-width: 767px) {
-		main {
-				/* height: auto;
-				overflow: hidden; */
-				height: auto;
-				max-height: auto;
-			}
-			/* single column of text on mobile, scroll down rather than sideways */
-			.header {
-				padding-right: 20px;
-			}
 
-				/* scroll properly on mobile */
-			.text-container {
-				column-width: 100%; /* Full width for the column */
-				overflow-y: scroll; /* Enable vertical scrolling */
-				overflow-x: hidden; /* Hide horizontal scrollbar */
-				height: auto;
-				padding-left: 0; /* Adjust padding if needed */
-			}
+		/* Make the text-container scroll vertically within main on mobile */
+		.text-container {
+				overflow-y: auto;
+				overflow-x: hidden;
+				height: 100%;
+				column-width: 142px;
+				column-gap: 20px;
+				text-align: justify;
+				box-sizing: border-box;
+		}
 
 			a {
 				text-decoration: red underline;

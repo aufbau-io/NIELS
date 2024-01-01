@@ -1,0 +1,19 @@
+main {
+	/* height: auto;
+  overflow: hidden; */
+	height: auto;
+	max-height: auto;
+}
+/* single column of text on mobile, scroll down rather than sideways */
+.header {
+	padding-right: 20px;
+}
+
+/* scroll properly on mobile */
+.text-container {
+	column-width: 100%; /* Full width for the column */
+	overflow-y: scroll; /* Enable vertical scrolling */
+	overflow-x: hidden; /* Hide horizontal scrollbar */
+	height: auto;
+	padding-left: 0; /* Adjust padding if needed */
+}
