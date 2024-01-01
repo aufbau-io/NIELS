@@ -151,7 +151,7 @@
 		}
 
 		.header p.less-spacing {
-			text-decoration: none;
+			text-decoration: none !important;
 			-webkit-text-decoration-color: transparent;
 			text-decoration-color: transparent;
 		} 
