@@ -119,19 +119,15 @@
 	
 	@media (max-width: 767px) {
 
-		/* Make the text-container scroll vertically within main on mobile */
+		/* Make the text-container scroll vertically within main on mobile rather than get stuck at 100% page height */
 		main {
-				flex-direction: row;
-				overflow: auto;
+			height: auto;
+			max-height: auto;
 		}
+
 		.text-container {
-				overflow-y: auto;
-				overflow-x: hidden;
-				height: 100%;
-				column-width: 142px;
-				column-gap: 20px;
-				text-align: justify;
-				box-sizing: border-box;
+			height: 100%;
+			max-height: 100%;
 		}
 
 			a {
