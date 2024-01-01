@@ -121,6 +121,8 @@
 		main {
 				/* height: auto;
 				overflow: hidden; */
+				height: auto;
+				max-height: auto;
 			}
 			/* single column of text on mobile, scroll down rather than sideways */
 			.header {
