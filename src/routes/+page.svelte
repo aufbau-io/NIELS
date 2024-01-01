@@ -68,7 +68,6 @@
 		padding-left: 20px;
 		padding-top: 10px;
 		box-sizing: border-box;
-		overflow: hidden;
 	}
 	.header {
 			flex: 0 0 144px; /* Fixed width for the first column */
@@ -123,12 +122,17 @@
 		main {
 			height: auto;
 			max-height: auto;
+			overflow: auto;
+		}
+
+		.header {
+			position: sticky;
+			top: 0;
 		}
 
 		.text-container {
 			height: fit-content;
 			max-height: fit-content;
-			overflow-y: scroll;
 		}
 
 			a {
