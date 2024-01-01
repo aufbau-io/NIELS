@@ -119,8 +119,8 @@
 	
 	@media (max-width: 767px) {
 		main {
-				height: auto; /* Adjust height to content */
-				overflow: hidden; /* Prevent scrolling on the main container */
+				/* height: auto;
+				overflow: hidden; */
 			}
 			/* single column of text on mobile, scroll down rather than sideways */
 			.header {
