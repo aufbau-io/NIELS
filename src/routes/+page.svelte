@@ -120,8 +120,8 @@
 
 		/* Make the text-container scroll vertically within main on mobile rather than get stuck at 100% page height */
 		main {
-			height: auto;
-			max-height: auto;
+			height: fit-content;
+			max-height: fit-content;
 			overflow: auto;
 		}
 
@@ -133,6 +133,7 @@
 		.text-container {
 			height: fit-content;
 			max-height: fit-content;
+			overflow: auto;
 		}
 
 			a {
