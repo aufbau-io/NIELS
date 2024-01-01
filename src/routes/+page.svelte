@@ -85,10 +85,6 @@
 		letter-spacing: 0.082em;
 		color: red;
 		font-style: italic;
-		text-decoration: none;
-		/* on mobile */
-		-webkit-text-decoration-color: transparent;
-		text-decoration-color: transparent;
 	} 
 
 	.text-container {
@@ -123,16 +119,10 @@
 	
 	@media (max-width: 767px) {
 
-		/* Make the text-container scroll vertically within main on mobile rather than get stuck at 100% page height */
 		main {
 			height: 100%;
 			max-height: 100%;
 			overflow: auto;
-		}
-
-		.header {
-			position: sticky;
-			top: 0;
 		}
 
 		.text-container {
@@ -149,12 +139,6 @@
 		a:hover {
 			text-decoration: underline;
 		}
-
-		.header p.less-spacing {
-			text-decoration: none !important;
-			-webkit-text-decoration-color: transparent;
-			text-decoration-color: transparent;
-		} 
 
 	}
 </style>
