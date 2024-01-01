@@ -120,8 +120,8 @@
 
 		/* Make the text-container scroll vertically within main on mobile rather than get stuck at 100% page height */
 		main {
-			height: fit-content;
-			max-height: fit-content;
+			height: 100%;
+			max-height: 100%;
 			overflow: auto;
 		}
 
@@ -136,15 +136,15 @@
 			overflow: auto;
 		}
 
-			a {
-				text-decoration: red underline;
-				-webkit-text-decoration-color: red;
-				text-decoration-color: red;
-			}
+		a {
+			text-decoration: red underline;
+			-webkit-text-decoration-color: red;
+			text-decoration-color: red;
+		}
 
-			a:hover {
-				text-decoration: underline;
-			}
+		a:hover {
+			text-decoration: underline;
+		}
 
 	}
 </style>
