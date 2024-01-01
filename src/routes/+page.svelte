@@ -136,11 +136,11 @@
 				padding-left: 0; /* Adjust padding if needed */
 			}
 
-			a {
+			a, .header p {
 				text-decoration: red underline !important;
 			}
 
-			a:hover {
+			a:hover, .header p:hover {
 				text-decoration: underline;
 			}
 
