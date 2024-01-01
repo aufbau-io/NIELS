@@ -136,11 +136,13 @@
 				padding-left: 0; /* Adjust padding if needed */
 			}
 
-			a, .header p {
-				text-decoration: red underline !important;
+			a {
+				text-decoration: red underline;
+				-webkit-text-decoration-color: red;
+				text-decoration-color: red;
 			}
 
-			a:hover, .header p:hover {
+			a:hover {
 				text-decoration: underline;
 			}
 
