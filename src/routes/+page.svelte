@@ -94,7 +94,7 @@
 			padding-left: 20px;
 			column-width: 142px;
 			column-gap: 20px;
-			height: auto;
+			height: 100%;
 			text-align: justify;
 			box-sizing: border-box;
 	}
@@ -130,7 +130,7 @@
 				/* scroll properly on mobile */
 			.text-container {
 				column-width: 100%; /* Full width for the column */
-				height: auto;
+				height: fit-content;
 				overflow-y: scroll; /* Enable vertical scrolling */
 				overflow-x: hidden; /* Hide horizontal scrollbar */
 				padding-left: 0; /* Adjust padding if needed */
