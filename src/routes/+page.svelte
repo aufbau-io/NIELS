@@ -150,5 +150,11 @@
 			text-decoration: underline;
 		}
 
+		.header p.less-spacing {
+			text-decoration: none;
+			-webkit-text-decoration-color: transparent;
+			text-decoration-color: transparent;
+		} 
+
 	}
 </style>
