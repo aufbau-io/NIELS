@@ -63,8 +63,8 @@
 		display: flex;
 		padding: 10px;
 		overflow: hidden; /* Prevent scrolling on the main container */
-		height: 100%;
-		max-height: 100%;
+		height: 100vh;
+		max-height: 100vh;
 		padding-left: 20px;
 		padding-top: 10px;
 		box-sizing: border-box;
