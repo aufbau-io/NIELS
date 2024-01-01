@@ -135,5 +135,14 @@
 				overflow-x: hidden; /* Hide horizontal scrollbar */
 				padding-left: 0; /* Adjust padding if needed */
 			}
+
+			a {
+				text-decoration: red underline;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
 	}
 </style>
