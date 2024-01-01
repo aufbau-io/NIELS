@@ -87,7 +87,8 @@
 		font-style: italic;
 		text-decoration: none;
 		/* on mobile */
-
+		-webkit-text-decoration-color: transparent;
+		text-decoration-color: transparent;
 	} 
 
 	.text-container {
