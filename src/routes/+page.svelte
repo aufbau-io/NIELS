@@ -134,6 +134,7 @@
 				column-width: 100%; /* Full width for the column */
 				overflow-y: scroll; /* Enable vertical scrolling */
 				overflow-x: hidden; /* Hide horizontal scrollbar */
+				height: auto;
 				padding-left: 0; /* Adjust padding if needed */
 			}
 
