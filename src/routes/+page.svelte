@@ -137,7 +137,7 @@
 			}
 
 			a {
-				text-decoration: red underline;
+				text-decoration: red underline !important;
 			}
 
 			a:hover {
