@@ -126,8 +126,9 @@
 		}
 
 		.text-container {
-			height: 100%;
-			max-height: 100%;
+			height: fit-content;
+			max-height: fit-content;
+			overflow-y: scroll;
 		}
 
 			a {
