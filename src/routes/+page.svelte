@@ -130,7 +130,6 @@
 				/* scroll properly on mobile */
 			.text-container {
 				column-width: 100%; /* Full width for the column */
-				height: fit-content;
 				overflow-y: scroll; /* Enable vertical scrolling */
 				overflow-x: hidden; /* Hide horizontal scrollbar */
 				padding-left: 0; /* Adjust padding if needed */
