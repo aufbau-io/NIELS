@@ -42,51 +42,12 @@
 	}, 10);
 </script>
 
-<main>
-	<div class="header">
-			<h2>Daniel Humphries</h2>
-			<!-- <p class="less-spacing">[ Niels for Art Things ]</p> -->
-			<p class="less-spacing">d.humphries@ucl.ac.uk</p>
-			<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
-			<a href="https://aufbau.io"><p>websites/apps/graphics</p></a>
-			<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
-			<hr style="margin-top:5px;"/>
-	</div>
-	<div class="text-container">
-			<p>{allWords}</p>
-	</div>
-</main>
+
+<div class="text-container">
+		<p>{allWords}</p>
+</div>
 
 <style>
-
-	main {
-		font-family: serif;
-		display: flex;
-		padding: 10px;
-		overflow: hidden; /* Prevent scrolling on the main container */
-		height: 100dvh;
-		max-height: 100dvh;
-		padding-left: 20px;
-		padding-top: 10px;
-		box-sizing: border-box;
-	}
-	.header {
-			flex: 0 0 144px; /* Fixed width for the first column */
-			box-sizing: border-box;
-
-			/* Add any specific height if required */
-	}
-
-	.header p {
-		margin-bottom: 0px;
-	}
-
-	.header p.less-spacing {
-		letter-spacing: 0.082em;
-		color: red;
-		font-style: italic;
-	} 
-
 	.text-container {
 			flex-grow: 1;
 			overflow-y: auto; /* Enable vertical scrolling */
@@ -99,46 +60,15 @@
 			box-sizing: border-box;
 	}
 
-	img {
-			border: 1px solid black;
-			margin: 5px 0 0px 0;
-	}
-
 	p {
 			break-inside: avoid; /* Avoid breaking inside paragraphs */
 	}
-
-	h2 {
-			padding-left: 0px;
-			font-size: 16px;
-			font-weight: normal;
-			letter-spacing: 0.115em;
-
-	}
-
 	
 	@media (max-width: 767px) {
-
-		main {
-			height: 100%;
-			max-height: 100%;
-			overflow: auto;
-		}
-
 		.text-container {
 			height: 100%;
 			max-height: 100%;
 			overflow: auto;
 		}
-
-		a {
-			-webkit-text-decoration-color: red;
-			text-decoration-color: red;
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
 	}
 </style>
