@@ -3,7 +3,7 @@
 
 <main style="">
 	<h2>Daniel Niels Humphries</h2>
-	<img src="niels.jpg" alt="niels, this is my website." width=188 />
+	<img src="niels.jpg" alt="" width=188 />
 	<p style="letter-spacing:1.35px">Neuroscience & Mathematics</p>
 	<h3>Places</h3>
 	<a href="https://bushlab-ucl.github.io/"><p>- UCL // Human Electrophysiology Lab // Research Assistant</p></a>
