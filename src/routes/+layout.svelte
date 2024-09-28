@@ -59,7 +59,9 @@
 				<p class="less-spacing">d.humphries@ucl.ac.uk</p>
 				<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
 				<a href="https://aufbau.io"><p>websites/apps/graphics</p></a>
-				<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
+				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's mathematics</p></a>
+				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neuro</p></a>
+				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
 				<hr style="margin-top:5px;"/>
 		</div>
 		<slot />
