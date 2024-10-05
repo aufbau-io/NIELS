@@ -1,69 +1,69 @@
 <script>
+	import { onMount } from 'svelte';
+
 	let allWords = '';
 	let displayIndex = 0;
-	const maxWordLength = 3; // Adjustable maximum word length
+	const maxWordLength = 3;
+	const unicodeRanges = [
+		[0x0041, 0x007A], // Latin (A-Z, a-z)
+		[0x0370, 0x03FF], // Greek
+		[0x0400, 0x04FF], // Cyrillic
+		[0x0590, 0x05FF], // Hebrew
+		[0x0600, 0x06FF], // Arabic
+		[0x0900, 0x097F], // Devanagari
+		[0x4E00, 0x9FFF], // CJK Unified Ideographs
+	];
 
-	// Function to generate words up to a specified length
-	function generateWords(maxLength) {
-			const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-			let words = [];
-			for (let length = 1; length <= maxLength; length++) {
-					for (let combo of getCombinations(alphabet, length)) {
-							words.push(combo);
-					}
-			}
-			return words;
+	// Function to generate random words from Unicode ranges
+	function generateRandomWord() {
+		let word = '';
+		for (let i = 0; i < maxWordLength; i++) {
+			const range = unicodeRanges[Math.floor(Math.random() * unicodeRanges.length)];
+			const randomChar = String.fromCharCode(Math.floor(Math.random() * (range[1] - range[0])) + range[0]);
+			word += randomChar;
+		}
+		return word;
 	}
 
-	// Helper function to get combinations of letters
-	function getCombinations(alphabet, length) {
-			if (length === 1) return alphabet.split('');
-			const combos = [];
-			const smallerCombos = getCombinations(alphabet, length - 1);
-			for (let letter of alphabet) {
-					for (let combo of smallerCombos) {
-							combos.push(letter + combo);
-					}
-			}
-			return combos;
-	}
+	// This ensures the code runs only on the client side
+	onMount(() => {
+		const textContainer = document.querySelector('.text-container p');
 
-	// Call function to generate words
-	const words = generateWords(maxWordLength);
+		const timer = setInterval(() => {
+			allWords += generateRandomWord() + ' ';
+			displayIndex++;
 
-	// Timer to display words by appending to a string
-	const timer = setInterval(() => {
-			if (displayIndex < words.length) {
-					allWords += words[displayIndex] + ' ';
-					displayIndex++;
-			} else {
-					clearInterval(timer);
-			}
-	}, 10);
+			// Update the content of the paragraph in real-time using textContent for better performance
+			textContainer.textContent = allWords;
+		}, 10);
+
+		// Optional: Cleanup the timer when the component is destroyed
+		return () => clearInterval(timer);
+	});
 </script>
 
-
 <div class="text-container">
-		<p>{allWords}</p>
+	<p></p>
 </div>
 
 <style>
 	.text-container {
-			flex-grow: 1;
-			overflow-y: auto; /* Enable vertical scrolling */
-			overflow-x: auto; /* Hide horizontal scrollbar */
-			padding-left: 20px;
-			column-width: 142px;
-			column-gap: 20px;
-			height: 100%;
-			text-align: justify;
-			box-sizing: border-box;
+		flex-grow: 1;
+		overflow-y: auto; /* Enable vertical scrolling */
+		overflow-x: auto; /* Hide horizontal scrollbar */
+		padding-left: 20px;
+		column-width: 142px;
+		column-gap: 20px;
+		height: 100%;
+		text-align: justify;
+		box-sizing: border-box;
 	}
 
 	p {
-			break-inside: avoid; /* Avoid breaking inside paragraphs */
+		font-size: 12px;
+		break-inside: avoid; /* Avoid breaking inside paragraphs */
 	}
-	
+
 	@media (max-width: 767px) {
 		.text-container {
 			height: 100%;

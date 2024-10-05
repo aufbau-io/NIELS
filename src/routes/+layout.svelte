@@ -37,7 +37,7 @@
 
 <svelte:head>
 	<title>DANIEL HUMPHRIES</title>
-	<meta name="description" content="Welcome to my world." />
+	<meta name="description" content="Human." />
 	<meta
 		name="keywords"
 		content="Daniel Humphries, Dan Humphries, D.N. Humphries, Niels, Daniel Niels, UCL, d.humphries@ucl.ac.uk, Neuroscience, Graphics, Mathematics, Words, Machien Learning, AI, Computational Psychiatry"
@@ -47,7 +47,7 @@
 	<meta property="og:title" content="NIELS // DANIEL HUMPHRIES" />
 	<meta
 		property="og:description"
-		content="Daniel Humphries. Neuroscience, Graphics, Mathematics, Words."
+		content="Daniel Humphries. Neuroscience, Graphics Engines, Rendering, Mathematics, Words."
 	/>
 	<meta property="og:image" content="https://danielniels.co.uk/niels_bw.jpg" />
 </svelte:head>
