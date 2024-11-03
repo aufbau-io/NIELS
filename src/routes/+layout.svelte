@@ -58,9 +58,9 @@
 				<!-- <p class="less-spacing">[ Niels for Art Things ]</p> -->
 				<p class="less-spacing">d.humphries@ucl.ac.uk</p>
 				<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
-				<a href="https://aufbau.io"><p>websites/apps/graphics</p></a>
+				<!-- <a href="https://aufbau.io"><p>websites/apps/graphics</p></a> -->
 				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's mathematics</p></a>
-				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neuro</p></a>
+				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neurosci</p></a>
 				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
 				<hr style="margin-top:5px;"/>
 		</div>
@@ -80,7 +80,7 @@
 		box-sizing: border-box;
 	}
 	.header {
-			flex: 0 0 144px; /* Fixed width for the first column */
+			flex: 0 0 148px; /* Fixed width for the first column */
 			box-sizing: border-box;
 			/* Add any specific height if required */
 	}
