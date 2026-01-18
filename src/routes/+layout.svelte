@@ -109,7 +109,7 @@
 
 	}
 
-	@media (max-width: 767px) {
+	@media (max-width: 540px) {
 
 main {
 	height: 100%;
