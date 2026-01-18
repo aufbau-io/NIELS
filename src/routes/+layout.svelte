@@ -36,7 +36,7 @@
 </script>
 
 <svelte:head>
-	<title>DANIEL HUMPHRIES</title>
+	<title>Daniel Humphries</title>
 	<meta name="description" content="Human." />
 	<meta
 		name="keywords"
@@ -44,7 +44,7 @@
 	/>
 	<meta name="author" content="Daniel Humphries" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:title" content="NIELS // DANIEL HUMPHRIES" />
+	<meta property="og:title" content="Daniel Humphries" />
 	<meta
 		property="og:description"
 		content="Daniel Humphries. Neuroscience, Graphics Engines, Rendering, Mathematics, Words."
@@ -58,10 +58,10 @@
 				<!-- <p class="less-spacing">[ Niels for Art Things ]</p> -->
 				<p class="less-spacing">daeillion[at]proton.me</p>
 				<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
-				<!-- <a href="https://aufbau.io"><p>websites/apps/graphics</p></a> -->
 				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's mathematics</p></a>
-				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neurosci</p></a>
+				<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
 				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
+				<!-- <a href="https://aufbau.io"><p>aufbau.io</p></a> -->
 				<hr style="margin-top:5px;"/>
 		</div>
 		<slot />
