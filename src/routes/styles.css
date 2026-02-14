@@ -47,7 +47,7 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-header);
-	letter-spacing: 0.1em;
+	letter-spacing: 0.0em;
 	color: var(--primary);
 	margin: 0;
 }

@@ -101,7 +101,7 @@
 	.header p.less-spacing {
 		/* letter-spacing: 0.082em; */
 		color: red;
-		font-style: italic;
+		/* font-style: italic; */
 	} 
 
 	img {
