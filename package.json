@@ -27,5 +27,7 @@
 		"web-vitals": "^3.5.0"
 	},
 	"type": "module",
-	"dependencies": {}
+	"dependencies": {
+		"three": "^0.148.0"
+	}
 }

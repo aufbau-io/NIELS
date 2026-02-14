@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	let allWords = '';
 	let displayIndex = 0;
 	const maxWordLength = 3; // Adjustable maximum word length
@@ -71,4 +71,4 @@
 			overflow: auto;
 		}
 	}
-</style>
+</style> -->

@@ -4,8 +4,12 @@
 	import { onMount } from 'svelte';
 	import { screenType, isIframe } from '$lib/store/store';
 
+	let Scene;
+
 	onMount(async () => {
-		// new Experience(document.querySelector('canvas.webgl'))
+		// webgl
+		const module = await import('$lib/three/scene.svelte');
+		Scene = module.default;
 
 		function getDeviceType() {
 			const width =
@@ -57,7 +61,7 @@
 				<h2>Daniel Humphries</h2>
 				<!-- <p class="less-spacing">[ Niels for Art Things ]</p> -->
 				<p class="less-spacing">daeillion[at]proton.me</p>
-				<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
+				<img src="daniel-2.jpg" alt="daniel niels humphries, this is my website." width=144 />
 				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's mathematics</p></a>
 				<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
 				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
@@ -66,6 +70,11 @@
 		</div>
 		<slot />
 </main>
+
+{#if Scene}
+	<svelte:component this={Scene} />
+{/if}
+
 
 <style>
 		main {
@@ -96,7 +105,7 @@
 	} 
 
 	img {
-			border: 1px solid black;
+			border: 1px solid var(--primary);
 			margin: 5px 0 0px 0;
 	}
 
@@ -111,26 +120,26 @@
 
 	@media (max-width: 540px) {
 
-main {
-	height: 100%;
-	max-height: 100%;
-	overflow: auto;
-}
+		main {
+			height: 100%;
+			max-height: 100%;
+			overflow: auto;
+		}
 
-.text-container {
-	height: 100%;
-	max-height: 100%;
-	overflow: auto;
-}
+		/* .text-container {
+			height: 100%;
+			max-height: 100%;
+			overflow: auto;
+		} */
 
-a {
-	-webkit-text-decoration-color: red;
-	text-decoration-color: red;
-}
+		a {
+			-webkit-text-decoration-color: red;
+			text-decoration-color: red;
+		}
 
-a:hover {
-	text-decoration: underline;
-}
+		a:hover {
+			text-decoration: underline;
+		}
 
-}
+	}
 </style>
