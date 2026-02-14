@@ -66,7 +66,7 @@
 				<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
 				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
 				<!-- <a href="https://aufbau.io"><p>aufbau.io</p></a> -->
-				<hr style="margin-top:5px;"/>
+				<!-- <hr style="margin-top:5px;border-color:var(--primary-50);"/> -->
 		</div>
 		<slot />
 </main>
@@ -105,7 +105,7 @@
 	} 
 
 	img {
-			border: 1px solid var(--primary);
+			border: 1px solid var(--primary-50);
 			margin: 5px 0 0px 0;
 	}
 
