@@ -51,7 +51,7 @@
 	<meta property="og:title" content="Daniel Humphries" />
 	<meta
 		property="og:description"
-		content="Daniel Humphries. Neuroscience, Graphics Engines, Rendering, Mathematics, Words."
+		content="Daniel Humphries. Neuroscience, Mathematics, Graphics, 3d Web, Words."
 	/>
 	<meta property="og:image" content="https://danielniels.co.uk/niels_bw.jpg" />
 </svelte:head>
