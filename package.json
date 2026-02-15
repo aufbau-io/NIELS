@@ -2,6 +2,9 @@
 	"name": "niels-web",
 	"version": "0.4.0",
 	"license": "MIT",
+	"engines": {
+		"node": "20.x"
+	},
 	"scripts": {
 		"dev": "vite dev --port 3000",
 		"build": "vite build",
