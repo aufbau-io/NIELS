@@ -54,7 +54,7 @@ h6 {
 }
 
 h1 {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 400;
 }
 
@@ -82,7 +82,7 @@ p {
 }
 
 a:hover {
-	text-decoration: blue underline;
+	text-decoration: green underline;
 }
 
 /* pre {

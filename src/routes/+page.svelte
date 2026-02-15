@@ -23,7 +23,7 @@
 
 <main>
 	<header>
-		<h2>{name}</h2>
+		<h1>{name}</h1>
 		<p class="affiliation">{title}<br>{department}</p>
 	</header>
 
@@ -37,16 +37,9 @@
 		<p>Hopfield networks, cognitive maps, schizophrenia, discrete algebraic geometry, theta functions, arithmetic.</p>
 	</section>
 
-	<p class="email">daeillion[at]proton.me</p>
-
-	<!-- <section>
-		<h2>Contact</h2>
-		<p class="contact">
-			Office: Engineering Building 412<br>
-			Email: {email}<br>
-			<a href="#">CV</a> · <a href="#">Google Scholar</a> · <a href="#">GitHub</a>
-		</p>
-	</section> -->
+	<section>
+		<p class="email">daeillion[at]proton.me</p>
+	</section>
 </main>
 
 <style>
@@ -54,18 +47,24 @@
 		padding-left: 20px;
 		display: flex;
 		flex-flow: column;
-		gap: 16px;
+		gap: 18px;
 		width: 50%;
 		color: var(--primary);
 	}
 
+	h1 {
+		padding-bottom: 4px;
+		text-decoration: 1px var(--accent) underline;
+	}
+
 	h2 {
-		padding-bottom: 8px;
+		padding-bottom: 6px;
+		text-decoration: 1px blue underline;
 	}
 
 	p.email {
-		padding-top: 4px;
+		padding-top: 3px;
 		letter-spacing: 0.1em;
-		text-decoration: var(--accent) underline;
+		text-decoration: 1px green underline;
 	}
 </style>
