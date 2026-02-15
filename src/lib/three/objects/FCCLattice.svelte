@@ -66,7 +66,8 @@
 		material = new THREE.LineBasicMaterial({
 			color,
 			transparent: true,
-			opacity
+			opacity,
+			depthWrite: false
 		});
 
 		mesh = new THREE.LineSegments(geometry, material);
