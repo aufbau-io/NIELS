@@ -111,17 +111,27 @@
 		}
 	}
 
+	// Throttle mouse updates
+	let lastMouseUpdate = 0;
+	const mouseThrottle = 16; // ~60fps max
+
 	function handleMouseMove(e) {
 		if (!useMouseControl) return;
+		
+		const now = performance.now();
+		if (now - lastMouseUpdate < mouseThrottle) return;
+		lastMouseUpdate = now;
 		
 		mouseX = (e.clientX / window.innerWidth) * 2 - 1;
 		mouseY = (e.clientY / window.innerHeight) * 2 - 1;
 		
 		updateTargetQuaternion();
 
+		// Only update projection, not every frame
+		const newProjection = projection + mouseX * 0.5;
 		rectangleComponents.forEach(comp => {
 			if (comp && comp.updateProjection) {
-				comp.updateProjection(projection + mouseX * 0.5);
+				comp.updateProjection(newProjection);
 			}
 		});
 	}
@@ -243,7 +253,7 @@
 	<FCCLattice
 		bind:this={latticeComponent}
 		{scene}
-		size={7}
+		size={6}
 		scale={2}
 		color={0xffa500}
 		opacity={0.1}

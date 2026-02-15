@@ -223,17 +223,15 @@
 				startPos.x, startPos.y, startPos.z
 			], 3));
 
-			const material = new THREE.LineDashedMaterial({
+			// Use regular LineBasicMaterial instead of dashed (much cheaper)
+			const material = new THREE.LineBasicMaterial({
 				color: 0xf0f0f0,
 				transparent: true,
-				opacity: 0,
-				dashSize: 0.1,
-				gapSize: 0.05
+				opacity: 0
 			});
 			traceLineMaterials.push(material);
 
 			const line = new THREE.Line(geometry, material);
-			line.computeLineDistances();
 			line.userData.startPos = startPos.clone();
 			scene.add(line);
 			lines.push(line);
@@ -295,13 +293,14 @@
 			positions[4] = endPos.y;
 			positions[5] = endPos.z;
 			line.geometry.attributes.position.needsUpdate = true;
-			line.computeLineDistances();
+			// Remove: line.computeLineDistances();
 		});
 
 		if (schematicComponent && schematicComponent.updateProjection) {
 			schematicComponent.updateProjection(projection, schematicDist);
 		}
 	}
+
 
 	export function dispose() {
 		if (rectangleGroup) {
