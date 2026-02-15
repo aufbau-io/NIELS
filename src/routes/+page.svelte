@@ -50,7 +50,10 @@
 		flex-flow: column;
 		gap: 18px;
 		width: 50%;
+		height: 100vh;
 		color: var(--primary);
+		overflow: auto;
+		
 	}
 
 	h2 {
@@ -60,6 +63,7 @@
 
 	p.email {
 		padding-top: 2px;
+		padding-bottom: 20px;
 		letter-spacing: 0.1em;
 		text-decoration: 1px var(--accent) underline;
 	}
