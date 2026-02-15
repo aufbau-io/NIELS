@@ -11,11 +11,12 @@
 }
 
 :root {
-	--background: #f0f0f0;
+	--background: #232323;
 	--background-50: #d0d0d080;
-	--primary: #232323;
+	--primary: #f0f0f0;
 	--primary-50: #23232380;
 	--accent: #ffa500;
+	--accent-50: #ffa50080;
 
 	--green: #008080;
 	--white: #f0f0f0;

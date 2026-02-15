@@ -23,7 +23,7 @@
 
 <main>
 	<header>
-		<h1>{name}</h1>
+		<h2>{name}</h2>
 		<p class="affiliation">{title}<br>{department}</p>
 	</header>
 
@@ -52,19 +52,14 @@
 		color: var(--primary);
 	}
 
-	h1 {
-		padding-bottom: 4px;
-		text-decoration: 1px var(--accent) underline;
-	}
-
 	h2 {
 		padding-bottom: 6px;
-		text-decoration: 1px blue underline;
+		/* text-decoration: 1px var(--accent) underline; */
 	}
 
 	p.email {
-		padding-top: 3px;
+		padding-top: 5px;
 		letter-spacing: 0.1em;
-		text-decoration: 1px green underline;
+		text-decoration: 1px var(--accent) underline;
 	}
 </style>

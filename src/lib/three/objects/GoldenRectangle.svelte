@@ -115,7 +115,7 @@
 		const pointsPerArc = 32;
 
 		spiralMaterial = new THREE.LineBasicMaterial({
-			color: 0x0000ff,
+			color: 0xf0f0f0,
 			transparent: true,
 			opacity: 0
 		});
@@ -160,7 +160,7 @@
 			]);
 			
 			const mat = new THREE.LineBasicMaterial({ 
-				color: 0x0000ff, 
+				color: 0xf0f0f0, 
 				transparent: true, 
 				opacity: 0
 			});
@@ -190,7 +190,7 @@
 		group.add(new THREE.Mesh(shape, fillMaterial));
 
 		outlineMaterial = new THREE.LineBasicMaterial({ 
-			color: 0x0000ff, 
+			color: 0xf0f0f0, 
 			transparent: true, 
 			opacity: 0 
 		});
@@ -224,7 +224,7 @@
 			], 3));
 
 			const material = new THREE.LineDashedMaterial({
-				color: 0x0000ff,
+				color: 0xf0f0f0,
 				transparent: true,
 				opacity: 0,
 				dashSize: 0.1,

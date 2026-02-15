@@ -3,6 +3,7 @@
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 	import GoldenRectangle from './objects/GoldenRectangle.svelte';
+	import FCCLattice from './objects/FCCLattice.svelte';
 
 	let canvasElement;
 	let scene, camera, renderer, controls;
@@ -15,6 +16,7 @@
 	let useMouseControl = true;
 
 	let rectangleComponents = [];
+	let latticeComponent;
 
 	// Mouse rotation state
 	let targetQuaternion = new THREE.Quaternion();
@@ -77,7 +79,7 @@
 				transparent: true,
 				opacity: 0.0,
 				side: THREE.DoubleSide,
-				depthWrite: true
+				depthWrite: false
 			})
 		);
 	}
@@ -93,7 +95,7 @@
 
 		return new THREE.LineSegments(
 			geometry,
-			new THREE.LineBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1.0 })
+			new THREE.LineBasicMaterial({ color: 0xf0f0f0, transparent: true, opacity: 1.0 })
 		);
 	}
 
@@ -103,6 +105,10 @@
 				comp.updateProjection(projection);
 			}
 		});
+
+		if (latticeComponent && latticeComponent.updateOpacity) {
+			latticeComponent.updateOpacity(projection);
+		}
 	}
 
 	function handleMouseMove(e) {
@@ -115,42 +121,25 @@
 
 		rectangleComponents.forEach(comp => {
 			if (comp && comp.updateProjection) {
-				comp.updateProjection(projection + mouseX * 0.5 );
+				comp.updateProjection(projection + mouseX * 0.5);
 			}
 		});
 	}
 
 	function updateTargetQuaternion() {
-		// Convert mouse position to rotation angles
 		const rotY = mouseX * Math.PI * 0.5;
 		const rotX = mouseY * Math.PI * 0.4;
 		
-		// Create quaternion from euler angles
 		const euler = new THREE.Euler(rotX, rotY, 0, 'YXZ');
 		targetQuaternion.setFromEuler(euler);
 	}
-
-	// function toggleControlMode() {
-	// 	useMouseControl = !useMouseControl;
-		
-	// 	if (useMouseControl) {
-	// 		controls.enabled = false;
-	// 		// Capture current camera orientation
-	// 		currentQuaternion.copy(camera.quaternion);
-	// 		targetQuaternion.copy(camera.quaternion);
-	// 	} else {
-	// 		controls.enabled = true;
-	// 	}
-	// }
 
 	function animate() {
 		animationFrameId = requestAnimationFrame(animate);
 		
 		if (useMouseControl) {
-			// Smooth quaternion interpolation
 			currentQuaternion.slerp(targetQuaternion, 0.08);
 			
-			// Apply rotation to camera position (orbit around origin)
 			const offset = new THREE.Vector3(0, 0, baseDistance);
 			offset.applyQuaternion(currentQuaternion);
 			camera.position.copy(offset);
@@ -201,7 +190,6 @@
 		scene.add(createIcosahedron());
 		scene.add(createWireframe());
 
-		// Initialize quaternions from starting camera position
 		camera.position.set(5, 4, 5);
 		camera.lookAt(0, 0, 0);
 		currentQuaternion.copy(camera.quaternion);
@@ -210,17 +198,15 @@
 		sceneReady = true;
 		await tick();
 
-		// Init all rectangle components
+		// Init rectangle components
 		for (const comp of rectangleComponents) {
-			if (comp) {
-				await comp.init();
-			}
+			if (comp) await comp.init();
 		}
 
-		// Wait another tick for schematics to mount
-		await tick();
+		// Init lattice
+		if (latticeComponent) latticeComponent.init();
 
-		// Now apply initial projection
+		await tick();
 		updateProjection();
 
 		animate();
@@ -235,6 +221,7 @@
 			rectangleComponents.forEach(comp => {
 				if (comp) comp.dispose();
 			});
+			if (latticeComponent) latticeComponent.dispose();
 			renderer.dispose();
 			controls.dispose();
 		};
@@ -252,6 +239,15 @@
 			indices={config.indices}
 		/>
 	{/each}
+
+	<FCCLattice
+		bind:this={latticeComponent}
+		{scene}
+		size={6}
+		scale={2}
+		color={0xffa500}
+		opacity={0.05}
+	/>
 {/if}
 
 <canvas bind:this={canvasElement}></canvas>
@@ -270,5 +266,4 @@
 		height: 100vh;
 		z-index: -1;
 	}
-
 </style>

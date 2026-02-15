@@ -100,7 +100,7 @@
 	}
 
 	img {
-			/* border: 3px double var(--accent); */
+			border: 1px solid var(--accent-50);
 			margin: 5px 0 0px 0;
 	}
 
