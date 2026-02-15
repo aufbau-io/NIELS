@@ -58,13 +58,13 @@
 
 <main>
 		<div class="header">
-				<h2>Daniel Humphries</h2>
+				<!-- <h2>Daniel Humphries</h2> -->
 				<!-- <p class="less-spacing">[ Niels for Art Things ]</p> -->
-				<p class="less-spacing">daeillion[at]proton.me</p>
+
 				<img src="daniel-2.jpg" alt="daniel niels humphries, this is my website." width=144 />
-				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's mathematics</p></a>
-				<a href="https://bushlab-ucl.github.io/"><p>ucl neuroscience</p></a>
-				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
+				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>□ king's mathematics </p></a>
+				<a href="https://bushlab-ucl.github.io/">□ ucl neuroscience</a>
+				<a href="https://www.tcplab.org/home"><p>□ ucl comp. psychiatry</p></a>
 				<!-- <a href="https://aufbau.io"><p>aufbau.io</p></a> -->
 				<!-- <hr style="margin-top:5px;border-color:var(--primary-50);"/> -->
 		</div>
@@ -96,16 +96,11 @@
 
 	.header p {
 		margin-bottom: 0px;
+		letter-spacing: 0.1em;	
 	}
 
-	.header p.less-spacing {
-		/* letter-spacing: 0.082em; */
-		color: #f0f0f0;
-		/* font-style: italic; */
-	} 
-
 	img {
-			border: 1px solid var(--primary-50);
+			/* border: 3px double var(--accent); */
 			margin: 5px 0 0px 0;
 	}
 

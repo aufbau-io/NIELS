@@ -10,10 +10,18 @@
 
 	const PHI = (1 + Math.sqrt(5)) / 2;
 
-	let projection = 0;
+	let projection = 1;
 	let sceneReady = false;
+	let useMouseControl = true;
 
 	let rectangleComponents = [];
+
+	// Mouse rotation state
+	let targetQuaternion = new THREE.Quaternion();
+	let currentQuaternion = new THREE.Quaternion();
+	let mouseX = 0;
+	let mouseY = 0;
+	let baseDistance = 10;
 
 	const vertices = [
 		[-1, PHI, 0], [1, PHI, 0], [-1, -PHI, 0], [1, -PHI, 0],
@@ -42,12 +50,12 @@
 	];
 
 	const rectangleConfigs = [
-		{ indices: [0, 1, 3, 2], axis: new THREE.Vector3(0, 0, 1), plane: 'XY', direction: 1 },
-		{ indices: [0, 1, 3, 2], axis: new THREE.Vector3(0, 0, 1), plane: 'XY', direction: -1 },
-		{ indices: [4, 5, 7, 6], axis: new THREE.Vector3(1, 0, 0), plane: 'YZ', direction: 1 },
-		{ indices: [4, 5, 7, 6], axis: new THREE.Vector3(1, 0, 0), plane: 'YZ', direction: -1 },
-		{ indices: [8, 9, 11, 10], axis: new THREE.Vector3(0, 1, 0), plane: 'XZ', direction: 1 },
-		{ indices: [8, 9, 11, 10], axis: new THREE.Vector3(0, 1, 0), plane: 'XZ', direction: -1 }
+		{ indices: [0, 1, 3, 2], axis: new THREE.Vector3(0, 0, 1), direction: 1 },
+		{ indices: [0, 1, 3, 2], axis: new THREE.Vector3(0, 0, 1), direction: -1 },
+		{ indices: [4, 5, 7, 6], axis: new THREE.Vector3(1, 0, 0), direction: 1 },
+		{ indices: [4, 5, 7, 6], axis: new THREE.Vector3(1, 0, 0), direction: -1 },
+		{ indices: [8, 9, 11, 10], axis: new THREE.Vector3(0, 1, 0), direction: 1 },
+		{ indices: [8, 9, 11, 10], axis: new THREE.Vector3(0, 1, 0), direction: -1 }
 	];
 
 	function createIcosahedron() {
@@ -65,8 +73,8 @@
 		return new THREE.Mesh(
 			geometry,
 			new THREE.MeshBasicMaterial({
-				color: 0x232323,
-				transparent: false,
+				color: 0xf0f0f0,
+				transparent: true,
 				opacity: 0.0,
 				side: THREE.DoubleSide,
 				depthWrite: true
@@ -85,23 +93,77 @@
 
 		return new THREE.LineSegments(
 			geometry,
-			new THREE.LineBasicMaterial({ color: 0xf0f0f0, transparent: true, opacity: 0.5 })
+			new THREE.LineBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1.0 })
 		);
 	}
 
 	function updateProjection() {
 		rectangleComponents.forEach(comp => {
-			if (comp) comp.updateProjection(projection);
+			if (comp && comp.updateProjection) {
+				comp.updateProjection(projection);
+			}
 		});
 	}
 
+	function handleMouseMove(e) {
+		if (!useMouseControl) return;
+		
+		mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+		mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+		
+		updateTargetQuaternion();
+
+		rectangleComponents.forEach(comp => {
+			if (comp && comp.updateProjection) {
+				comp.updateProjection(projection + mouseX * 0.5 );
+			}
+		});
+	}
+
+	function updateTargetQuaternion() {
+		// Convert mouse position to rotation angles
+		const rotY = mouseX * Math.PI * 0.5;
+		const rotX = mouseY * Math.PI * 0.4;
+		
+		// Create quaternion from euler angles
+		const euler = new THREE.Euler(rotX, rotY, 0, 'YXZ');
+		targetQuaternion.setFromEuler(euler);
+	}
+
+	// function toggleControlMode() {
+	// 	useMouseControl = !useMouseControl;
+		
+	// 	if (useMouseControl) {
+	// 		controls.enabled = false;
+	// 		// Capture current camera orientation
+	// 		currentQuaternion.copy(camera.quaternion);
+	// 		targetQuaternion.copy(camera.quaternion);
+	// 	} else {
+	// 		controls.enabled = true;
+	// 	}
+	// }
+
 	function animate() {
 		animationFrameId = requestAnimationFrame(animate);
-		controls.update();
+		
+		if (useMouseControl) {
+			// Smooth quaternion interpolation
+			currentQuaternion.slerp(targetQuaternion, 0.08);
+			
+			// Apply rotation to camera position (orbit around origin)
+			const offset = new THREE.Vector3(0, 0, baseDistance);
+			offset.applyQuaternion(currentQuaternion);
+			camera.position.copy(offset);
+			camera.lookAt(0, 0, 0);
+		} else {
+			controls.update();
+		}
+		
 		renderer.render(scene, camera);
 	}
 
 	const frustumSize = 12;
+	
 	function handleResize() {
 		const aspect = window.innerWidth / window.innerHeight;
 		camera.left = -frustumSize * aspect / 2;
@@ -124,35 +186,51 @@
 			0.1,
 			100
 		);
-		camera.position.set(5, 4, 5);
+		camera.position.set(0, 0, baseDistance);
 		camera.lookAt(0, 0, 0);
 
 		renderer = new THREE.WebGLRenderer({ canvas: canvasElement, antialias: true });
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setPixelRatio(window.devicePixelRatio);
-		renderer.setClearColor(0x232323, 0);
+		renderer.setClearColor(0xf0f0f0, 0);
 
 		controls = new OrbitControls(camera, canvasElement);
 		controls.enableDamping = true;
+		controls.enabled = !useMouseControl;
 
 		scene.add(createIcosahedron());
 		scene.add(createWireframe());
 
-		// Set flag and wait for components to bind
+		// Initialize quaternions from starting camera position
+		camera.position.set(5, 4, 5);
+		camera.lookAt(0, 0, 0);
+		currentQuaternion.copy(camera.quaternion);
+		targetQuaternion.copy(camera.quaternion);
+
 		sceneReady = true;
 		await tick();
 
-		// Now init all rectangle components
-		rectangleComponents.forEach(comp => {
-			if (comp) comp.init();
-		});
+		// Init all rectangle components
+		for (const comp of rectangleComponents) {
+			if (comp) {
+				await comp.init();
+			}
+		}
+
+		// Wait another tick for schematics to mount
+		await tick();
+
+		// Now apply initial projection
+		updateProjection();
 
 		animate();
 
 		window.addEventListener('resize', handleResize);
+		window.addEventListener('mousemove', handleMouseMove);
 
 		return () => {
 			window.removeEventListener('resize', handleResize);
+			window.removeEventListener('mousemove', handleMouseMove);
 			cancelAnimationFrame(animationFrameId);
 			rectangleComponents.forEach(comp => {
 				if (comp) comp.dispose();
@@ -168,7 +246,6 @@
 		<GoldenRectangle
 			bind:this={rectangleComponents[i]}
 			{scene}
-			plane={config.plane}
 			axis={config.axis}
 			direction={config.direction}
 			{vertices}
@@ -178,26 +255,6 @@
 {/if}
 
 <canvas bind:this={canvasElement}></canvas>
-
-<div class="controls">
-	<label>
-		Projection
-		<input 
-			type="range" 
-			bind:value={projection} 
-			on:input={updateProjection}
-			min="0" 
-			max="1" 
-			step="0.01"
-		/>
-		<span>{projection.toFixed(2)}</span>
-	</label>
-</div>
-
-<!-- <div class="info">
-	<div>φ = (1+√5)/2 ≈ {PHI.toFixed(6)}</div>
-	<div>φ² = φ+1 | 1/φ = φ-1</div>
-</div> -->
 
 <style>
 	:global(body) {
@@ -213,87 +270,5 @@
 		height: 100vh;
 		z-index: -1;
 	}
-	
-	/* container */
-	.controls {
-		position: fixed;
-		top: 14px;
-		right: 14px;
-	
-		padding: 6px 8px;
-		border-radius: 4px;
-	
-		background: rgba(255,255,255,0.04);
-		backdrop-filter: blur(6px);
-	
-		color: rgba(255,255,255,0.85);
-		font-size: 11px;
-		letter-spacing: .04em;
-	
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-	
-		border: 1px solid rgba(255,255,255,0.08);
-	}
-	
-	/* row */
-	label {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-	}
-	
-	/* slider */
-	input[type="range"] {
-		width: 90px;
-		height: 2px;
-		appearance: none;
-		background: rgba(255,255,255,0.15);
-		border-radius: 2px;
-		outline: none;
-	}
-	
-	/* slider thumb */
-	input[type="range"]::-webkit-slider-thumb {
-		appearance: none;
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: white;
-		border: none;
-	}
-	
-	input[type="range"]::-moz-range-thumb {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: white;
-		border: none;
-	}
-	
-	/* number */
-	span {
-		min-width: 28px;
-		text-align: right;
-		opacity: .7;
-	}
-	
-	/* info panel */
-	/* .info {
-		position: fixed;
-		bottom: 14px;
-		left: 14px;
-	
-		padding: 6px 8px;
-		border-radius: 4px;
-	
-		background: rgba(255,255,255,0.04);
-		border: 1px solid rgba(255,255,255,0.08);
-	
-		color: rgba(255,255,255,0.7);
-		font-size: 10px;
-		line-height: 1.5;
-	} */
-	</style>
-	
+
+</style>

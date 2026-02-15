@@ -15,8 +15,7 @@
 	let traceLines = [];
 	let schematicComponent;
 	let basis = null;
-	let baseOpacity = 0.25; 
-	let schematicBaseOpacity = 0.5; 
+	let initialized = false;
 
 	let fillMaterial;
 	let outlineMaterial;
@@ -58,7 +57,7 @@
 
 	function localToWorld(u, v) {
 		return basis.center.clone()
-			.add(basis.uAxis.clone().multiplyScalar(-u)) // note, flipped y
+			.add(basis.uAxis.clone().multiplyScalar(-u))
 			.add(basis.vAxis.clone().multiplyScalar(v));
 	}
 
@@ -66,7 +65,6 @@
 		const squares = [];
 		const arcCenters = [];
 		
-		// Start with the full bounds in local space
 		let rect = {
 			left: -basis.uLen / 2,
 			right: basis.uLen / 2,
@@ -82,25 +80,23 @@
 			const side = Math.min(w, h);
 			let square, arc;
 
-			// The "side" index (i % 4) determines which corner the square occupies
-			// and where the arc is centered.
 			switch (i % 4) {
-				case 0: // Cut from Bottom
+				case 0:
 					square = { left: rect.left, right: rect.left + side, bottom: rect.bottom, top: rect.bottom + side };
 					arc = { u: rect.left + side, v: rect.bottom + side, startAngle: Math.PI, dir: 0 };
 					rect.bottom += side; 
 					break;
-				case 1: // Cut from Left
+				case 1:
 					square = { left: rect.left, right: rect.left + side, bottom: rect.top - side, top: rect.top };
 					arc = { u: rect.left + side, v: rect.top - side, startAngle: Math.PI * 0.5, dir: 1 };
 					rect.left += side;
 					break;
-				case 2: // Cut from Top
+				case 2:
 					square = { left: rect.right - side, right: rect.right, bottom: rect.top - side, top: rect.top };
 					arc = { u: rect.right - side, v: rect.top - side, startAngle: 0, dir: 2 };
 					rect.top -= side;
 					break;
-				case 3: // Cut from Right
+				case 3:
 					square = { left: rect.right - side, right: rect.right, bottom: rect.bottom, top: rect.bottom + side };
 					arc = { u: rect.right - side, v: rect.bottom + side, startAngle: Math.PI * 1.5, dir: 3 };
 					rect.right -= side;
@@ -119,7 +115,7 @@
 		const pointsPerArc = 32;
 
 		spiralMaterial = new THREE.LineBasicMaterial({
-			color: 0xf0f0f0,
+			color: 0x0000ff,
 			transparent: true,
 			opacity: 0
 		});
@@ -129,12 +125,11 @@
 			const arcPoints = [];
 
 			for (let j = 0; j <= pointsPerArc; j++) {
-			const t = j / pointsPerArc;
-			const angle = arc.startAngle + t * (Math.PI / 2);
-
-			const u = arc.u + arc.radius * Math.cos(angle);
-			const v = arc.v + arc.radius * Math.sin(angle);
-			arcPoints.push(localToWorld(u, v));
+				const t = j / pointsPerArc;
+				const angle = arc.startAngle + t * (Math.PI / 2);
+				const u = arc.u + arc.radius * Math.cos(angle);
+				const v = arc.v + arc.radius * Math.sin(angle);
+				arcPoints.push(localToWorld(u, v));
 			}
 
 			const geo = new THREE.BufferGeometry().setFromPoints(arcPoints);
@@ -143,7 +138,6 @@
 
 		return group;
 	}
-
 
 	function createSubdivisionLines(squares) {
 		const group = new THREE.Group();
@@ -166,7 +160,7 @@
 			]);
 			
 			const mat = new THREE.LineBasicMaterial({ 
-				color: 0xf0f0f0, 
+				color: 0x0000ff, 
 				transparent: true, 
 				opacity: 0
 			});
@@ -181,7 +175,6 @@
 		const group = new THREE.Group();
 		const corners = getRectCorners();
 
-		// Fill
 		fillMaterial = new THREE.MeshBasicMaterial({
 			color: 0x232323,
 			transparent: true,
@@ -196,9 +189,8 @@
 		]);
 		group.add(new THREE.Mesh(shape, fillMaterial));
 
-		// Outline
 		outlineMaterial = new THREE.LineBasicMaterial({ 
-			color: 0xf0f0f0, 
+			color: 0x0000ff, 
 			transparent: true, 
 			opacity: 0 
 		});
@@ -211,7 +203,6 @@
 		]);
 		group.add(new THREE.LineSegments(outline, outlineMaterial));
 
-		// Compute the golden rectangle subdivision data
 		const { squares, arcCenters } = computeGoldenRectangleData();
 		
 		group.add(createGoldenSpiral(arcCenters));
@@ -233,7 +224,7 @@
 			], 3));
 
 			const material = new THREE.LineDashedMaterial({
-				color: 0xf0f0f0,
+				color: 0x0000ff,
 				transparent: true,
 				opacity: 0,
 				dashSize: 0.1,
@@ -252,19 +243,18 @@
 	}
 
 	function updateOpacities(t) {
-		// const opacity = t;
-		const opacity = 1;
+		const opacity = t;
 		
 		if (fillMaterial) fillMaterial.opacity = opacity * 0.0;
-		if (outlineMaterial) outlineMaterial.opacity = opacity * baseOpacity;
-		if (spiralMaterial) spiralMaterial.opacity = opacity * baseOpacity;
+		if (outlineMaterial) outlineMaterial.opacity = opacity;
+		if (spiralMaterial) spiralMaterial.opacity = opacity;
 		
 		subdivisionMaterials.forEach(({ mat }) => {
-			mat.opacity = opacity * baseOpacity * 0.5;
+			mat.opacity = opacity * 0.5;
 		});
 		
 		traceLineMaterials.forEach(mat => {
-			mat.opacity = opacity * baseOpacity * 0.5;
+			mat.opacity = opacity * 0.5;
 		});
 	}
 
@@ -281,12 +271,14 @@
 		if (schematicComponent) {
 			schematicComponent.init();
 		}
+
+		initialized = true;
 	}
 
 	export function updateProjection(projection) {
-		if (!rectangleGroup) return;
+		if (!rectangleGroup || !initialized) return;
 
-		const paneDist = projection * 3.14;
+		const paneDist = projection * 3.5;
 		const schematicDist = projection * 7;
 
 		const offset = axis.clone().multiplyScalar(paneDist * direction);
@@ -337,6 +329,5 @@
 		{basis}
 		{axis}
 		{direction}
-		baseOpacity={schematicBaseOpacity}
 	/>
 {/if}

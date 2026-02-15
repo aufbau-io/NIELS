@@ -11,10 +11,11 @@
 }
 
 :root {
-	--background: #232323;
+	--background: #f0f0f0;
 	--background-50: #d0d0d080;
-	--primary: #ffa500;
-	--primary-50: #ffa50080;
+	--primary: #232323;
+	--primary-50: #23232380;
+	--accent: #ffa500;
 
 	--green: #008080;
 	--white: #f0f0f0;
@@ -57,13 +58,18 @@ h1 {
 	font-weight: 400;
 }
 
+h2 {
+	font-size: 16px;
+	font-weight: 400;
+}
+
 p,
 a {
 	font-weight: 400;
 	margin: 0;
 	text-transform: none;
 	letter-spacing: 0.1em;
-	font-size: 13px;
+	font-size: 12px;
 	color: var(--primary);
 }
 
@@ -71,12 +77,12 @@ p {
 	line-height: 1.5;
 }
 
-a {
-	text-decoration: #f0f0f0 underline;
+.underline, a {
+	text-decoration: var(--accent) underline;
 }
 
 a:hover {
-	text-decoration: red underline;
+	text-decoration: blue underline;
 }
 
 /* pre {
