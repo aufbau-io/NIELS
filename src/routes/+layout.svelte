@@ -104,15 +104,6 @@
 			margin: 5px 0 0px 0;
 	}
 
-
-	h2 {
-			padding-left: 0px;
-			font-size: 16px;
-			font-weight: normal;
-			letter-spacing: 0.115em;
-
-	}
-
 	@media (max-width: 540px) {
 
 		main {

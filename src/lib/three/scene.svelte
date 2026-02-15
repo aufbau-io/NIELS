@@ -246,7 +246,7 @@
 		size={6}
 		scale={2}
 		color={0xffa500}
-		opacity={0.05}
+		opacity={0.1}
 	/>
 {/if}
 
@@ -265,5 +265,6 @@
 		width: 100vw;
 		height: 100vh;
 		z-index: -1;
+		opacity: 0.5;
 	}
 </style>
