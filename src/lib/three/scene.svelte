@@ -243,7 +243,7 @@
 	<FCCLattice
 		bind:this={latticeComponent}
 		{scene}
-		size={10}
+		size={7}
 		scale={2}
 		color={0xffa500}
 		opacity={0.1}
