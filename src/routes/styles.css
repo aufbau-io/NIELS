@@ -72,11 +72,11 @@ p {
 }
 
 a {
-	text-decoration: red underline;
+	text-decoration: #f0f0f0 underline;
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration: red underline;
 }
 
 /* pre {

@@ -130,7 +130,7 @@
 		renderer = new THREE.WebGLRenderer({ canvas: canvasElement, antialias: true });
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setPixelRatio(window.devicePixelRatio);
-		renderer.setClearColor(0x232323, 0 );
+		renderer.setClearColor(0x232323, 0);
 
 		controls = new OrbitControls(camera, canvasElement);
 		controls.enableDamping = true;
@@ -211,6 +211,7 @@
 		inset: 0;
 		width: 100vw;
 		height: 100vh;
+		z-index: -1;
 	}
 	
 	/* container */

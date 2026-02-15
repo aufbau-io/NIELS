@@ -100,7 +100,7 @@
 
 	.header p.less-spacing {
 		/* letter-spacing: 0.082em; */
-		color: red;
+		color: #f0f0f0;
 		/* font-style: italic; */
 	} 
 
@@ -131,11 +131,6 @@
 			max-height: 100%;
 			overflow: auto;
 		} */
-
-		a {
-			-webkit-text-decoration-color: red;
-			text-decoration-color: red;
-		}
 
 		a:hover {
 			text-decoration: underline;
