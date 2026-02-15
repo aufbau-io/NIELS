@@ -53,7 +53,7 @@
 		property="og:description"
 		content=""
 	/>
-	<meta property="og:image" content="https://danielniels.co.uk/niels_bw.jpg" />
+	<!-- <meta property="og:image" content="https://danielniels.co.uk/daniel-2.jpg" /> -->
 </svelte:head>
 
 <main>
