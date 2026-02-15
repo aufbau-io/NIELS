@@ -22,14 +22,14 @@
 		const geo = new THREE.BufferGeometry().setFromPoints(points);
 		const mat = dashed 
 			? new THREE.LineDashedMaterial({ 
-				color: 0xffffff, 
+				color: 0xf0f0f0, 
 				transparent: true, 
 				opacity: 0,
 				dashSize: 0.08,
 				gapSize: 0.04
 			})
 			: new THREE.LineBasicMaterial({ 
-				color: 0xffffff, 
+				color: 0xf0f0f0, 
 				transparent: true, 
 				opacity: 0 
 			});
