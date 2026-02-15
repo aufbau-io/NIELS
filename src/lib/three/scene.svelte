@@ -200,6 +200,8 @@
 		scene.add(createIcosahedron());
 		scene.add(createWireframe());
 
+		// scene.fog = new THREE.Fog( 0x232323, 10, 20 );
+
 		camera.position.set(5, 4, 5);
 		camera.lookAt(0, 0, 0);
 		currentQuaternion.copy(camera.quaternion);
@@ -253,7 +255,7 @@
 	<FCCLattice
 		bind:this={latticeComponent}
 		{scene}
-		size={6}
+		size={4}
 		scale={2}
 		color={0xffa500}
 		opacity={0.1}
