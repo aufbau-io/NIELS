@@ -44,14 +44,14 @@
 	<meta name="description" content="Human." />
 	<meta
 		name="keywords"
-		content="Daniel Humphries, Dan Humphries, D.N. Humphries, Niels, Daniel Niels, UCL, d.humphries@ucl.ac.uk, Neuroscience, Graphics, Mathematics, Words, Machien Learning, AI, Computational Psychiatry"
+		content="Daniel Humphries, Dan Humphries, UCL, d.humphries@ucl.ac.uk, Neuroscience, Mathematics, Computational Psychiatry"
 	/>
 	<meta name="author" content="Daniel Humphries" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta property="og:title" content="Daniel Humphries" />
 	<meta
 		property="og:description"
-		content="Daniel Humphries. Neuroscience, Mathematics, Graphics, 3d Web, Words."
+		content=""
 	/>
 	<meta property="og:image" content="https://danielniels.co.uk/niels_bw.jpg" />
 </svelte:head>
