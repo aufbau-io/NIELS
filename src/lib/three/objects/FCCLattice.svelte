@@ -7,69 +7,61 @@
 	export let color = 0x0000ff;
 	export let opacity = 0.4;
 
-	let group;
+	let mesh;
 	let material;
 
-	function generateFCCPoints() {
-		const points = [];
-		const a = scale;
+	// FCC nearest neighbor offsets (in units of a/2)
+	// Each atom connects to 12 neighbors at distance a/√2
+	const nnOffsets = [
+		[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0],
+		[1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1],
+		[0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]
+	];
 
-		for (let i = -size; i <= size; i++) {
-			for (let j = -size; j <= size; j++) {
-				for (let k = -size; k <= size; k++) {
-					const origin = new THREE.Vector3(i * a, j * a, k * a);
-
-					if (i === -size || j === -size || k === -size) {
-						points.push(origin.clone());
-					}
-
-					if (i < size) {
-						points.push(new THREE.Vector3(origin.x + a/2, origin.y + a/2, origin.z));
-						points.push(new THREE.Vector3(origin.x + a/2, origin.y, origin.z + a/2));
-					}
-					if (j < size) {
-						points.push(new THREE.Vector3(origin.x, origin.y + a/2, origin.z + a/2));
-					}
-				}
-			}
-		}
-
-		const unique = [];
-		const seen = new Set();
-		for (const p of points) {
-			const key = `${p.x.toFixed(6)},${p.y.toFixed(6)},${p.z.toFixed(6)}`;
-			if (!seen.has(key)) {
-				seen.add(key);
-				unique.push(p);
-			}
-		}
-
-		return unique;
-	}
-
-	function generateNearestNeighborEdges(points) {
-		const edges = [];
-		const a = scale;
-		const nnDist = a * Math.SQRT1_2;
-		const tolerance = 0.01;
-
-		for (let i = 0; i < points.length; i++) {
-			for (let j = i + 1; j < points.length; j++) {
-				const dist = points[i].distanceTo(points[j]);
-				if (Math.abs(dist - nnDist) < tolerance) {
-					edges.push([points[i], points[j]]);
-				}
-			}
-		}
-
-		return edges;
-	}
+	// FCC basis: corner + 3 face centers
+	const basis = [
+		[0, 0, 0],
+		[0.5, 0.5, 0],
+		[0.5, 0, 0.5],
+		[0, 0.5, 0.5]
+	];
 
 	function create() {
-		group = new THREE.Group();
+		const a = scale;
+		const half = a / 2;
+		const positions = [];
 
-		const points = generateFCCPoints();
-		const edges = generateNearestNeighborEdges(points);
+		// For each unit cell
+		for (let i = -size; i < size; i++) {
+			for (let j = -size; j < size; j++) {
+				for (let k = -size; k < size; k++) {
+					// For each basis atom
+					for (const [bx, by, bz] of basis) {
+						const x = (i + bx) * a;
+						const y = (j + by) * a;
+						const z = (k + bz) * a;
+
+						// Add edges to forward neighbors only (avoid duplicates)
+						for (const [dx, dy, dz] of nnOffsets) {
+							const nx = x + dx * half;
+							const ny = y + dy * half;
+							const nz = z + dz * half;
+
+							// Only add if neighbor is "ahead" (avoids drawing twice)
+							if (dx > 0 || (dx === 0 && dy > 0) || (dx === 0 && dy === 0 && dz > 0)) {
+								// Check bounds
+								if (Math.abs(nx) <= size * a && Math.abs(ny) <= size * a && Math.abs(nz) <= size * a) {
+									positions.push(x, y, z, nx, ny, nz);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		const geometry = new THREE.BufferGeometry();
+		geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
 
 		material = new THREE.LineBasicMaterial({
 			color,
@@ -77,12 +69,8 @@
 			opacity
 		});
 
-		edges.forEach(([a, b]) => {
-			const geo = new THREE.BufferGeometry().setFromPoints([a, b]);
-			group.add(new THREE.Line(geo, material));
-		});
-
-		scene.add(group);
+		mesh = new THREE.LineSegments(geometry, material);
+		scene.add(mesh);
 	}
 
 	export function init() {
@@ -94,17 +82,15 @@
 	}
 
 	export function setPosition(x, y, z) {
-		if (group) group.position.set(x, y, z);
+		if (mesh) mesh.position.set(x, y, z);
 	}
 
 	export function dispose() {
-		if (group) {
-			scene.remove(group);
-			group.traverse(obj => {
-				if (obj.geometry) obj.geometry.dispose();
-			});
-			if (material) material.dispose();
-			group = null;
+		if (mesh) {
+			scene.remove(mesh);
+			mesh.geometry.dispose();
+			material.dispose();
+			mesh = null;
 			material = null;
 		}
 	}
