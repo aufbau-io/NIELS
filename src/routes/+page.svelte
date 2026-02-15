@@ -44,6 +44,7 @@
 
 <style>
 	main {
+		padding-top: 4px;
 		padding-left: 20px;
 		display: flex;
 		flex-flow: column;
@@ -58,7 +59,7 @@
 	}
 
 	p.email {
-		padding-top: 5px;
+		padding-top: 2px;
 		letter-spacing: 0.1em;
 		text-decoration: 1px var(--accent) underline;
 	}
