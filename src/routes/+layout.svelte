@@ -41,7 +41,7 @@
 
 <svelte:head>
 	<title>Daniel Humphries</title>
-	<meta name="description" content="Human." />
+	<meta name="description" content="" />
 	<meta
 		name="keywords"
 		content="Daniel Humphries, Dan Humphries, UCL, d.humphries@ucl.ac.uk, Neuroscience, Mathematics, Computational Psychiatry"
