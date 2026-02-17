@@ -264,19 +264,13 @@
 
 <canvas bind:this={canvasElement}></canvas>
 
-<style>
-	:global(body) {
-		margin: 0;
-		overflow: hidden;
-		font-family: monospace;
-	}
-	
+<style>	
 	canvas {
 		position: fixed;
 		inset: 0;
 		width: 100vw;
 		height: 100vh;
-		z-index: -1;
 		opacity: 0.5;
+		z-index: -1;
 	}
 </style>

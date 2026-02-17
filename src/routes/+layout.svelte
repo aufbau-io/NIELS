@@ -56,6 +56,10 @@
 	<meta property="og:image" content="https://danielniels.co.uk/square.png" />
 </svelte:head>
 
+{#if Scene}
+	<svelte:component this={Scene} />
+{/if}
+
 <main>
 		<div class="header">
 				<!-- <h2>Daniel Humphries</h2> -->
@@ -71,23 +75,18 @@
 		<slot />
 </main>
 
-{#if Scene}
-	<svelte:component this={Scene} />
-{/if}
-
-
 <style>
 		main {
 		font-family: serif;
 		display: flex;
 		padding: 10px;
 		overflow: hidden; /* Prevent scrolling on the main container */
-		height: 100dvh;
 		max-height: 100dvh;
 		padding-left: 20px;
 		padding-top: 10px;
 		box-sizing: border-box;
 	}
+	
 	.header {
 			flex: 0 0 148px; /* Fixed width for the first column */
 			box-sizing: border-box;
