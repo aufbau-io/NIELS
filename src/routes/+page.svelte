@@ -29,7 +29,9 @@
 
 	<section>
 		<h2>About</h2>
-		<p>PhD candidate at King's College London and UCL, supervised by Izaak Neri, Daniel Bush, and Rick Adams. I study the arithmetic and geometry of memory and cognition; how periodic structures like grid cells and prefrontal circuits organise thought through attractor dynamics, and how defects in these networks cause schizophrenia.</p>
+		<p>PhD candidate at King's College London and UCL, supervised by Izaak Neri, Daniel Bush, and Rick Adams.
+			I study the arithmetic and geometry of memory and cognition; how periodic structures like grid cells and prefrontal circuits organise thought through attractor dynamics,
+			and how defects in these networks cause schizophrenia, epilepsy, and dementia.</p>
 	</section>
 
 	<section>
