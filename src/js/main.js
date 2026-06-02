@@ -1,27 +1,22 @@
 /* ===========================================================================
    Background router
    ---------------------------------------------------------------------------
-   Import THIS instead of bg.js (e.g. in main.js:  import './background.js';).
-
-   WebGPU available & a device comes up  ->  the new ghostly manifold.
-   Anything missing or failing           ->  the existing WebGL bg.js (standard
-                                              page), imported unchanged.
-
-   manifold.init() resolves to false (rather than throwing) when WebGPU can't
-   be used, which is what triggers the fallback below.
+   Pulls in the stylesheet (rollup-plugin-postcss extracts it to
+   /assets/styles.css at build time) and, when WebGPU is available, the
+   ghostly manifold background from manifold.js. If WebGPU is missing or its
+   setup fails, the page renders fine without the background.
    =========================================================================== */
 
+   import '../styles/main.css';
+
    async function boot() {
-    if (navigator.gpu) {
-      try {
-        const manifold = await import('./manifold.js');
-        if (await manifold.init()) return;     // WebGPU path took over
-      } catch (e) {
-        // fall through to the WebGL standard page
-      }
-    }
-    // FIX: Change './main.js' to your actual WebGL background script (e.g., './bg.js')
-    await import('./manifold.js');                    
-  }
-  
-  boot();
+     if (!navigator.gpu) return;          // no WebGPU → plain page, no background
+     try {
+       const manifold = await import('./manifold.js');
+       await manifold.init();             // resolves false on failure — nothing else to do
+     } catch {
+       // WebGPU setup threw; leave the background plain
+     }
+   }
+   
+   boot();

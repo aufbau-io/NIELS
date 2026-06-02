@@ -1,72 +1,177 @@
-html{background:#f0f0f0;}
-html,body{margin:0;color:#111;}
-body{font-family:"Times New Roman",Times,Georgia,serif; font-size:15px; line-height:1.42;
-     -webkit-font-smoothing:antialiased; background:transparent;}
-a{color:#111; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:1.5px;}
-a:hover{color:#cc5500;}
-.x{text-decoration:none; color:#aaa; font-size:.78em;}
-a:hover .x{color:#cc5500;}
-.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+/* ===========================================================================
+   Daniel Humphries — index
+   ---------------------------------------------------------------------------
+   Newspaper / index layout: mono section labels in the margin, dense content
+   to their right, one rust accent on hover. The body is transparent so the
+   WebGPU manifold (manifold.js) shows through; --paper is the fallback behind it.
+   =========================================================================== */
 
-/* full-page manifold render, fixed behind everything */
-canvas#bg-manifold{position:fixed; inset:0; width:100vw; height:100vh;
-                   z-index:-1; display:block; pointer-events:none;}
-
-/* shader strip — kept lean */
-canvas#banner{display:block; width:100%; height:0; background:#232323;}
-.cap{display:flex; justify-content:space-between; font-family:ui-monospace,Menlo,monospace;
-     font-size:10.5px; color:#9a9a9a; padding:4px 18px 0; letter-spacing:.03em;}
-
-/* masthead */
-.mast{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between;
-      gap:6px 24px; padding:12px 18px 10px;}
-.mast h1{font-size:20px; font-weight:normal; letter-spacing:.01em; margin:0; display:inline;}
-.mast .sub{font-style:italic; color:#777; font-size:13.5px; margin-left:8px;}
-nav{font-family:ui-monospace,Menlo,monospace; font-size:11.5px; letter-spacing:.02em;
-    display:flex; flex-wrap:wrap; gap:1px 12px; align-items:baseline;}
-nav a{text-decoration:none; color:#444; border-bottom:1px solid transparent; padding-bottom:1px;}
-nav a:hover{color:#cc5500; border-color:#cc5500;}
-nav .gap{color:#cfcfcf;}
-
-hr{border:0; border-top:1px solid #111; margin:0;}
-
-/* indexed sections: mono number+label in the margin, dense content right */
-.sec{display:grid; grid-template-columns:128px minmax(0,1fr); gap:6px 18px;
-     padding:13px 18px; border-top:1px solid #e6e6e6; align-items:start;}
-.sec:first-of-type{border-top:0;}
-.sec .lab{font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.14em;
-          text-transform:uppercase; color:#9a9a9a; padding-top:2px; line-height:1.45;}
-.sec .lab b{color:#111; font-weight:600; margin-right:6px;}
-.sec .body p{margin:0 0 7px;}
-.sec .body p:last-child{margin:0;}
-.sec .body .small{font-size:13px; color:#555;}
-
-/* index list: entry left, dotted leader feel, year hard-right */
-.ix{list-style:none; margin:0; padding:0; max-width:70ch;}
-.ix li{display:flex; align-items:baseline; gap:8px; padding:2.5px 0;}
-.ix .n{font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:#bbb; width:1.4em;
-       flex:none; text-align:right;}
-.ix .t{flex:none;}
-.ix .lead{flex:1; border-bottom:1px dotted #d4d4d4; transform:translateY(-3px);}
-.ix .yr{font-family:ui-monospace,Menlo,monospace; font-size:11px; color:#999; flex:none;}
-.ix .desc{font-size:12.5px; color:#777; font-style:italic; flex:none;}
-
-/* keyword run for research */
-.kw{font-size:13.5px;}
-.kw a{text-decoration:none; border-bottom:1px solid #ddd;}
-.kw a:hover{border-color:#cc5500;}
-.kw .sep{color:#cfcfcf; padding:0 5px;}
-
-.colophon{padding:18px; border-top:1px solid #e6e6e6; margin-top:4px;
-          font-size:12.5px; color:#888; line-height:1.5; max-width:66ch;}
-.colophon a{text-decoration-color:#ccc;}
-.last{font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:#bbb;
-      letter-spacing:.05em; margin-top:9px;}
-
-@media(max-width:640px){
-  .mast{flex-direction:column; gap:6px;}
-  .sec{grid-template-columns:1fr; gap:4px;}
-  .sec .lab{padding-top:0;}
-  .ix .lead{display:none;}
-  .ix li{flex-wrap:wrap;}
-}
+   :root {
+     --paper: #f0f0f0;   /* page background, behind the canvas */
+     --ink:   #111;      /* primary text */
+     --ink-2: #555;      /* secondary text */
+     --ink-3: #999;      /* mono labels, years, role tags */
+     --faint: #c8c8c8;   /* list numerals, separators, dotted leaders */
+     --rule:  #e6e6e6;   /* section hairlines */
+     --hot:   #cc5500;   /* the one accent */
+   
+     --serif: "Times New Roman", Times, Georgia, serif;
+     --mono:  ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+   
+     --pad: 4px;        /* page gutter */
+   }
+   
+   /* ---------------- BASE ---------------- */
+   * { box-sizing: border-box; }
+   
+   html {
+     background: var(--ink);
+     -webkit-text-size-adjust: 100%;
+   }
+   
+   body {
+     margin: 0;
+     background: transparent;          /* let the canvas show through */
+     color: var(--ink);
+     font-family: var(--serif);
+     font-size: 15px;
+     line-height: 1.42;
+     -webkit-font-smoothing: antialiased;
+   }
+   
+   a {
+     color: var(--ink);
+     text-decoration: underline;
+     text-decoration-thickness: 1px;
+     text-underline-offset: 1.5px;
+   }
+   a:hover { color: var(--hot); }
+   
+   /* ---------------- BACKGROUND CANVASES ---------------- */
+   /* full-page manifold, fixed behind everything */
+   #bg-manifold {
+     position: fixed;
+     inset: 0;
+     width: 100vw;
+     height: 100vh;
+     z-index: -1;
+     display: block;
+     pointer-events: none;
+   }
+   
+   /* collapsed strip — kept in the DOM because manifold.js needs the element */
+   #banner {
+     display: block;
+     width: 100%;
+     height: 0;
+   }
+   
+   /* ---------------- MASTHEAD ---------------- */
+   .mast {
+     padding: var(--pad);
+   }
+   .mast h1 {
+     margin: 0;
+     font-size: 14px;
+     font-weight: normal;
+     letter-spacing: 0.01em;
+   }
+   
+   hr {
+     margin: 0;
+     border: 0;
+     border-top: 1px solid var(--ink);
+   }
+   
+   /* ---------------- SECTIONS ---------------- */
+   /* mono number + label in the margin, content to the right */
+   .sec {
+     display: grid;
+     grid-template-columns: 128px minmax(0, 1fr);
+     gap: 6px 18px;
+     align-items: start;
+     padding: 13px var(--pad);
+     border-top: 1px solid var(--rule);
+   }
+   .sec:first-of-type { border-top: 0; }
+   
+   .sec .lab {
+     padding-top: 2px;
+     font-family: var(--mono);
+     font-size: 10px;
+     line-height: 1.45;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+     color: var(--ink-3);
+   }
+   .sec .lab b {
+     margin-right: 6px;
+     color: var(--ink);
+     font-weight: 600;
+   }
+   
+   .sec .body p { margin: 0 0 7px; }
+   .sec .body p:last-child { margin: 0; }
+   .sec .body .small {
+     font-size: 13px;
+     color: var(--ink-2);
+   }
+   
+   /* ---------------- INDEX LIST ---------------- */
+   /* entry left, dotted leader, year hard-right */
+   .ix {
+     margin: 0;
+     padding: 0;
+     max-width: 70ch;
+     list-style: none;
+   }
+   .ix li {
+     display: flex;
+     align-items: baseline;
+     gap: 8px;
+     padding: 2.5px 0;
+   }
+   .ix .n {
+     flex: none;
+     width: 1.4em;
+     font-family: var(--mono);
+     font-size: 10.5px;
+     text-align: right;
+     color: var(--faint);
+   }
+   .ix .t { flex: none; }
+   .ix .role {
+     margin-left: 8px;
+     font-size: 12.5px;
+     font-style: italic;
+     color: var(--ink-3);
+   }
+   .ix .lead {
+     flex: 1;
+     border-bottom: 1px dotted var(--faint);
+     transform: translateY(-3px);
+   }
+   .ix .yr {
+     flex: none;
+     font-family: var(--mono);
+     font-size: 11px;
+     color: var(--ink-3);
+   }
+   
+   /* ---------------- KEYWORD RUN ---------------- */
+   .kw { font-size: 13.5px; }
+   .kw .sep {
+     padding: 0 5px;
+     color: var(--faint);
+   }
+   
+   /* ---------------- RESPONSIVE ---------------- */
+   @media (max-width: 640px) {
+     .sec {
+       grid-template-columns: 1fr;
+       gap: 4px;
+     }
+     .sec .lab { padding-top: 0; }
+     .ix li { flex-wrap: wrap; }
+     .ix .lead { display: none; }
+   }
