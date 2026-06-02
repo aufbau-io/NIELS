@@ -20,7 +20,8 @@
         // fall through to the WebGL standard page
       }
     }
-    await import('./main.js');                    // existing washi shader
+    // FIX: Change './main.js' to your actual WebGL background script (e.g., './bg.js')
+    await import('./manifold.js');                    
   }
   
   boot();
