@@ -2,7 +2,7 @@
   "name": "niels",
   "version": "1.0.0",
   "private": true,
-  "description": "Niels — personal index site.",
+  "description": "niels — personal index site.",
   "type": "module",
   "scripts": {
     "dev": "rollup -c -w",

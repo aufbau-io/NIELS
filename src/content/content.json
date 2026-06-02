@@ -1,0 +1,262 @@
+{
+  "_readme": "This file holds ALL text shown on the site. Edit the values, not the keys. Every entry has an English (en) and Chinese (zh) version — keep both filled in. You can use simple HTML inside the text: <br/> is a line break, <b>…</b> is bold, &amp; is the & symbol, <sup>…</sup> is superscript. Don't rename keys or remove commas/quotes/brackets. After editing, save and redeploy.",
+  "siteTitle": {
+    "en": "Josephine Shen",
+    "zh": "沈菲菲"
+  },
+  "metaDescription": {
+    "en": "Josephine Shen — research, facilitation and strategy across AI, security, and the state.",
+    "zh": "沈菲菲——横跨人工智能、安全与国家的研究、协调与战略。"
+  },
+  "ui": {
+    "indexMark": {
+      "en": "Josephine Shen<sup>®</sup> &nbsp;/&nbsp; 沈菲菲",
+      "zh": "沈菲菲<sup>®</sup> &nbsp;/&nbsp; Josephine Shen"
+    },
+    "nameA": {
+      "en": "Josephine",
+      "zh": "沈"
+    },
+    "nameB": {
+      "en": "Shen",
+      "zh": "菲菲"
+    },
+    "role": {
+      "en": "Research, facilitation &amp; strategy across AI, security &amp; the state.<br>A practice for the institutions, communities and companies shaping how advanced AI meets the public good.",
+      "zh": "横跨人工智能、安全与国家的研究、协调与战略。<br>为塑造先进人工智能如何服务公共利益的机构、社区与企业而工作。"
+    },
+    "meta_avail": {
+      "en": "Available for collaboration",
+      "zh": "开放合作"
+    },
+    "meta_city": {
+      "en": "Berlin, DE",
+      "zh": "德国 · 柏林"
+    },
+    "about_label": {
+      "en": "About",
+      "zh": "简介"
+    },
+    "about_lede": {
+      "en": "Research, facilitation and strategy for the institutions, communities and companies shaping how advanced AI meets the public good.",
+      "zh": "为塑造先进人工智能如何服务公共利益的机构、社区与企业，提供研究、协调与战略支持。"
+    },
+    "about_p1": {
+      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "zh": "占位文本。此处将替换为该领域工作的真实摘录，用以呈现其政策与研究写作的风格、结构与论证方式，供读者参考与评估。"
+    },
+    "about_p2": {
+      "en": "Embedded across the seams between sectors, the work facilitates the emergence of new systems for <b>AI</b>, <b>security</b> and <b>society</b> — translating between the people who build capability, the bodies that govern it, and the communities who live with its consequences.",
+      "zh": "在各部门的接缝之间展开工作，促成<b>人工智能</b>、<b>安全</b>与<b>社会</b>新系统的形成——在构建能力的人、治理能力的机构，以及承受其后果的社区之间进行转译。"
+    },
+    "about_sub": {
+      "en": "Practice — Researcher / Facilitator / Strategist / Libertine / Provocateur / Arsonist. Based in Berlin. Working across English &amp; 中文.",
+      "zh": "实践 — 研究者 / 促进者 / 战略家 / 风流者 / 煽动者 / 纵火者。常驻柏林。工作语言：English &amp; 中文。"
+    },
+    "themes_label": {
+      "en": "Themes",
+      "zh": "主题"
+    },
+    "artefacts_label": {
+      "en": "Artefacts",
+      "zh": "器物"
+    },
+    "projects_label": {
+      "en": "Projects",
+      "zh": "项目"
+    },
+    "dg_state":      { "en": "State",      "zh": "国家" },
+    "dg_industry":   { "en": "Industry",   "zh": "产业" },
+    "dg_grassroots": { "en": "Grassroots", "zh": "基层" },
+    "contact_label": {
+      "en": "Contact",
+      "zh": "联系"
+    },
+    "contact_marg": {
+      "en": "//",
+      "zh": "//"
+    },
+    "contact_sub": {
+      "en": "For collaborations, briefings, convenings, or correspondence. &nbsp;—&nbsp; linkedin.com/in/josephinesb",
+      "zh": "合作、简报、召集或来函，欢迎联系。 &nbsp;—&nbsp; linkedin.com/in/josephinesb"
+    },
+    "error_msg": {
+      "en": "Aiyo, méiyǒu!",
+      "zh": "哎哟，没有！"
+    },
+    "error_back": {
+      "en": "Back home",
+      "zh": "返回首页"
+    }
+  },
+  "contact": {
+    "email": "josephine.fmsb@gmail.com"
+  },
+  "themes": [
+    {
+      "title": {
+        "en": "Regulatory Design",
+        "zh": "监管设计"
+      },
+      "venue": {
+        "en": "rules &amp; compliance",
+        "zh": "规则与合规"
+      },
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该主题的简短描述，说明所涉及的工作与判断。"
+      }
+    },
+    {
+      "title": {
+        "en": "Institutional Strategy",
+        "zh": "制度战略"
+      },
+      "venue": {
+        "en": "agencies &amp; leverage",
+        "zh": "机构与杠杆"
+      },
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该主题的简短描述，说明所涉及的工作与判断。"
+      }
+    },
+    {
+      "title": {
+        "en": "Public-Interest AI",
+        "zh": "公共利益人工智能"
+      },
+      "venue": {
+        "en": "measurement &amp; safety",
+        "zh": "测量与安全"
+      },
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该主题的简短描述，说明所涉及的工作与判断。"
+      }
+    }
+  ],
+  "artefacts": [
+    {
+      "title": {
+        "en": "Lorem Ipsum Artefact I",
+        "zh": "Lorem Ipsum 器物 I"
+      },
+      "venue": {
+        "en": "briefing",
+        "zh": "简报"
+      },
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该器物的简短说明，列出形式、范围与受众。"
+      }
+    },
+    {
+      "title": {
+        "en": "Lorem Ipsum Artefact II",
+        "zh": "Lorem Ipsum 器物 II"
+      },
+      "venue": {
+        "en": "working paper",
+        "zh": "工作论文"
+      },
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该器物的简短说明，列出形式、范围与受众。"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "title": {
+        "en": "Fellow, AIxist",
+        "zh": "AIxist 研究员"
+      },
+      "venue": {
+        "en": "fellowship",
+        "zh": "研究员"
+      },
+      "yr": "(2025—)",
+      "hot": true,
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该项目的简短描述。"
+      }
+    },
+    {
+      "title": {
+        "en": "Grassroots Facilitation",
+        "zh": "基层协调"
+      },
+      "venue": {
+        "en": "grassroots",
+        "zh": "基层"
+      },
+      "yr": "(2024—)",
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该项目的简短描述。"
+      }
+    },
+    {
+      "title": {
+        "en": "Workshops &amp; Convening",
+        "zh": "工作坊与召集"
+      },
+      "venue": {
+        "en": "convening",
+        "zh": "召集"
+      },
+      "yr": "(2023—)",
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该项目的简短描述。"
+      }
+    },
+    {
+      "title": {
+        "en": "Organising",
+        "zh": "组织工作"
+      },
+      "venue": {
+        "en": "organising",
+        "zh": "组织"
+      },
+      "yr": "(2023)",
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该项目的简短描述。"
+      }
+    },
+    {
+      "title": {
+        "en": "Research",
+        "zh": "研究"
+      },
+      "venue": {
+        "en": "research",
+        "zh": "研究"
+      },
+      "yr": "(2022—)",
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该项目的简短描述。"
+      }
+    },
+    {
+      "title": {
+        "en": "Industry &amp; ML",
+        "zh": "产业与机器学习"
+      },
+      "venue": {
+        "en": "industry",
+        "zh": "产业"
+      },
+      "yr": "(2020—22)",
+      "body": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zh": "占位文本。此处展开为该项目的简短描述。"
+      }
+    }
+  ]
+}

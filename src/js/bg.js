@@ -1,28 +1,26 @@
 /* ===========================================================================
-   Background router  (imported by main.js:  import './bg.js';)
+   Background router
    ---------------------------------------------------------------------------
-   WebGPU available & a device comes up  ->  the manifold.
-   Anything missing or failing           ->  the WebGL washi shader (washi.js).
+   Import THIS instead of bg.js (e.g. in main.js:  import './background.js';).
 
-   ┌─ PICK A MANIFOLD VARIANT ────────────────────────────────────────────────┐
-   │  './manifold.js'             — Josie palette (paper / lilac / ink)        │
-   │  './manifold-iridescent.js'  — the iridescent log(sin/cos/tan) Rust look  │
-   └──────────────────────────────────────────────────────────────────────────┘
-   Both export init() and are otherwise identical (same ray, camera, geometry).
+   WebGPU available & a device comes up  ->  the new ghostly manifold.
+   Anything missing or failing           ->  the existing WebGL bg.js (standard
+                                              page), imported unchanged.
+
+   manifold.init() resolves to false (rather than throwing) when WebGPU can't
+   be used, which is what triggers the fallback below.
    =========================================================================== */
 
-const MANIFOLD = './manifold.js';   // ← swap to './manifold-iridescent.js' for the other look
-
-async function boot() {
-  if (navigator.gpu) {
-    try {
-      const manifold = await import(MANIFOLD);
-      if (await manifold.init()) return;   // WebGPU manifold took over
-    } catch (e) {
-      // fall through to the WebGL standard page
+   async function boot() {
+    if (navigator.gpu) {
+      try {
+        const manifold = await import('./manifold.js');
+        if (await manifold.init()) return;     // WebGPU path took over
+      } catch (e) {
+        // fall through to the WebGL standard page
+      }
     }
+    await import('./bg.js');                    // existing washi shader
   }
-  await import('./washi.js');              // WebGL washi gradient (fallback)
-}
-
-boot();
+  
+  boot();

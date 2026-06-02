@@ -1,83 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Daniel Humphries — index</title>
-<meta name="description" content="Daniel Humphries — applied mathematics, neuroscience, graphics."/>
-<link rel="stylesheet" href="/styles/main.css"/>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josephine Shen</title>
+  <meta name="description" content="Josephine Shen — research, facilitation and strategy across AI, security, and the state." />
+  <meta name="author" content="Josephine Shen" />
+  <meta name="keywords" content="Josephine Shen, AI policy, AI governance, security, research, facilitation, strategy, Berlin" />
 
-<!-- WebGPU manifold render, behind everything (see /js/bg.js → manifold.js) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Josephine Shen" />
+  <meta property="og:description" content="Josephine Shen — research, facilitation and strategy across AI, security, and the state." />
+  <meta property="og:image" content="https://josephine-shen.vercel.app/square.png" />
+  <meta property="og:url" content="https://josephine-shen.vercel.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Josephine Shen" />
+  <meta name="twitter:description" content="Josephine Shen — research, facilitation and strategy across AI, security, and the state." />
+  <meta name="twitter:image" content="https://josephine-shen.vercel.app/square.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Archivo:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="fonts-loading">
+
+<!-- +bg : background shader canvas (kept behind everything, non-interactive) -->
 <canvas id="bg" aria-hidden="true"></canvas>
 
-<div class="mast">
-  <div>
-    <h1>Daniel Humphries</h1><span class="sub">also Niels, and aufbau.</span>
+<div class="wrap" id="wrap">
+
+  <div class="masthead">
+    <div class="mast-main">
+      <p class="index-mark" data-i18n="indexMark"></p>
+      <h1><span class="a" data-i18n="nameA">Josephine</span> <span class="b" data-i18n="nameB">Shen</span></h1>
+      <p class="role" data-i18n="role"></p>
+    </div>
+    <div class="meta">
+      <span class="avail" data-i18n="meta_avail"></span>
+      <span data-i18n="meta_city"></span>
+      <span>English · 中文</span>
+      <a href="#" data-email>[ email ]</a>
+    </div>
   </div>
-  <nav>
-    <a href="#about">about</a>
-    <a href="#research">research</a>
-    <a href="#work">work</a>
-    <a href="#contact">contact</a>
-    <span class="gap">/</span>
-    <a href="https://www.aufbau.io/">aufbau<span class="x"> ↗</span></a>
-    <a href="mailto:daeillion@proton.me">mail<span class="x"> ↗</span></a>
-  </nav>
-</div>
 
-<hr/>
-
-<div class="sec" id="status">
-  <div class="lab"><b>00</b>status</div>
-  <div class="body">
-    <ul class="ix">
-      <li><span class="n">a</span><span class="t">PhD candidate, Applied Mathematics — Disordered Systems, <a href="https://www.kcl.ac.uk/research/disordered-systems">King's</a> &amp; UCL</span><span class="lead"></span><span class="yr">present</span></li>
-      <li><span class="n">b</span><span class="t">Graphics, shaders &amp; low-latency systems, as <a href="https://www.aufbau.io/">aufbau</a></span><span class="lead"></span><span class="yr">freelance</span></li>
-    </ul>
+  <!-- ABOUT -->
+  <div class="row is-about" data-marg-key="about_label">
+    <div class="label" data-i18n="about_label"></div>
+    <div class="content">
+      <p class="lede" data-i18n="about_lede"></p>
+      <p data-i18n="about_p1"></p>
+      <p data-i18n="about_p2"></p>
+      <p class="sub" data-i18n="about_sub"></p>
+    </div>
   </div>
-</div>
 
-<div class="sec" id="about">
-  <div class="lab"><b>01</b>about</div>
-  <div class="body">
-    <p>I study the arithmetic and geometry of memory and cognition — how periodic structures like grid cells and prefrontal circuits organise thought through attractor dynamics, and how defects in those networks surface as schizophrenia, epilepsy and dementia.</p>
-    <p class="small">Supervised by Izaak Neri, Daniel Bush and Rick Adams, across the Disordered Systems Group at King's, <a href="https://bushlab-ucl.github.io/">neuroscience</a> and <a href="https://www.tcplab.org/home">computational psychiatry</a> at UCL.</p>
+  <!-- THEMES -->
+  <div class="row" data-marg-key="themes_label">
+    <div class="label" data-i18n="themes_label"></div>
+    <div class="content"><ol class="cites cites-drop" id="themesList"></ol></div>
   </div>
-</div>
 
-<div class="sec" id="research">
-  <div class="lab"><b>02</b>interests</div>
-  <div class="body kw">
-    <span>Hopfield networks</span><span class="sep">·</span><span>cognitive maps</span><span class="sep">·</span><span>theta functions</span><span class="sep">·</span><span>discrete algebraic geometry</span><span class="sep">·</span><span>arithmetic</span>
+  <!-- ARTEFACTS -->
+  <div class="row" data-marg-key="artefacts_label">
+    <div class="label" data-i18n="artefacts_label"></div>
+    <div class="content"><ol class="cites cites-drop" id="artefactsList"></ol></div>
   </div>
-</div>
 
-<div class="sec" id="work">
-  <div class="lab"><b>03</b>work — aufbau</div>
-  <div class="body">
-    <ul class="ix">
-      <li><span class="n">01</span><a class="t" href="https://theta-field.aufbau.io/">Theta-Field<span class="x"> ↗</span></a><span class="lead"></span><span class="yr">2026</span></li>
-      <li><span class="n">02</span><a class="t" href="https://birds.aufbau.io/">Birds<span class="x"> ↗</span></a><span class="lead"></span><span class="yr">2025</span></li>
-      <li><span class="n">03</span><a class="t" href="https://quasicrystal.aufbau.io/">Quasicrystal<span class="x"> ↗</span></a><span class="lead"></span><span class="yr">2024</span></li>
-      <li><span class="n">04</span><a class="t" href="https://garrettmusar.work/">Garrett<span class="x"> ↗</span></a><span class="lead"></span><span class="yr">2024</span></li>
-    </ul>
+  <!-- PROJECTS -->
+  <div class="row" data-marg-key="projects_label">
+    <div class="label" data-i18n="projects_label"></div>
+    <div class="content"><ol class="cites cites-drop" id="projectsList"></ol></div>
   </div>
-</div>
 
-<div class="sec" id="contact">
-  <div class="lab"><b>04</b>contact</div>
-  <div class="body">
-    <p>Best by mail, <a href="mailto:daeillion@proton.me">daeillion@proton.me</a> — or for commissioned and technical work, through <a href="https://www.aufbau.io/">aufbau.io</a>.</p>
+  <!-- CONTACT — one card: email + portrait + domain map -->
+  <div class="row r-end contact-row" data-marg-key="contact_marg">
+    <div class="label" data-i18n="contact_label"></div>
+    <div class="content">
+      <div class="contact-row3">
+
+        <div class="cc-main">
+          <p class="cc-mail-wrap"><a class="mail" href="#" data-email>[ email ]</a></p>
+          <p class="sub" data-i18n="contact_sub"></p>
+        </div>
+
+        <figure class="cc-figure" aria-label="The Overlap — domain map">
+          <svg class="domain-svg" viewBox="0 0 480 380" role="img">
+            <circle class="dom-fill" cx="190" cy="150" r="125"/>
+            <circle class="dom-fill" cx="290" cy="150" r="125"/>
+            <circle class="dom-fill" cx="240" cy="245" r="125"/>
+            <circle class="dom-core" cx="240" cy="183" r="42"/>
+            <circle class="dom-ring" cx="190" cy="150" r="125"/>
+            <circle class="dom-ring" cx="290" cy="150" r="125"/>
+            <circle class="dom-ring" cx="240" cy="245" r="125"/>
+            <text class="dom-label" x="130" y="95"  data-i18n="dg_state">State</text>
+            <text class="dom-label" x="350" y="95"  data-i18n="dg_industry">Industry</text>
+            <text class="dom-label" x="240" y="325" data-i18n="dg_grassroots">Grassroots</text>
+          </svg>
+        </figure>
+
+      </div>
+    </div>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span class="foot-mark">2026</span>
+    <a class="foot-link" href="https://aufbau.io">AUFBAU</a>
+  </footer>
+
 </div>
 
-<div class="colophon">
-  <p>Plain on purpose — <a href="http://contemporary-home-computing.org/prof-dr-style/">Prof. Dr. style</a>, for easy maintenance. In progress, as these always are. <a href="#">Previous version.</a> The background is a fragment shader, not a picture.</p>
-  <p class="last">Last change: today.</p>
-</div>
+<button class="lang-toggle" id="langToggle" aria-label="Language — English / 中文">
+  <span class="seg en on">EN</span><span class="seg zh" lang="zh">中</span>
+</button>
 
-<script type="module" src="/js/bg.js"></script>
+<script type="module" src="/js/main.js"></script>
 </body>
 </html>

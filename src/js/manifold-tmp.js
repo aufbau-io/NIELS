@@ -1,6 +1,10 @@
 /* ===========================================================================
-   Josephine Shen — WebGPU manifold background — IRIDESCENT variant (Rust log(sin/cos/tan) colors)
+   Josephine Shen — WebGPU manifold background — PALETTE variant (site colors)
    ---------------------------------------------------------------------------
+   The manifold from the Rust crate (raum) = WavePlaneScene, skinned in the
+   site's own palette (paper / lilac / ink) rather than the iridescent Rust
+   coloring. For that look, use manifold-iridescent.js instead.
+
    The manifold from the Rust crate (raum) = WavePlaneScene:
 
      • the wave surface   — wave_plane.rs grid + plane_shader.wgsl (vertex AND
@@ -95,21 +99,16 @@ fn vs_plane(@location(0) position: vec3<f32>, @location(1) disp: f32) -> POut {
 }
 @fragment
 fn fs_plane(in: POut) -> @location(0) vec4<f32> {
-  let scale = 0.0015;
-  let clip_pos_truncated = vec3<f32>(in.pos.x, in.pos.y, in.pos.z);   // framebuffer coords, as in Rust
-  let adjusted_pos = abs(in.world * clip_pos_truncated * scale);
-
-  let pattern1 = log(sin(dot(adjusted_pos, clip_pos_truncated) * 0.01));
-  let pattern2 = log(cos(dot(adjusted_pos, clip_pos_truncated) * 0.01));
-  let pattern3 = log(tan(dot(adjusted_pos, clip_pos_truncated) * 10.0));
-
-  let color1 = mix(pattern1, pattern2, sin(u.time * clip_pos_truncated.x * clip_pos_truncated.y * 0.01));
-  let color2 = mix(pattern2, pattern3, cos(u.time * clip_pos_truncated.y * clip_pos_truncated.y * 0.01));
-  let color3 = mix(pattern3, pattern2, sin(u.time * clip_pos_truncated.z * clip_pos_truncated.y * 0.0001));
-
-  var col = vec3<f32>(color1, color2, color3);
-  col *= 1.0 + scanBoost(in.world.x);
-  return vec4<f32>(col, GHOST_ALPHA);
+  var col = paper;
+  let h = clamp(in.world.y * 0.5 + 0.5, 0.0, 1.0);
+  col = mix(col, mix(paper, murasaki, 0.6), h * 0.18);              // faint lilac where it rises
+  let n = normalize(cross(dpdx(in.world), dpdy(in.world)));         // face normal from derivatives
+  let shade = clamp(dot(n, normalize(vec3<f32>(0.4, 0.8, 0.3))) * 0.5 + 0.5, 0.0, 1.0);
+  col = mix(col, usuzumi, (1.0 - shade) * 0.12);                    // ink in the troughs
+  let scanX = mix(-5.0, 5.0, fract(u.time * SCAN_SPEED));
+  let band  = exp(-pow((in.world.x - scanX) / SCAN_WIDTH, 2.0));
+  col = mix(col, gofun, band * 0.5);                                // gofun scan sweep
+  return vec4<f32>(col, 1.0);
 }
 
 // =========================================================================
@@ -127,21 +126,11 @@ fn vs_line(@location(0) position: vec3<f32>) -> LOut {
 }
 @fragment
 fn fs_line(in: LOut) -> @location(0) vec4<f32> {
-  let scale = 0.002;
-  let clip_pos_truncated = vec3<f32>(in.pos.x, in.pos.y, in.pos.z);
-  let adjusted_pos = abs(cos(u.time) * clip_pos_truncated * scale);
-
-  let pattern1 = log(sin(dot(adjusted_pos, clip_pos_truncated) * 0.01));
-  let pattern2 = log(cos(dot(adjusted_pos, clip_pos_truncated) * 0.01));
-  let pattern3 = log(tan(dot(adjusted_pos, clip_pos_truncated) * 10.0));
-
-  let color1 = mix(pattern1, pattern2, sin(u.time * clip_pos_truncated.x * clip_pos_truncated.y * 0.01));
-  let color2 = mix(pattern2, pattern3, cos(u.time * clip_pos_truncated.y * clip_pos_truncated.y * 0.01));
-  let color3 = mix(pattern3, pattern2, sin(u.time * clip_pos_truncated.z * clip_pos_truncated.y * 0.0001));
-
-  var col = vec3<f32>(color1, color2, color3);
-  col *= 1.0 + scanBoost(in.world.x);
-  return vec4<f32>(col, GHOST_ALPHA);
+  var col = usuzumi;                                                // faint ink wire
+  let scanX = mix(-5.0, 5.0, fract(u.time * SCAN_SPEED));
+  let band  = exp(-pow((in.world.x - scanX) / SCAN_WIDTH, 2.0));
+  col = mix(col, gofun, band * 0.6);
+  return vec4<f32>(col, 1.0);
 }
 
 // =========================================================================
@@ -162,7 +151,7 @@ fn fs_well(in: WOut) -> @location(0) vec4<f32> {
   let y_effect = fract(in.pos.y / repeat_y - u.time * speed);
   var opacity  = 0.0;
   if (y_effect > 0.5) { opacity = y_effect - 0.5; }
-  return vec4<f32>(1.0, 0.0, 0.0, opacity);
+  return vec4<f32>(murasaki, opacity * 0.6);                        // lilac rain (palette)
 }
 
 // =========================================================================
@@ -354,14 +343,14 @@ export async function init() {
       { shaderLocation: 0, offset: 0, format: 'float32x3' },
       { shaderLocation: 1, offset: 12, format: 'float32' },
     ] }] },
-    fragment: { module, entryPoint: 'fs_plane', targets: [{ format, blend: alphaOver }] },
+    fragment: { module, entryPoint: 'fs_plane', targets: [{ format }] },
     primitive: { topology: 'triangle-list', cullMode: 'none' },
     depthStencil: depthState(true, 'less'),
   });
   const linePipe = device.createRenderPipeline({
     layout: pipeLayout,
     vertex: { module, entryPoint: 'vs_line', buffers: [{ arrayStride: 12, attributes: [{ shaderLocation: 0, offset: 0, format: 'float32x3' }] }] },
-    fragment: { module, entryPoint: 'fs_line', targets: [{ format, blend: alphaOver }] },
+    fragment: { module, entryPoint: 'fs_line', targets: [{ format }] },
     primitive: { topology: 'line-list' },
     depthStencil: depthState(true, 'less'),
   });
