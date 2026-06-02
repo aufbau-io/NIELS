@@ -1,33 +1,23 @@
 {
-	"name": "niels-web",
-	"version": "0.4.0",
-	"license": "MIT",
-	"scripts": {
-		"dev": "vite dev --port 3000",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-vercel": "^3.1.0",
-		"@sveltejs/kit": "^1.30.3",
-		"eslint": "^8.55.0",
-		"eslint-config-prettier": "^8.10.0",
-		"eslint-plugin-svelte": "^2.35.1",
-		"normalize.css": "^8.0.1",
-		"prettier": "^2.8.8",
-		"prettier-plugin-svelte": "^2.10.1",
-		"svelte": "^3.59.2",
-		"vite": "^4.5.1",
-		"vite-plugin-glsl": "^1.2.1",
-		"vitest": "^0.25.8",
-		"web-vitals": "^3.5.0"
-	},
-	"type": "module",
-	"dependencies": {
-		"three": "^0.148.0"
-	}
+  "name": "niels",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Niels — personal index site.",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "preview": "serve dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "postcss": "^8.4.35",
+    "rollup": "^4.9.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-serve": "^1.1.1",
+    "serve": "^14.2.1"
+  }
 }
