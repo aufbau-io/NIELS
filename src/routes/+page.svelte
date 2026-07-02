@@ -67,10 +67,13 @@
 	}
 	
 	@media (max-width: 767px) {
-		.text-container {
-			height: 100%;
-			max-height: 100%;
-			overflow: auto;
-		}
+	.text-container {
+		height: 100%;
+		max-height: 100%;
+		overflow: auto;
+		column-width: auto;
+		column-count: 1;
+		padding-right: 20px;
 	}
+}
 </style>
