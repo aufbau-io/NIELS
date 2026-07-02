@@ -69,6 +69,7 @@
 	
 	@media (max-width: 767px) {
 	.text-container {
+		padding-left: 14px;
 		height: 100%;
 		max-height: 100%;
 		overflow-y: auto;
