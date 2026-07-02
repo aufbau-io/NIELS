@@ -101,23 +101,9 @@
 			margin: 5px 0 0px 0;
 	}
 
-
-	h2 {
-			padding-left: 0px;
-			font-size: 12px;
-			font-weight: normal;
-
-	}
-
 	@media (max-width: 767px) {
 
 main {
-	height: 100%;
-	max-height: 100%;
-	overflow: auto;
-}
-
-.text-container {
 	height: 100%;
 	max-height: 100%;
 	overflow: auto;
