@@ -87,7 +87,7 @@
 		box-sizing: border-box;
 	}
 	.header {
-			flex: 0 0 160px; /* Fixed width for the first column */
+			flex: 0 0 154px; /* Fixed width for the first column */
 			box-sizing: border-box;
 			/* Add any specific height if required */
 	}
@@ -121,6 +121,10 @@ a:hover {
 @media (max-width: 767px) {
 	main {
 		overflow-x: hidden;
+	}
+
+	.header {
+		flex: 0 0 160px; /* fix overflow isssue */
 	}
 }
 }
