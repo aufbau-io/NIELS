@@ -54,9 +54,9 @@
 			flex-grow: 1;
 			overflow-y: auto; /* Enable vertical scrolling */
 			overflow-x: auto; /* Hide horizontal scrollbar */
-			padding-left: 20px;
+			padding-left: 10px;
 			column-width: 64px;
-			column-gap: 20px;
+			column-gap: 10px;
 			height: 100%;
 			text-align: justify;
 			box-sizing: border-box;
