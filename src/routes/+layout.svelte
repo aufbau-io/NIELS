@@ -124,7 +124,7 @@ a:hover {
 	}
 
 	.header {
-			flex: 0 0 160px; /* fix mobile overflow bug */
+		flex: 0 0 160px; /* fix mobile overflow bug */
 	}
 }
 }
