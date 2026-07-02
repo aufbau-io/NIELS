@@ -36,7 +36,7 @@
 </script>
 
 <svelte:head>
-	<title>DANIEL HUMPHRIES</title>
+	<title>Daniel Humphries</title>
 	<meta name="description" content="Human." />
 	<meta
 		name="keywords"
