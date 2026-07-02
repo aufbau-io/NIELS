@@ -89,6 +89,7 @@
 	.header {
 			flex: 0 0 154px; /* Fixed width for the first column */
 			box-sizing: border-box;
+			min-width: 154px;
 			/* Add any specific height if required */
 	}
 
