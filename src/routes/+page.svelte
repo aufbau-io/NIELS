@@ -73,7 +73,6 @@
 		max-height: 100%;
 		overflow-y: auto;
 		column-width: auto;
-		padding-right: 20px;
 	}
 }
 </style>
