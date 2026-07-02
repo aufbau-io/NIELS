@@ -66,11 +66,12 @@
 			break-inside: avoid; /* Avoid breaking inside paragraphs */
 	}
 	
-	@media (max-width: 767px) {
+@media (max-width: 767px) {
 	.text-container {
+		min-width: 300px;
 		height: 100%;
 		max-height: 100%;
-		overflow: auto;
+		overflow-y: auto;
 		column-width: auto;
 		padding-right: 20px;
 	}
