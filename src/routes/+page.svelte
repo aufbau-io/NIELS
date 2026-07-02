@@ -70,7 +70,7 @@
 	@media (max-width: 767px) {
 	.text-container {
 		height: 100%;
-		min-width: 300px;
+		min-width: 500px;
 		max-height: 100%;
 		overflow-y: auto;
 		column-width: auto;
