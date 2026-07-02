@@ -70,10 +70,8 @@
 	.text-container {
 		height: 100%;
 		max-height: 100%;
-		overflow: auto;
-		column-width: auto;
-		column-count: 1;
-		padding-right: 20px;
+		overflow-y: auto;   /* main scroll stays vertical */
+		overflow-x: clip;   /* a started column bleeds off the edge, no h-scroll */
 	}
 }
 </style>
