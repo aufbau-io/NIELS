@@ -60,10 +60,11 @@
 			height: 100%;
 			text-align: justify;
 			box-sizing: border-box;
+
 	}
 
 	p {
-			break-inside: avoid; /* Avoid breaking inside paragraphs */
+		break-inside: avoid; /* Avoid breaking inside paragraphs */
 	}
 	
 	@media (max-width: 767px) {
