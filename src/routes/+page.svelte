@@ -1,16 +1,18 @@
 <script>
 	let allWords = '';
 	let displayIndex = 0;
-	const maxWordLength = 3; // Adjustable maximum word length
+	const maxWordLength = 10; // was 8, now 10 places: 2^10 = 1024 words
 
-	// Function to generate words up to a specified length
+	// Function to generate words of exactly maxLength
 	function generateWords(maxLength) {
-			const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+			const alphabet = '01';
 			let words = [];
-			for (let length = 1; length <= maxLength; length++) {
-					for (let combo of getCombinations(alphabet, length)) {
-							words.push(combo);
-					}
+			// Generating only full-length combos means every word is
+			// naturally zero-padded to the same width: 0000000000,
+			// 0000000001, ... 1111111111. (Padding shorter words to
+			// this width would just duplicate these.)
+			for (let combo of getCombinations(alphabet, maxLength)) {
+					words.push(combo);
 			}
 			return words;
 	}
@@ -53,7 +55,7 @@
 			overflow-y: auto; /* Enable vertical scrolling */
 			overflow-x: auto; /* Hide horizontal scrollbar */
 			padding-left: 20px;
-			column-width: 142px;
+			column-width: 64px;
 			column-gap: 20px;
 			height: 100%;
 			text-align: justify;

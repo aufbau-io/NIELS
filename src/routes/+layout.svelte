@@ -40,11 +40,11 @@
 	<meta name="description" content="Human." />
 	<meta
 		name="keywords"
-		content="Daniel Humphries, Dan Humphries, D.N. Humphries, Niels, Daniel Niels, UCL, d.humphries@ucl.ac.uk, Neuroscience, Graphics, Mathematics, Words, Machien Learning, AI, Computational Psychiatry"
+		content=""
 	/>
 	<meta name="author" content="Daniel Humphries" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:title" content="NIELS // DANIEL HUMPHRIES" />
+	<meta property="og:title" content="Daniel Humphries" />
 	<meta
 		property="og:description"
 		content="Daniel Humphries. Neuroscience, Graphics Engines, Rendering, Mathematics, Words."
@@ -54,15 +54,22 @@
 
 <main>
 		<div class="header">
-				<h2>Daniel Humphries</h2>
-				<!-- <p class="less-spacing">[ Niels for Art Things ]</p> -->
-				<p class="less-spacing">d.humphries@ucl.ac.uk</p>
-				<img src="niels_bw.jpg" alt="daniel niels humphries, this is my website." width=144 height = 144 />
-				<!-- <a href="https://aufbau.io"><p>websites/apps/graphics</p></a> -->
-				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's mathematics</p></a>
-				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neurosci</p></a>
+				<p>Daniel Humphries [ 🍉 ]</p>
+				<hr>
+				<img src="niels_bw.jpg" alt="daniel humphries, this is my website." width=154 height = 154 />
+				<hr>
+				<p>daniel.c.humphries@[A]</p>
+				<p>d.humphries@[B]</p>
+				<hr>
+				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's app. mathematics</p></a>
+				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neuroscience</p></a>
 				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
-				<hr style="margin-top:5px;"/>
+				<hr>
+				<a href="https://aufbau.io"><p>websites / visual art</p></a>
+				<hr>
+				<p>[ A = kcl.ac.uk ]</p>
+				<p>[ B = ucl.ac.uk ]</p>
+				<hr>
 		</div>
 		<slot />
 </main>
@@ -89,12 +96,6 @@
 		margin-bottom: 0px;
 	}
 
-	.header p.less-spacing {
-		letter-spacing: 0.082em;
-		color: red;
-		font-style: italic;
-	} 
-
 	img {
 			border: 1px solid black;
 			margin: 5px 0 0px 0;
@@ -103,9 +104,8 @@
 
 	h2 {
 			padding-left: 0px;
-			font-size: 16px;
+			font-size: 12px;
 			font-weight: normal;
-			letter-spacing: 0.115em;
 
 	}
 
