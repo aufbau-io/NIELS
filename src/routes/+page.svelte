@@ -54,9 +54,9 @@
 			flex-grow: 1;
 			overflow-y: auto; /* Enable vertical scrolling */
 			overflow-x: auto; /* Hide horizontal scrollbar */
-			padding-left: 10px;
+			padding-left: 20px;
 			column-width: 64px;
-			column-gap: 10px;
+			column-gap: 20px;
 			height: 100%;
 			text-align: justify;
 			box-sizing: border-box;
@@ -66,10 +66,10 @@
 			break-inside: avoid; /* Avoid breaking inside paragraphs */
 	}
 	
-@media (max-width: 767px) {
+	@media (max-width: 767px) {
 	.text-container {
-		min-width: 300px;
 		height: 100%;
+		min-width: 300px;
 		max-height: 100%;
 		overflow-y: auto;
 		column-width: auto;
