@@ -70,10 +70,9 @@
 	.text-container {
 		height: 100%;
 		max-height: 100%;
-		overflow-y: auto;
-		overflow-x: clip;
-		column-width: auto;  /* stop 142px acting as a minimum */
-		column-count: 2;     /* always exactly two columns */
+		overflow: auto;
+		column-width: auto;
+		padding-right: 20px;
 	}
 }
 </style>
