@@ -118,10 +118,10 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* @media (max-width: 767px) {
+@media (max-width: 767px) {
 	main {
 		overflow-x: hidden;
 	}
-} */
+}
 }
 </style>
