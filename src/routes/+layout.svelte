@@ -64,7 +64,7 @@
 				<a href="https://www.kcl.ac.uk/research/disordered-systems"><p>king's app. mathematics</p></a>
 				<a href="https://bushlab-ucl.github.io/"><p>ucl comp. neuroscience</p></a>
 				<a href="https://www.tcplab.org/home"><p>ucl comp. psychiatry</p></a>
-				<hr>
+				<hr>		
 				<a href="https://aufbau.io"><p>websites / visual art</p></a>
 				<hr>
 				<p>[ A = kcl.ac.uk ]</p>

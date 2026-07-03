@@ -7,11 +7,10 @@
 	--margin: 20px;
 
 	font-family: var(--font-body);
-	color: black;
 }
 
 :root {
-	--background: #ffffff;
+	--background: #f0f0f0;
 	--background-50: #d0d0d080;
 	--primary: #e0e0e0;
 	--primary-50: #ffa50080;
