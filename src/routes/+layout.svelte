@@ -49,7 +49,7 @@
 		property="og:description"
 		content="Daniel Humphries. Neuroscience, Graphics Engines, Rendering, Mathematics, Words."
 	/>
-	<meta property="og:image" content="https://danielniels.co.uk/niels_bw.jpg" />
+	<meta property="og:image" content="https://www.danielniels.co.uk/niels_bw.jpg" />
 </svelte:head>
 
 <main>
