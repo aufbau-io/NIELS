@@ -36,7 +36,7 @@ h5,
 h6 {
 	font-family: var(--font-header);
 	letter-spacing: 0.1em;
-	color: black;
+	color: #1b1b1b;
 	margin: 0;
 }
 
@@ -52,7 +52,7 @@ a {
 	text-transform: none;
 	letter-spacing: 0.1em;
 	font-size: 13px;
-	color: black;
+	color: #1b1b1b;
 }
 
 p {
